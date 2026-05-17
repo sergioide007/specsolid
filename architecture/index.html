@@ -51,13 +51,17 @@
       <div>
         <div class="arch-tabs">
           <button class="arch-tab active" onclick="switchArchTab('flow',this)">◆ Flow</button>
-          <button class="arch-tab" onclick="switchArchTab('spec',this)">📄 SPEC.md</button>
+          <button class="arch-tab" onclick="switchArchTab('spec',this)">📄 SPEC arquitectónica</button>
+          <button class="arch-tab" onclick="switchArchTab('sprint',this)">✅ SPEC de sprint</button>
         </div>
         <div class="arch-panel active" id="archFlow">
           <div class="mermaid-wrap"><div class="mermaid" id="mermaidDiagram"></div></div>
         </div>
         <div class="arch-panel" id="archSpec">
           <div class="arch-code" id="archCode"></div>
+        </div>
+        <div class="arch-panel" id="archSprint">
+          <div class="arch-code" id="archSprintCode"></div>
         </div>
       </div>
     </div>
@@ -160,11 +164,36 @@ document.getElementById('archSteps').innerHTML = archSteps.map((s, i) => `
   </div>`).join('');
 document.getElementById('archCode').innerHTML = archCode;
 
+const sprintCode = `<span class="c-muted">// SPEC-Sprint-2.md — exportado desde Scrum Board</span>
+<span class="c-muted">// Alpaquitay AI lo lee como contexto del sprint activo</span>
+
+<span class="c-green"># SPEC: Sprint 2 — Auth & Dashboard</span>
+
+<span class="c-yellow">**Período:**</span> 2026-04-28 → 2026-05-11
+<span class="c-yellow">**Capacidad:**</span> 42 pts
+
+---
+
+<span class="c-green">## Epic: Auth & Security</span>
+- [x] Login con email y password
+- [ ] Implementar MFA con TOTP
+- [ ] Notificación login nuevo dispositivo
+- [x] Fix: sesión expirada sin feedback
+
+<span class="c-green">## Epic: Dashboard UX</span>
+- [ ] Widget de métricas del sprint
+- [ ] Dark mode persistente
+
+<span class="c-green">## Sin épica</span>
+- [x] Configurar pipeline CI/CD`;
+document.getElementById('archSprintCode').innerHTML = sprintCode;
+
 function switchArchTab(tab, btn) {
   document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.arch-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById(tab === 'flow' ? 'archFlow' : 'archSpec').classList.add('active');
+  const panelId = tab === 'flow' ? 'archFlow' : tab === 'spec' ? 'archSpec' : 'archSprint';
+  document.getElementById(panelId).classList.add('active');
 }
 
 function toggleMenu() {

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philosophy — SpecSolid</title>
+<meta name="description" content="Por qué SDD gana donde Vibe Coding pierde. Principios de Spec-Driven Development para arquitectos senior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="../" class="brand">SPEC<span>SOLID</span></a>
+    <nav class="nav-links">
+      <a href="../tools/" class="nav-link">Tools</a>
+      <a href="../architecture/" class="nav-link">Architecture</a>
+      <a href="../philosophy/" class="nav-link active">Philosophy</a>
+      <a href="../support/" class="nav-link">Support</a>
+      <a href="../opensource/" class="nav-link">Open Source</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Consulta técnica</a>
+      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
+    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
+    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
+    <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support</a>
+    <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
+    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Consulta técnica</a>
+    <a href="https://github.com/sergioide007" target="_blank" class="mobile-link">GitHub →</a>
+  </div>
+</header>
+
+<section id="philosophy">
+  <div class="section-inner">
+    <div class="section-label">Principios</div>
+    <h2 class="section-h2">Por qué SDD gana<br>donde Vibe Coding pierde</h2>
+    <p class="section-sub">El Vibe Coding produce prototipos. SDD produce sistemas. La diferencia se mide en meses, no en horas.</p>
+    <div class="phil-grid" id="philGrid"></div>
+    <div class="callout">
+      <blockquote id="mainQuote"></blockquote>
+      <cite id="mainCite"></cite>
+      <div class="callout-grid" id="calloutGrid"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="../" class="brand" style="margin-bottom:12px;font-size:13px;display:block">SPEC<span>SOLID</span></a>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
+          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
+        </p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <a href="https://sergioide007.github.io/scrum/" class="footer-link">Scrum Board SDD</a>
+        <a href="https://sergioide007.github.io/spec/" class="footer-link">SDD Teoría</a>
+        <a href="https://sergioide007.github.io/alpaquitay-ai/" class="footer-link">Alpaquitay AI</a>
+        <a href="../support/" class="footer-link">Soporte extensión →</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
+        <a href="https://github.com/sergioide007" target="_blank" class="footer-link">github.com/sergioide007</a>
+        <a href="https://github.com/sergioide007/alpaquitay-ia-v3/issues" target="_blank" class="footer-link">Reportar bug →</a>
+        <a href="https://github.com/sponsors/sergioide007" target="_blank" class="footer-link">Patrocinar →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
+      <p class="footer-legal">
+        SpecSolid y Alpaquitay AI son iniciativas de investigación técnica autónomas.
+        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const philosophy = [
+  { icon:'📐', title:'SPEC primero',          body:'Un documento de especificación preciso define el problema completo antes de que la IA genere una sola línea.' },
+  { icon:'🔗', title:'Decisiones versionadas', body:'ADRs registran el por qué de cada decisión. La IA tiene contexto, no improvisa. El equipo tiene historia.' },
+  { icon:'🤖', title:'Agentes coordinados',   body:'Modelos especializados por rol: seguridad, dominio, UX, generación. El orquestador distribuye y consolida.' },
+  { icon:'📊', title:'Métricas trazables',     body:'Tokens consumidos, costo por cambio, iteraciones y cobertura de tests son medibles desde el primer sprint.' },
+  { icon:'🚫', title:'Sin Vibe Coding',        body:'El Vibe Coding produce deuda técnica masiva, architecture drift y código ininteligible en semanas.' },
+  { icon:'⚖️', title:'Supervisión senior',    body:'La IA amplifica al arquitecto, no lo reemplaza. El senior valida SPEC, ADR y aprueba decisiones críticas.' },
+];
+
+const quote = {
+  text:'"Un agente de IA que recibe una especificación precisa genera código limpio y testeable en una sola pasada. Sin especificación, necesita diez pasadas para llegar al mismo resultado."',
+  author:'Lewis Campbell · DEV Community, 2026'
+};
+
+const callout = [
+  { title:'45% vulnerabilidades',  body:'Código IA sin SPEC según análisis de seguridad 2026.' },
+  { title:'×100 costo de tokens',  body:'Iteraciones sin contexto vs. una pasada con SPEC completa.' },
+  { title:'80% menos correcciones',body:'Estimación de reducción en ciclos de revisión con SDD.' },
+  { title:'1-2 días de SPEC',      body:'Tiempo que se recupera en la primera iteración ahorrada.' },
+];
+
+document.getElementById('philGrid').innerHTML = philosophy.map(p => `
+  <div class="phil-item">
+    <div class="icon">${p.icon}</div>
+    <h4>${p.title}</h4>
+    <p>${p.body}</p>
+  </div>`).join('');
+document.getElementById('mainQuote').textContent = quote.text;
+document.getElementById('mainCite').textContent = '— ' + quote.author;
+document.getElementById('calloutGrid').innerHTML = callout.map(c => `
+  <div class="cg-item"><h4>${c.title}</h4><p>${c.body}</p></div>`).join('');
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+</script>
+</body>
+</html>

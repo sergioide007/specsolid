@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture — SpecSolid</title>
+<meta name="description" content="Flujo de trabajo Spec-Driven: del problema al código sin improvisación. Cada decisión registrada, cada generación con contexto completo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="../" class="brand">SPEC<span>SOLID</span></a>
+    <nav class="nav-links">
+      <a href="../tools/" class="nav-link">Tools</a>
+      <a href="../architecture/" class="nav-link active">Architecture</a>
+      <a href="../philosophy/" class="nav-link">Philosophy</a>
+      <a href="../support/" class="nav-link">Support</a>
+      <a href="../opensource/" class="nav-link">Open Source</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Consulta técnica</a>
+      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
+    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
+    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
+    <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support</a>
+    <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
+    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Consulta técnica</a>
+    <a href="https://github.com/sergioide007" target="_blank" class="mobile-link">GitHub →</a>
+  </div>
+</header>
+
+<section id="architecture" class="arch-section">
+  <div class="section-inner">
+    <div class="section-label">Flujo de trabajo</div>
+    <h2 class="section-h2">Del problema al código.<br>Sin improvisación.</h2>
+    <p class="section-sub">Cada decisión arquitectónica queda registrada. Cada generación de IA tiene contexto completo.</p>
+    <button class="ai-write-btn" onclick="openSpecModal()">
+      <span class="blink-c">▊</span>&nbsp;Ver Alpaquitay AI generando este SPEC →
+    </button>
+    <div class="arch-grid">
+      <div class="arch-steps" id="archSteps"></div>
+      <div>
+        <div class="arch-tabs">
+          <button class="arch-tab active" onclick="switchArchTab('flow',this)">◆ Flow</button>
+          <button class="arch-tab" onclick="switchArchTab('spec',this)">📄 SPEC.md</button>
+        </div>
+        <div class="arch-panel active" id="archFlow">
+          <div class="mermaid-wrap"><div class="mermaid" id="mermaidDiagram"></div></div>
+        </div>
+        <div class="arch-panel" id="archSpec">
+          <div class="arch-code" id="archCode"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEC MODAL ── -->
+<div class="modal-overlay" id="specModal" onclick="if(event.target===this)closeSpecModal()">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <div class="modal-brand"><div class="modal-dot"></div>Alpaquitay AI</div>
+      <span class="modal-status" id="modalStatus">generando SPEC.md…</span>
+      <button class="modal-close-btn" onclick="closeSpecModal()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-phases-bar" id="modalPhasesBar"></div>
+    <div class="modal-body" id="modalBody"><span class="modal-cursor"></span></div>
+    <div class="modal-ftr">
+      <div class="modal-pbar"><div class="modal-pfill" id="modalPfill"></div></div>
+      <span class="modal-pct" id="modalPct">0%</span>
+      <span class="modal-credit">✦ Alpaquitay AI</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="../" class="brand" style="margin-bottom:12px;font-size:13px;display:block">SPEC<span>SOLID</span></a>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
+          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
+        </p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <a href="https://sergioide007.github.io/scrum/" class="footer-link">Scrum Board SDD</a>
+        <a href="https://sergioide007.github.io/spec/" class="footer-link">SDD Teoría</a>
+        <a href="https://sergioide007.github.io/alpaquitay-ai/" class="footer-link">Alpaquitay AI</a>
+        <a href="../support/" class="footer-link">Soporte extensión →</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
+        <a href="https://github.com/sergioide007" target="_blank" class="footer-link">github.com/sergioide007</a>
+        <a href="https://github.com/sergioide007/alpaquitay-ia-v3/issues" target="_blank" class="footer-link">Reportar bug →</a>
+        <a href="https://github.com/sponsors/sergioide007" target="_blank" class="footer-link">Patrocinar →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
+      <p class="footer-legal">
+        SpecSolid y Alpaquitay AI son iniciativas de investigación técnica autónomas.
+        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+const archSteps = [
+  { num:'01', title:'SPEC antes de código',    tip:'Contexto completo = una sola pasada de generación', body:'Define el problema, flujos, contratos de API y criterios de aceptación. La IA recibe contexto completo.' },
+  { num:'02', title:'Validación multi-agente', tip:'4 agentes en paralelo: seguridad, dominio, UX, compliance', body:'Agentes especializados analizan la SPEC: seguridad, dominio, UX, compliance. Cero bloqueantes antes de generar.' },
+  { num:'03', title:'Generación limpia',        tip:'1 pass = código testeable y documentado', body:'Una sola pasada. Código testeable, documentado y alineado con la arquitectura definida.' },
+  { num:'04', title:'ADR + Review senior',      tip:'Architecture Decision Records versionados con el PR', body:'El arquitecto valida el output, registra decisiones en ADR y aprueba. La SPEC viaja con el PR.' },
+  { num:'05', title:'Deploy + observabilidad',  tip:'Trazabilidad IA end-to-end: tokens, latencia, decisiones', body:'Feature flags, métricas de tokens, logs de decisiones IA trazables en la plataforma de observabilidad.' },
+];
+
+const archCode = `<span class="c-muted">// SPEC.md — versionado en Git con el PR</span>
+
+<span class="c-green">## Contexto</span>
+Implementar MFA TOTP para 50k usuarios.
+Sprint 14 · Plazo: 2026-05-12.
+
+<span class="c-green">## Contratos API</span>
+<span class="c-blue">POST</span> /auth/mfa/init
+  <span class="c-yellow">body</span>: { userId: string }
+  <span class="c-yellow">resp</span>: { challengeId, expiresAt }
+
+<span class="c-blue">POST</span> /auth/mfa/verify
+  <span class="c-yellow">body</span>: { challengeId, code }
+  <span class="c-yellow">resp</span>: { accessToken } | <span class="c-red">401</span>
+
+<span class="c-green">## Criterios de aceptación</span>
+<span class="c-green">✅</span> <span data-tip="Red team verified — zero bypass vectors found">Pentesting sin bypass MFA</span>
+<span class="c-green">✅</span> <span data-tip="SonarQube gate: ≥90% branch coverage requerido">Cobertura tests &gt;90%</span>
+<span class="c-green">✅</span> <span data-tip="Medido en CDN edge, no en app server">Latencia p99 &lt; 300ms</span>
+<span class="c-green">✅</span> <span data-tip="SOC 2 Type II: todos los eventos MFA persistidos">Audit log obligatorio</span>`;
+
+document.getElementById('archSteps').innerHTML = archSteps.map((s, i) => `
+  <div class="arch-step">
+    <div class="step-col">
+      <div class="step-num"${s.tip ? ` data-tip="${s.tip}"` : ''}>${s.num}</div>
+      ${i < archSteps.length - 1 ? '<div class="step-line"></div>' : ''}
+    </div>
+    <div class="step-body">
+      <h4>${s.title}</h4>
+      <p>${s.body}</p>
+    </div>
+  </div>`).join('');
+document.getElementById('archCode').innerHTML = archCode;
+
+function switchArchTab(tab, btn) {
+  document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.arch-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tab === 'flow' ? 'archFlow' : 'archSpec').classList.add('active');
+}
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+
+/* Mermaid */
+const MERMAID_DEF = `flowchart TD
+  A(["👤 Client"]):::node --> B["POST /auth/mfa/init"]:::endpoint
+  B --> C{{"🔐 TOTP Challenge\\ncreated"}}:::challenge
+  C --> D["challengeId · expiresAt"]:::resp
+  D --> E(["📱 Authenticator App"]):::node
+  E --> F["POST /auth/mfa/verify"]:::endpoint
+  F --> G{"Valid TOTP?"}:::decision
+  G -->|"✅ success"| H(["accessToken"]):::success
+  G -->|"❌ 401"| I(["Unauthorized"]):::error
+  H --> J["📋 Audit Log"]:::audit
+  I --> J
+  classDef node fill:#0d1117,stroke:#00e5a0,color:#e6edf3,rx:8
+  classDef endpoint fill:#161b22,stroke:#60a5fa,color:#60a5fa
+  classDef challenge fill:#161b22,stroke:#fcd34d,color:#fcd34d
+  classDef resp fill:#0d1117,stroke:#30363d,color:#9ca3af
+  classDef decision fill:#161b22,stroke:#a78bfa,color:#a78bfa
+  classDef success fill:#0a2a1c,stroke:#00e5a0,color:#00e5a0
+  classDef error fill:#2a0d11,stroke:#ff4b6e,color:#ff7070
+  classDef audit fill:#161b22,stroke:#30363d,color:#9ca3af`;
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  themeVariables: {
+    primaryColor:'#161b22', primaryTextColor:'#e6edf3',
+    primaryBorderColor:'#30363d', lineColor:'#6b7280',
+    secondaryColor:'#0d1117', background:'#0d1117',
+    mainBkg:'#161b22', nodeBorder:'#30363d',
+    clusterBkg:'#0d1117', edgeLabelBackground:'#0d1117',
+    fontFamily:'IBM Plex Mono, monospace', fontSize:'11px',
+  }
+});
+(function() {
+  const el = document.getElementById('mermaidDiagram');
+  if (!el) return;
+  el.textContent = MERMAID_DEF;
+  mermaid.run({ nodes: [el] });
+})();
+
+/* Modal */
+const SPEC_PHASES = [
+  {
+    label:'Contexto',
+    segs:[
+      { t:'// SPEC.md — versionado en Git con el PR', c:'cc-muted' },
+      { t:'\n\n' },
+      { t:'## Contexto', c:'cc-green' },
+      { t:'\nImplementar MFA TOTP para 50k usuarios.\nSprint 14 · Plazo: 2026-05-12.' },
+    ]
+  },
+  {
+    label:'Contratos API',
+    segs:[
+      { t:'\n\n' },
+      { t:'## Contratos API', c:'cc-green' },
+      { t:'\n' },{ t:'POST', c:'cc-blue' },
+      { t:' /auth/mfa/init\n  ' },{ t:'body', c:'cc-yellow' },
+      { t:': { userId: string }\n  ' },{ t:'resp', c:'cc-yellow' },
+      { t:': { challengeId, expiresAt }\n\n' },
+      { t:'POST', c:'cc-blue' },{ t:' /auth/mfa/verify\n  ' },
+      { t:'body', c:'cc-yellow' },{ t:': { challengeId, code }\n  ' },
+      { t:'resp', c:'cc-yellow' },{ t:': { accessToken } | ' },
+      { t:'401', c:'cc-red' },
+    ]
+  },
+  {
+    label:'Criterios de aceptación',
+    segs:[
+      { t:'\n\n' },
+      { t:'## Criterios de aceptación', c:'cc-green' },
+      { t:'\n' },
+      { t:'✅', c:'cc-green' },{ t:' Pentesting sin bypass MFA\n' },
+      { t:'✅', c:'cc-green' },{ t:' Cobertura tests >90%\n' },
+      { t:'✅', c:'cc-green' },{ t:' Latencia p99 < 300ms\n' },
+      { t:'✅', c:'cc-green' },{ t:' Audit log obligatorio' },
+    ]
+  },
+];
+
+let _animActive = false, _animTimer = null;
+
+function renderModalPhases(activeIdx) {
+  document.getElementById('modalPhasesBar').innerHTML = SPEC_PHASES.map((p, i) => {
+    const cls = i < activeIdx ? 'mphase done' : (i === activeIdx ? 'mphase act' : 'mphase');
+    return `<div class="${cls}">${i < activeIdx ? '✓ ' : ''}${p.label}</div>`;
+  }).join('');
+}
+
+function openSpecModal() {
+  document.getElementById('specModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  _startAnim();
+}
+
+function closeSpecModal() {
+  document.getElementById('specModal').classList.remove('open');
+  document.body.style.overflow = '';
+  _stopAnim();
+}
+
+function _stopAnim() {
+  _animActive = false;
+  if (_animTimer) { clearTimeout(_animTimer); _animTimer = null; }
+}
+
+function _startAnim() {
+  _stopAnim();
+  _animActive = true;
+  const bodyEl = document.getElementById('modalBody');
+  const pfill  = document.getElementById('modalPfill');
+  const pct    = document.getElementById('modalPct');
+  const status = document.getElementById('modalStatus');
+  bodyEl.innerHTML = '<span class="modal-cursor"></span>';
+  pfill.style.width = '0%';
+  pct.textContent = '0%';
+  status.textContent = 'generando SPEC.md…';
+  renderModalPhases(0);
+
+  const stream = [];
+  SPEC_PHASES.forEach((phase, pi) => {
+    phase.segs.forEach(seg => {
+      for (const ch of seg.t) stream.push({ ch, cls: seg.c || '', pi });
+    });
+  });
+
+  const total = stream.length;
+  let idx = 0, html = '', curCls = '', curBuf = '', curPi = -1;
+
+  function flush() {
+    if (!curBuf) return;
+    html += curCls ? `<span class="${curCls}">${curBuf}</span>` : curBuf;
+    curBuf = '';
+  }
+
+  function tick() {
+    if (!_animActive) return;
+    if (idx >= total) {
+      flush();
+      status.textContent = '✓ SPEC.md generado';
+      pfill.style.width = '100%';
+      pct.textContent = '100%';
+      renderModalPhases(SPEC_PHASES.length);
+      bodyEl.innerHTML = html;
+      return;
+    }
+    const { ch, cls, pi } = stream[idx++];
+    if (pi !== curPi) { curPi = pi; renderModalPhases(pi); }
+    if (cls !== curCls) { flush(); curCls = cls; }
+    const safe = ch === '\n' ? '\n' : ch.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    curBuf += safe;
+    const p = Math.round((idx / total) * 100);
+    pfill.style.width = p + '%';
+    pct.textContent = p + '%';
+    const preview = html + (curCls ? `<span class="${curCls}">${curBuf}</span>` : curBuf);
+    bodyEl.innerHTML = preview + '<span class="modal-cursor"></span>';
+    _animTimer = setTimeout(tick, (ch === '\n' || ch === ' ') ? 12 : 20);
+  }
+
+  _animTimer = setTimeout(tick, 180);
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSpecModal(); });
+</script>
+</body>
+</html>

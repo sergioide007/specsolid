@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — SpecSolid</title>
+<meta name="description" content="Tres herramientas diseñadas para Spec-Driven Development: Scrum Board SDD, SDD Teoría y Alpaquitay AI para VS Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="../" class="brand">SPEC<span>SOLID</span></a>
+    <nav class="nav-links">
+      <a href="../tools/" class="nav-link active">Tools</a>
+      <a href="../architecture/" class="nav-link">Architecture</a>
+      <a href="../philosophy/" class="nav-link">Philosophy</a>
+      <a href="../support/" class="nav-link">Support</a>
+      <a href="../opensource/" class="nav-link">Open Source</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Consulta técnica</a>
+      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
+    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
+    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
+    <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support</a>
+    <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
+    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Consulta técnica</a>
+    <a href="https://github.com/sergioide007" target="_blank" class="mobile-link">GitHub →</a>
+  </div>
+</header>
+
+<section id="tools">
+  <div class="section-inner">
+    <div class="section-label">Herramientas</div>
+    <h2 class="section-h2">Tres herramientas.<br>Un ecosistema coherente.</h2>
+    <p class="section-sub">Diseñadas para trabajar juntas: la IA genera, la SPEC guía, el tablero gestiona.</p>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="../" class="brand" style="margin-bottom:12px;font-size:13px;display:block">SPEC<span>SOLID</span></a>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
+          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
+        </p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <a href="https://sergioide007.github.io/scrum/" class="footer-link">Scrum Board SDD</a>
+        <a href="https://sergioide007.github.io/spec/" class="footer-link">SDD Teoría</a>
+        <a href="https://sergioide007.github.io/alpaquitay-ai/" class="footer-link">Alpaquitay AI</a>
+        <a href="../support/" class="footer-link">Soporte extensión →</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
+        <a href="https://github.com/sergioide007" target="_blank" class="footer-link">github.com/sergioide007</a>
+        <a href="https://github.com/sergioide007/alpaquitay-ia-v3/issues" target="_blank" class="footer-link">Reportar bug →</a>
+        <a href="https://github.com/sponsors/sergioide007" target="_blank" class="footer-link">Patrocinar →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
+      <p class="footer-legal">
+        SpecSolid y Alpaquitay AI son iniciativas de investigación técnica autónomas.
+        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const tools = [
+  {
+    icon:'▲',
+    name:'Scrum Board SDD',
+    desc:'Tablero Kanban de alto rendimiento construido sobre principios Spec-Driven. Gestiona sprints, velocidad y deuda técnica con integración nativa a Alpaquitay AI.',
+    features:[
+      'Sprint planning con capacidad del equipo en tiempo real',
+      'Drag & drop con persistencia automática en localStorage',
+      'Burndown chart y velocidad histórica por sprint',
+      'Puente Alpaquitay: estimación y refinamiento de historias con AI',
+      'Exportar sprint como SPEC.md versionable en Git',
+    ],
+    tags:[{t:'SDD',c:'tag-g'},{t:'Kanban',c:'tag-b'},{t:'AI-Ready',c:'tag-v'},{t:'Offline',c:'tag-w'}],
+    href:'https://sergioide007.github.io/scrum/',
+    cta:'Abrir tablero →',
+  },
+  {
+    icon:'◈',
+    name:'SDD Teoría & Arquitectura',
+    desc:'Framework teórico completo para arquitectos senior. Incluye flujo de 7 pasos, anatomía de SPEC, catálogo de modelos IA, simulador de costos y Architecture Decision Records.',
+    features:[
+      'Flujo SDD completo: del problema al deploy observable',
+      'Simulador de costos IA con y sin especificación',
+      'ADRs colapsables con contexto, decisión y alternativas',
+      'Catálogo comparativo de modelos IA por caso de uso',
+      'Matriz de riesgos: architecture drift, dead ends, vulnerabilidades',
+    ],
+    tags:[{t:'ADR',c:'tag-b'},{t:'Simulador',c:'tag-g'},{t:'Modelos IA',c:'tag-v'},{t:'Riesgos',c:'tag-r'}],
+    href:'https://sergioide007.github.io/spec/',
+    cta:'Ver teoría →',
+  },
+  {
+    icon:'✦',
+    name:'Alpaquitay AI',
+    desc:'Asistente de ingeniería para VS Code construido sobre Claude SDK. Co-piloto que entiende tu SPEC, refina historias, estima complejidad y genera documentación arquitectónica.',
+    features:[
+      'Integración nativa con VS Code via WebView Bridge',
+      'Refinamiento de historias de usuario con criterios de aceptación',
+      'Estimación Fibonacci justificada por referencias históricas',
+      'Generación de SPEC.md desde epics y sprints activos',
+      'Análisis de salud del sprint con recomendaciones accionables',
+    ],
+    tags:[{t:'VS Code',c:'tag-b'},{t:'Claude',c:'tag-g'},{t:'WebView',c:'tag-v'},{t:'MIT',c:'tag-w'}],
+    href:'https://sergioide007.github.io/alpaquitay-ai/',
+    cta:'Ver extensión →',
+  },
+];
+
+document.getElementById('toolsGrid').innerHTML = tools.map(tool => `
+  <div class="tool-card">
+    <div class="tool-icon">${tool.icon}</div>
+    <h3>${tool.name}</h3>
+    <p>${tool.desc}</p>
+    <div class="tool-tags">${tool.tags.map(t=>`<span class="tag ${t.c}">${t.t}</span>`).join('')}</div>
+    <div class="tool-features">${tool.features.map(f=>`<div class="tool-feat">${f}</div>`).join('')}</div>
+    <a href="${tool.href}" class="btn btn-o btn-sm">${tool.cta}</a>
+  </div>`).join('');
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+</script>
+</body>
+</html>

@@ -101,6 +101,7 @@
       <a href="philosophy/" class="nav-link">Philosophy</a>
       <a href="support/" class="nav-link">Support</a>
       <a href="opensource/" class="nav-link">Open Source</a>
+      <a href="../devops/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
     </nav>
     <div class="nav-cta">
       <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
@@ -109,6 +110,7 @@
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
+    <a href="../devops/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
     <a href="tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
     <a href="architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
     <a href="philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
@@ -139,12 +141,17 @@
     <span class="marquee-item">Distributed Systems</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">SpecSolid Lab</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">AI Engineering</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" style="color:#00e5a0">DevOps Curriculum</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Kubernetes</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Terraform</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ISO 27001</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Alpaquitay AI</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Spec-Driven Dev</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Scrum Board SDD</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">XAI Research</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">VS Code Extension</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Distributed Systems</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" style="color:#00e5a0">12 Sections · 41+ Guides</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">SpecSolid Lab</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">AI Engineering</span><span class="marquee-dot">◆</span>
   </div>
@@ -179,6 +186,81 @@
   </div>
 </div>
 
+<!-- ── DEVOPS FEATURE ── -->
+<style>
+.devops-feature{padding:80px 24px;background:linear-gradient(180deg,var(--s1) 0%,rgba(0,229,160,.03) 50%,var(--s1) 100%);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.df-inner{max-width:1100px;margin:0 auto}
+.df-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#00e5a0;margin-bottom:16px;opacity:.85}
+.df-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.df-title{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;color:#e6edf3;line-height:1.1;margin-bottom:20px}
+.df-title em{font-style:normal;color:#00e5a0}
+.df-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:24px;max-width:480px}
+.df-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.df-pill{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid rgba(0,229,160,.2);border-radius:20px;color:rgba(0,229,160,.7);background:rgba(0,229,160,.04)}
+.df-terminal{background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,229,160,.06)}
+.df-term-bar{height:36px;background:#161b22;display:flex;align-items:center;padding:0 14px;gap:7px;border-bottom:1px solid rgba(255,255,255,.06)}
+.df-term-dot{width:11px;height:11px;border-radius:50%}
+.df-term-dot.r{background:#ff5f57}.df-term-dot.y{background:#febc2e}.df-term-dot.g{background:#28c840}
+.df-term-body{padding:20px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:2;color:rgba(255,255,255,.75)}
+.df-term-body .prompt{color:#00e5a0}
+.df-term-body .dim{color:rgba(255,255,255,.35);padding-left:0}
+.df-term-body .ok{color:#00e5a0;font-weight:600}
+.df-term-body .sec{color:#8be9fd}
+.df-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+.df-stat-num{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#00e5a0}
+.df-stat-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+@media(max-width:800px){.df-grid{grid-template-columns:1fr;gap:40px}.df-title{font-size:30px}}
+</style>
+<section class="devops-feature">
+  <div class="df-inner">
+    <div class="df-eyebrow">New · Open Curriculum · 2026</div>
+    <div class="df-grid">
+      <div>
+        <h2 class="df-title">DevOps<br><em>from Zero to Senior</em></h2>
+        <p class="df-desc">12 sections. 41+ guides. Every command tested. From Linux fundamentals to ISO 27001 compliance — written in A1/A2 English with senior technical depth.</p>
+        <div class="df-pills">
+          <span class="df-pill">Linux</span>
+          <span class="df-pill">Kubernetes</span>
+          <span class="df-pill">Terraform</span>
+          <span class="df-pill">CI/CD</span>
+          <span class="df-pill">Prometheus</span>
+          <span class="df-pill">ISO 27001</span>
+          <span class="df-pill">BIAN</span>
+          <span class="df-pill">PCI-DSS</span>
+          <span class="df-pill">TOGAF</span>
+          <span class="df-pill">GDPR</span>
+        </div>
+        <a href="../devops/" class="btn btn-p" style="font-size:14px;padding:10px 24px">Explore DevOps Curriculum →</a>
+        <div class="df-stats">
+          <div><div class="df-stat-num">12</div><div class="df-stat-lbl">Sections</div></div>
+          <div><div class="df-stat-num">41+</div><div class="df-stat-lbl">Guides</div></div>
+          <div><div class="df-stat-num">7</div><div class="df-stat-lbl">ISO/Compliance Frameworks</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="df-terminal">
+          <div class="df-term-bar">
+            <div class="df-term-dot r"></div>
+            <div class="df-term-dot y"></div>
+            <div class="df-term-dot g"></div>
+          </div>
+          <div class="df-term-body">
+            <div><span class="prompt">$</span> kubectl get nodes</div>
+            <div class="dim">NAME         STATUS   ROLES    AGE</div>
+            <div class="dim">master-01    Ready    control  47d</div>
+            <div class="dim">worker-01    Ready    &lt;none&gt;   47d</div>
+            <div class="dim">worker-02    Ready    &lt;none&gt;   47d</div>
+            <div><span class="prompt">$</span> terraform apply -auto-approve</div>
+            <div class="dim">Plan: 14 to add, 0 to change...</div>
+            <div class="ok">✓ Apply complete! 14 added.</div>
+            <div><span class="prompt">$</span> <span class="sec"># 12 sections · zero to senior</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
@@ -191,6 +273,7 @@
       </div>
       <div>
         <h4>Herramientas</h4>
+        <a href="../devops/" class="footer-link" style="color:#00e5a0">DevOps Curriculum →</a>
         <a href="https://sergioide007.github.io/scrum/" class="footer-link">Scrum Board SDD</a>
         <a href="https://sergioide007.github.io/spec/" class="footer-link">SDD Teoría</a>
         <a href="https://sergioide007.github.io/alpaquitay-ai/" class="footer-link">Alpaquitay AI</a>
@@ -240,7 +323,7 @@ document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
 });
 
 /* Roulette */
-const WORDS = ['Alpaquitay AI', 'Scrum Board', 'SDD Framework', 'SpecSolid'];
+const WORDS = ['Alpaquitay AI', 'Scrum Board', 'SDD Framework', 'DevOps Curriculum', 'SpecSolid'];
 let idx = 0;
 const el = document.getElementById('rouletteWord');
 function cycleRoulette() {

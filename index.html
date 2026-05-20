@@ -35,6 +35,7 @@
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shared/specsolid-search.css">
 <!-- JSON-LD: Organization + WebSite -->
 <script type="application/ld+json">
 {
@@ -297,6 +298,14 @@
   </div>
 </footer>
 
+<script>
+window.SpecSearch = {
+  site: 'specsolid',
+  lang: 'es',
+  topics: ['Spec-Driven Development','Alpaquitay AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture'],
+};
+</script>
+<script src="shared/specsolid-search.js" defer></script>
 <script>
 const heroStats = [
   { num:'45%',    lbl:'del código IA sin SPEC contiene vulnerabilidades', src:'Rick-Brick, 2026' },

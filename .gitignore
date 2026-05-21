@@ -1,0 +1,9 @@
+# previews
+*_preview*
+_icon-preview.html
+
+# scripts
+*.ps1
+
+# temp builds
+coverage/

@@ -28,31 +28,31 @@
     { title: 'SpecSolid — Open Source', url: 'https://www.specsolid.com/opensource/', tags: ['open source','github','codigo abierto','contribuir'] },
     { title: 'SpecSolid — Support', url: 'https://www.specsolid.com/support/', tags: ['support','soporte','help','ayuda','contacto'] },
     /* DevOps */
-    { title: 'DevOps — Linux Foundations', url: 'https://sergioide007.github.io/devops/foundations/', tags: ['linux','bash','shell','terminal','fundamentos','permisos','systemd'] },
-    { title: 'DevOps — Cloud (AWS/GCP/Azure)', url: 'https://sergioide007.github.io/devops/cloud/', tags: ['cloud','aws','gcp','azure','ec2','s3','vpc','iam','nube'] },
-    { title: 'DevOps — CI/CD Pipelines', url: 'https://sergioide007.github.io/devops/cicd/', tags: ['cicd','github actions','jenkins','gitlab ci','pipeline','continuous integration'] },
-    { title: 'DevOps — Containers & Docker', url: 'https://sergioide007.github.io/devops/containers/', tags: ['docker','kubernetes','k8s','containers','contenedores','helm','pod'] },
-    { title: 'DevOps — Infrastructure as Code', url: 'https://sergioide007.github.io/devops/iac/', tags: ['terraform','ansible','pulumi','iac','infrastructure','hcl'] },
-    { title: 'DevOps — Monitoring & Observability', url: 'https://sergioide007.github.io/devops/monitoring/', tags: ['prometheus','grafana','loki','monitoring','monitoreo','alerting','sre'] },
-    { title: 'DevOps — Advanced Topics', url: 'https://sergioide007.github.io/devops/advanced/', tags: ['advanced','senior','architecture','avanzado','microservices'] },
-    { title: 'DevOps — Interview Preparation', url: 'https://sergioide007.github.io/devops/interview/', tags: ['interview','entrevista','preguntas','devops interview','prep'] },
-    { title: 'DevOps — Experience & Projects', url: 'https://sergioide007.github.io/devops/experience/', tags: ['experience','experiencia','projects','proyectos','portfolio'] },
-    { title: 'DevOps — Compliance: ISO 27001 / GDPR / PCI-DSS', url: 'https://sergioide007.github.io/devops/compliance/', tags: ['compliance','iso27001','gdpr','pci-dss','soc2','bian','togaf','seguridad'] },
+    { title: 'DevOps — Linux Foundations', url: 'https://devops.specsolid.com/foundations/', tags: ['linux','bash','shell','terminal','fundamentos','permisos','systemd'] },
+    { title: 'DevOps — Cloud (AWS/GCP/Azure)', url: 'https://devops.specsolid.com/cloud/', tags: ['cloud','aws','gcp','azure','ec2','s3','vpc','iam','nube'] },
+    { title: 'DevOps — CI/CD Pipelines', url: 'https://devops.specsolid.com/cicd/', tags: ['cicd','github actions','jenkins','gitlab ci','pipeline','continuous integration'] },
+    { title: 'DevOps — Containers & Docker', url: 'https://devops.specsolid.com/containers/', tags: ['docker','kubernetes','k8s','containers','contenedores','helm','pod'] },
+    { title: 'DevOps — Infrastructure as Code', url: 'https://devops.specsolid.com/iac/', tags: ['terraform','ansible','pulumi','iac','infrastructure','hcl'] },
+    { title: 'DevOps — Monitoring & Observability', url: 'https://devops.specsolid.com/monitoring/', tags: ['prometheus','grafana','loki','monitoring','monitoreo','alerting','sre'] },
+    { title: 'DevOps — Advanced Topics', url: 'https://devops.specsolid.com/advanced/', tags: ['advanced','senior','architecture','avanzado','microservices'] },
+    { title: 'DevOps — Interview Preparation', url: 'https://devops.specsolid.com/interview/', tags: ['interview','entrevista','preguntas','devops interview','prep'] },
+    { title: 'DevOps — Experience & Projects', url: 'https://devops.specsolid.com/experience/', tags: ['experience','experiencia','projects','proyectos','portfolio'] },
+    { title: 'DevOps — Compliance: ISO 27001 / GDPR / PCI-DSS', url: 'https://devops.specsolid.com/compliance/', tags: ['compliance','iso27001','gdpr','pci-dss','soc2','bian','togaf','seguridad'] },
     /* Scrum */
-    { title: 'Scrum Board SDD', url: 'https://sergioide007.github.io/scrum/', tags: ['scrum','board','kanban','sprint','backlog','task'] },
-    { title: 'Scrum — Backlog', url: 'https://sergioide007.github.io/scrum/backlog/', tags: ['backlog','product backlog','user story','historia de usuario'] },
-    { title: 'Scrum — Planning', url: 'https://sergioide007.github.io/scrum/planning/', tags: ['planning','sprint planning','story points','velocity','estimacion'] },
-    { title: 'Scrum — Métricas', url: 'https://sergioide007.github.io/scrum/metricas/', tags: ['metricas','metrics','velocity','burndown','charts'] },
+    { title: 'Scrum Board SDD', url: 'https://scrum.specsolid.com/', tags: ['scrum','board','kanban','sprint','backlog','task'] },
+    { title: 'Scrum — Backlog', url: 'https://scrum.specsolid.com/backlog/', tags: ['backlog','product backlog','user story','historia de usuario'] },
+    { title: 'Scrum — Planning', url: 'https://scrum.specsolid.com/planning/', tags: ['planning','sprint planning','story points','velocity','estimacion'] },
+    { title: 'Scrum — Métricas', url: 'https://scrum.specsolid.com/metricas/', tags: ['metricas','metrics','velocity','burndown','charts'] },
     /* Spec */
-    { title: 'SDD — Framework Teórico', url: 'https://sergioide007.github.io/spec/', tags: ['spec-driven','sdd','specification','especificacion','framework'] },
-    { title: 'SDD — Flujo', url: 'https://sergioide007.github.io/spec/flujo/', tags: ['flujo','workflow','sdd flow','proceso'] },
-    { title: 'SDD — Anatomía SPEC', url: 'https://sergioide007.github.io/spec/spec/', tags: ['spec anatomy','anatomia spec','spec.md','formato'] },
-    { title: 'SDD — ADR (Architecture Decision Records)', url: 'https://sergioide007.github.io/spec/adr/', tags: ['adr','architecture decision','decision records','registro'] },
-    { title: 'SDD — Modelos IA', url: 'https://sergioide007.github.io/spec/modelos/', tags: ['ai models','modelos ia','llm','gpt','claude','machine learning'] },
-    { title: 'SDD — Simulador', url: 'https://sergioide007.github.io/spec/sim/', tags: ['simulator','simulador','demo','prueba'] },
-    { title: 'SDD — Riesgos', url: 'https://sergioide007.github.io/spec/riesgos/', tags: ['riesgos','risks','risk management','gestion'] },
+    { title: 'SDD — Framework Teórico', url: 'https://ai.specsolid.com/', tags: ['spec-driven','sdd','specification','especificacion','framework'] },
+    { title: 'SDD — Flujo', url: 'https://ai.specsolid.com/flujo/', tags: ['flujo','workflow','sdd flow','proceso'] },
+    { title: 'SDD — Anatomía SPEC', url: 'https://ai.specsolid.com/spec/', tags: ['spec anatomy','anatomia spec','spec.md','formato'] },
+    { title: 'SDD — ADR (Architecture Decision Records)', url: 'https://ai.specsolid.com/adr/', tags: ['adr','architecture decision','decision records','registro'] },
+    { title: 'SDD — Modelos IA', url: 'https://ai.specsolid.com/modelos/', tags: ['ai models','modelos ia','llm','gpt','claude','machine learning'] },
+    { title: 'SDD — Simulador', url: 'https://ai.specsolid.com/sim/', tags: ['simulator','simulador','demo','prueba'] },
+    { title: 'SDD — Riesgos', url: 'https://ai.specsolid.com/riesgos/', tags: ['riesgos','risks','risk management','gestion'] },
     /* Alpaquitay AI */
-    { title: 'Alpaquitay AI — VS Code Extension', url: 'https://sergioide007.github.io/alpaquitay-ai/', tags: ['alpaquitay','vscode','extension','ai','coding assistant','llm','claude'] },
+    { title: 'Alpaquitay AI — VS Code Extension', url: 'https://alpaquitay-ai.specsolid.com/', tags: ['alpaquitay','vscode','extension','ai','coding assistant','llm','claude'] },
   ];
 
   /* ── KNOWLEDGE BASE (Interview + Search topics) ───────── */
@@ -84,7 +84,7 @@
       response_en: 'I\'ve managed production Kubernetes clusters, implementing HPA for auto-scaling based on CPU/memory and custom Prometheus metrics. I follow GitOps with ArgoCD, configure liveness and readiness probes for zero-downtime deployments, and use RBAC with least-privilege principles.',
       response_es: 'He gestionado clústeres Kubernetes en producción, implementando HPA para auto-escalado y GitOps con ArgoCD. Configuro probes de liveness y readiness para despliegues sin downtime, y uso RBAC con principio de mínimo privilegio.',
       related: ['docker', 'terraform', 'cicd', 'monitoring'],
-      url: 'https://sergioide007.github.io/devops/containers/',
+      url: 'https://devops.specsolid.com/containers/',
     },
     docker: {
       title: 'Docker',
@@ -112,7 +112,7 @@
       response_en: 'I write production Dockerfiles with multi-stage builds, reducing image sizes by 80%+ (e.g., 800MB → 120MB for Node.js). I implement security practices: non-root user, read-only filesystem, Trivy scanning in CI/CD, and sign images with Docker Content Trust.',
       response_es: 'Escribo Dockerfiles de producción con builds multi-etapa, reduciendo tamaños de imagen en 80%+. Implemento prácticas de seguridad: usuario no-root, filesystem de solo lectura, escaneo Trivy en CI/CD y firmado de imágenes.',
       related: ['kubernetes', 'cicd', 'terraform'],
-      url: 'https://sergioide007.github.io/devops/containers/',
+      url: 'https://devops.specsolid.com/containers/',
     },
     terraform: {
       title: 'Terraform',
@@ -140,7 +140,7 @@
       response_en: 'I architect Terraform with modular design — separate modules for VPC, compute, databases, and security. Remote state in S3 with DynamoDB locking, environment separation via workspaces, and all changes go through a CI pipeline that runs `terraform plan` for PR review before `apply`.',
       response_es: 'Diseño Terraform con arquitectura modular — módulos separados para VPC, cómputo, bases de datos y seguridad. Estado remoto en S3 con locking DynamoDB, separación de entornos via workspaces, y todos los cambios pasan por CI que ejecuta `terraform plan` en la PR antes del `apply`.',
       related: ['kubernetes', 'cicd', 'cloud'],
-      url: 'https://sergioide007.github.io/devops/iac/',
+      url: 'https://devops.specsolid.com/iac/',
     },
     cicd: {
       title: 'CI/CD Pipelines',
@@ -171,7 +171,7 @@
       response_en: 'I design CI/CD pipelines with GitHub Actions and GitLab CI, following fail-fast ordering: lint → test with coverage → container scanning (Trivy) → build → deploy. I implement semantic versioning, automated rollback on failed health checks, and environment promotion gates.',
       response_es: 'Diseño pipelines CI/CD con GitHub Actions y GitLab CI, siguiendo fail-fast: lint → tests con coverage → escaneo de contenedores → build → deploy. Implemento versionado semántico, rollback automático en health checks fallidos y gates de promoción entre entornos.',
       related: ['docker', 'kubernetes', 'terraform'],
-      url: 'https://sergioide007.github.io/devops/cicd/',
+      url: 'https://devops.specsolid.com/cicd/',
     },
     monitoring: {
       title: 'Monitoring & Observability',
@@ -197,7 +197,7 @@
       response_en: 'I implement the full observability stack: Prometheus + Alertmanager for metrics, Loki for log aggregation, and Jaeger for distributed tracing — all in Grafana. I define SLOs first (e.g., 99.9% availability) and use error budgets to decide when to stop feature work for reliability.',
       response_es: 'Implemento el stack completo de observabilidad: Prometheus + Alertmanager para métricas, Loki para agregación de logs y Jaeger para trazas distribuidas — todo en Grafana. Defino SLOs primero (ej. 99.9% disponibilidad) y uso error budgets para decidir cuándo pausar features por confiabilidad.',
       related: ['kubernetes', 'cicd', 'cloud'],
-      url: 'https://sergioide007.github.io/devops/monitoring/',
+      url: 'https://devops.specsolid.com/monitoring/',
     },
     linux: {
       title: 'Linux / Bash',
@@ -225,7 +225,7 @@
       response_en: 'I\'m proficient in Linux system administration — writing Bash scripts for automation, monitoring, and log analysis using awk/grep/sed. I manage services with systemd, troubleshoot network issues with ss and tcpdump, and perform performance analysis with top, iostat, and perf.',
       response_es: 'Tengo dominio de administración de sistemas Linux — escribo scripts Bash para automatización, monitoreo y análisis de logs con awk/grep/sed. Gestiono servicios con systemd, hago troubleshooting de red con ss y tcpdump, y análisis de rendimiento con top, iostat y perf.',
       related: ['docker', 'kubernetes', 'cicd'],
-      url: 'https://sergioide007.github.io/devops/foundations/',
+      url: 'https://devops.specsolid.com/foundations/',
     },
     cloud: {
       title: 'Cloud — AWS / GCP / Azure',
@@ -252,7 +252,7 @@
       response_en: 'I design cloud architectures with multi-AZ VPCs — public subnets for ALBs, private for compute and data tiers. I implement IAM with least-privilege and use AWS SSM Parameter Store/Secrets Manager for credentials. All infrastructure is managed as code via Terraform.',
       response_es: 'Diseño arquitecturas cloud con VPCs multi-AZ — subredes públicas para ALBs, privadas para capas de cómputo y datos. Implemento IAM con mínimo privilegio y uso AWS SSM Parameter Store para credenciales. Toda la infraestructura se gestiona como código con Terraform.',
       related: ['kubernetes', 'terraform', 'cicd'],
-      url: 'https://sergioide007.github.io/devops/cloud/',
+      url: 'https://devops.specsolid.com/cloud/',
     },
     security: {
       title: 'Security & Compliance',
@@ -278,7 +278,7 @@
       response_en: 'I implement DevSecOps by integrating Trivy for container scanning and Snyk for dependency analysis into CI/CD pipelines as quality gates. I\'ve designed ISO 27001-compliant architectures with proper access controls, secret rotation, and audit logging using HashiCorp Vault and AWS CloudTrail.',
       response_es: 'Implemento DevSecOps integrando Trivy y Snyk como quality gates en pipelines CI/CD. He diseñado arquitecturas conformes con ISO 27001 con controles de acceso, rotación de secretos y logging de auditoría usando HashiCorp Vault y AWS CloudTrail.',
       related: ['kubernetes', 'cloud', 'cicd'],
-      url: 'https://sergioide007.github.io/devops/compliance/',
+      url: 'https://devops.specsolid.com/compliance/',
     },
     'spec-driven': {
       title: 'Spec-Driven Development (SDD)',
@@ -306,7 +306,7 @@
       response_en: 'I apply Spec-Driven Development where spec.md files define acceptance criteria before any code is written. This reduces ambiguity when using AI coding tools, improves team alignment, and enables full traceability from git commits back to requirements.',
       response_es: 'Aplico SDD donde archivos spec.md definen criterios de aceptación antes de escribir código. Esto reduce ambigüedad al usar herramientas de IA, mejora el alineamiento del equipo y permite trazabilidad completa desde commits de git hasta requisitos.',
       related: ['kubernetes', 'cicd', 'scrum'],
-      url: 'https://sergioide007.github.io/spec/',
+      url: 'https://ai.specsolid.com/',
     },
     scrum: {
       title: 'Scrum / Agile',
@@ -334,7 +334,7 @@
       response_en: 'I\'ve worked in Scrum as developer, tech lead, and Scrum Master. I facilitate sprint ceremonies with focus on sprint goal alignment, maintain a groomed backlog with INVEST stories, and run data-driven retrospectives using metrics to continuously improve team delivery.',
       response_es: 'He trabajado en Scrum como desarrollador, tech lead y Scrum Master. Facilito ceremonias de sprint enfocadas en el objetivo del sprint, mantengo un backlog saludable con historias INVEST y ejecuto retrospectivas basadas en datos para mejorar continuamente la entrega del equipo.',
       related: ['spec-driven', 'cicd'],
-      url: 'https://sergioide007.github.io/scrum/',
+      url: 'https://scrum.specsolid.com/',
     },
     microservices: {
       title: 'Microservices Architecture',
@@ -361,7 +361,7 @@
       response_en: 'I design microservices with clear bounded contexts, each service owning its database. I implement service mesh with Istio for traffic management and observability, event-driven communication with Kafka for async workflows, and distributed tracing with Jaeger for debugging across service boundaries.',
       response_es: 'Diseño microservicios con contextos delimitados claros, cada servicio propietario de su base de datos. Implemento service mesh con Istio para gestión de tráfico y observabilidad, comunicación event-driven con Kafka para flujos async, y trazas distribuidas con Jaeger.',
       related: ['kubernetes', 'monitoring', 'cicd'],
-      url: 'https://sergioide007.github.io/devops/advanced/',
+      url: 'https://devops.specsolid.com/advanced/',
     },
   };
 

@@ -99,11 +99,11 @@
 
 <section id="philosophy">
   <div class="section-inner">
-    <div class="section-label">Principios</div>
-    <h2 class="section-h2">Por qué SDD gana<br>donde Vibe Coding pierde</h2>
-    <p class="section-sub">El Vibe Coding produce prototipos. SDD produce sistemas. La diferencia se mide en meses, no en horas.</p>
+    <div class="section-label reveal">Principios</div>
+    <h2 class="section-h2 reveal reveal-1">Por qué SDD gana<br>donde Vibe Coding pierde</h2>
+    <p class="section-sub reveal reveal-2">El Vibe Coding produce prototipos. SDD produce sistemas. La diferencia se mide en meses, no en horas.</p>
     <div class="phil-grid" id="philGrid"></div>
-    <div class="callout">
+    <div class="callout reveal">
       <blockquote id="mainQuote"></blockquote>
       <cite id="mainCite"></cite>
       <div class="callout-grid" id="calloutGrid"></div>
@@ -167,8 +167,8 @@ const callout = [
   { title:'1-2 días de SPEC',      body:'Tiempo que se recupera en la primera iteración ahorrada.' },
 ];
 
-document.getElementById('philGrid').innerHTML = philosophy.map(p => `
-  <div class="phil-item">
+document.getElementById('philGrid').innerHTML = philosophy.map((p, i) => `
+  <div class="phil-item reveal reveal-${i + 1}">
     <div class="icon">${p.icon}</div>
     <h4>${p.title}</h4>
     <p>${p.body}</p>
@@ -184,6 +184,16 @@ function toggleMenu() {
 document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

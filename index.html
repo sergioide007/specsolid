@@ -138,11 +138,11 @@
 
 <!-- ── ROULETTE HERO ── -->
 <div class="roulette-wrapper hero">
-  <span class="roulette-label">We Build</span>
-  <div class="roulette-viewport">
+  <span class="roulette-label reveal">We Build</span>
+  <div class="roulette-viewport reveal reveal-1">
     <div class="roulette-word" id="rouletteWord">Alpaquitay AI</div>
   </div>
-  <div class="roulette-divider"></div>
+  <div class="roulette-divider reveal reveal-2"></div>
 </div>
 
 <!-- ── MARQUEE ── -->
@@ -176,20 +176,20 @@
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">SDD · AI Engineering · Senior Architecture</div>
-      <h1>Build software<br>that <em>stays alive</em><br>under AI pressure</h1>
-      <p class="hero-sub">
+      <div class="eyebrow reveal">SDD · AI Engineering · Senior Architecture</div>
+      <h1 class="reveal reveal-1">Build software<br>that <em>stays alive</em><br>under AI pressure</h1>
+      <p class="hero-sub reveal reveal-2">
         SpecSolid es un laboratorio de ingeniería especializado en
         <strong style="color:#fff">Spec-Driven Development</strong> —
         la metodología que convierte la IA en un multiplicador predecible,
         no en una apuesta.
       </p>
-      <div class="hero-ctas">
+      <div class="hero-ctas reveal reveal-3">
         <a href="tools/" class="btn btn-p">Explorar herramientas →</a>
         <a href="https://ai.specsolid.com/" class="btn btn-o">Ver teoría SDD</a>
       </div>
     </div>
-    <div class="hero-stats" id="heroStats"></div>
+    <div class="hero-stats reveal reveal-2" id="heroStats"></div>
   </div>
 </section>
 
@@ -228,12 +228,12 @@
 </style>
 <section class="devops-feature">
   <div class="df-inner">
-    <div class="df-eyebrow">New · Open Curriculum · 2026</div>
+    <div class="df-eyebrow reveal">New · Open Curriculum · 2026</div>
     <div class="df-grid">
       <div>
-        <h2 class="df-title">DevOps<br><em>from Zero to Senior</em></h2>
-        <p class="df-desc">12 sections. 41+ guides. Every command tested. From Linux fundamentals to ISO 27001 compliance — written in A1/A2 English with senior technical depth.</p>
-        <div class="df-pills">
+        <h2 class="df-title reveal reveal-1">DevOps<br><em>from Zero to Senior</em></h2>
+        <p class="df-desc reveal reveal-2">12 sections. 41+ guides. Every command tested. From Linux fundamentals to ISO 27001 compliance — written in A1/A2 English with senior technical depth.</p>
+        <div class="df-pills reveal reveal-3">
           <span class="df-pill">Linux</span>
           <span class="df-pill">Kubernetes</span>
           <span class="df-pill">Terraform</span>
@@ -345,25 +345,33 @@ document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
 
-/* Roulette */
+/* Roulette with spring animation classes */
 const WORDS = ['Alpaquitay AI', 'Scrum Board', 'SDD Framework', 'DevOps Curriculum', 'SpecSolid'];
 let idx = 0;
 const el = document.getElementById('rouletteWord');
+let rouletteTimer;
 function cycleRoulette() {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(-28px)';
+  el.classList.add('r-exit');
   setTimeout(() => {
     idx = (idx + 1) % WORDS.length;
     el.textContent = WORDS[idx];
-    el.style.transition = 'none';
-    el.style.transform = 'translateY(28px)';
-    el.getBoundingClientRect();
-    el.style.transition = '';
-    el.style.opacity = '1';
-    el.style.transform = 'translateY(0)';
-  }, 420);
+    el.classList.remove('r-exit');
+    el.classList.add('r-enter');
+    el.addEventListener('animationend', () => el.classList.remove('r-enter'), { once: true });
+  }, 300);
 }
-setInterval(cycleRoulette, 2800);
+rouletteTimer = setInterval(cycleRoulette, 2800);
+
+/* Scroll reveal with IntersectionObserver */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

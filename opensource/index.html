@@ -99,22 +99,22 @@
 
 <section id="opensource" class="os-section">
   <div class="os-inner">
-    <div class="section-label" style="justify-content:center">Sponsorship &amp; Research</div>
-    <h2 class="section-h2" style="text-align:center">Investigación independiente.<br>Open source primero.</h2>
-    <p class="section-sub" style="margin:0 auto 8px;text-align:center">
+    <div class="section-label reveal" style="justify-content:center">Sponsorship &amp; Research</div>
+    <h2 class="section-h2 reveal reveal-1" style="text-align:center">Investigación independiente.<br>Open source primero.</h2>
+    <p class="section-sub reveal reveal-2" style="margin:0 auto 8px;text-align:center">
       SpecSolid opera como laboratorio autónomo. Tu patrocinio financia investigación en
       IA Explicable (XAI) y frameworks de arquitectura distribuida.
     </p>
     <div class="os-cards">
-      <a href="https://github.com/sponsors/sergioide007" target="_blank" class="os-card">
+      <a href="https://github.com/sponsors/sergioide007" target="_blank" class="os-card reveal reveal-3">
         <div class="icon">♥</div>
         <div><div class="label">Become a</div><div class="title">GitHub Sponsor</div></div>
       </a>
-      <a href="https://www.paypal.me/sergioide007" target="_blank" class="os-card">
+      <a href="https://www.paypal.me/sergioide007" target="_blank" class="os-card reveal reveal-4">
         <div class="icon">◈</div>
         <div><div class="label">Direct support</div><div class="title">PayPal.Me</div></div>
       </a>
-      <a href="https://github.com/sergioide007" target="_blank" class="os-card">
+      <a href="https://github.com/sergioide007" target="_blank" class="os-card reveal reveal-5">
         <div class="icon">⊕</div>
         <div><div class="label">Repositorios</div><div class="title">GitHub Profile</div></div>
       </a>
@@ -163,6 +163,16 @@ function toggleMenu() {
 document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

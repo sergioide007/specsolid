@@ -99,10 +99,10 @@
 
 <section id="architecture" class="arch-section">
   <div class="section-inner">
-    <div class="section-label">Flujo de trabajo</div>
-    <h2 class="section-h2">Del problema al código.<br>Sin improvisación.</h2>
-    <p class="section-sub">Cada decisión arquitectónica queda registrada. Cada generación de IA tiene contexto completo.</p>
-    <button class="ai-write-btn" onclick="openSpecModal()">
+    <div class="section-label reveal">Flujo de trabajo</div>
+    <h2 class="section-h2 reveal reveal-1">Del problema al código.<br>Sin improvisación.</h2>
+    <p class="section-sub reveal reveal-2">Cada decisión arquitectónica queda registrada. Cada generación de IA tiene contexto completo.</p>
+    <button class="ai-write-btn reveal reveal-3" onclick="openSpecModal()">
       <span class="blink-c">▊</span>&nbsp;Ver Alpaquitay AI generando este SPEC →
     </button>
     <div class="arch-grid">
@@ -425,6 +425,16 @@ function _startAnim() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSpecModal(); });
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

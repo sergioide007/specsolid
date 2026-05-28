@@ -99,29 +99,29 @@
 
 <section id="support" class="support-section">
   <div class="section-inner">
-    <div class="section-label">Alpaquitay AI · VS Code Extension</div>
-    <h2 class="section-h2">Soporte &amp; ayuda</h2>
-    <p class="section-sub">Reporta bugs, solicita features o contáctanos directamente. Respondemos en 24–48 h hábiles.</p>
+    <div class="section-label reveal">Alpaquitay AI · VS Code Extension</div>
+    <h2 class="section-h2 reveal reveal-1">Soporte &amp; ayuda</h2>
+    <p class="section-sub reveal reveal-2">Reporta bugs, solicita features o contáctanos directamente. Respondemos en 24–48 h hábiles.</p>
     <div class="support-grid">
-      <div class="support-card">
+      <div class="support-card reveal reveal-1">
         <div class="s-icon">🐛</div>
         <h3>Reportar un bug</h3>
         <p>Abre un issue en GitHub con los pasos para reproducirlo, tu versión de VS Code y el mensaje de error si aplica.</p>
         <a href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=bug_report.md" target="_blank" class="btn btn-o btn-sm">Abrir issue →</a>
       </div>
-      <div class="support-card">
+      <div class="support-card reveal reveal-2">
         <div class="s-icon">💡</div>
         <h3>Solicitar una feature</h3>
         <p>¿Tienes una idea para mejorar la extensión? Cuéntanos el caso de uso y el problema que resuelve.</p>
         <a href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=feature_request.md" target="_blank" class="btn btn-o btn-sm">Proponer feature →</a>
       </div>
-      <div class="support-card">
+      <div class="support-card reveal reveal-3">
         <div class="s-icon">📋</div>
         <h3>Issues conocidos</h3>
         <p>Revisa el tracker de issues antes de reportar. Es posible que tu problema ya esté documentado o en progreso.</p>
         <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" class="btn btn-o btn-sm">Ver issues →</a>
       </div>
-      <div class="support-card">
+      <div class="support-card reveal reveal-4">
         <div class="s-icon">✉️</div>
         <h3>Contacto comunitario</h3>
         <p>Para dudas sobre el uso de la extensión o contribuciones, escríbenos aquí. Esto es soporte comunitario gratuito para la comunidad open source.</p>
@@ -182,6 +182,16 @@ function toggleMenu() {
 document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

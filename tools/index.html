@@ -101,9 +101,9 @@
 
 <section id="tools">
   <div class="section-inner">
-    <div class="section-label">Herramientas</div>
-    <h2 class="section-h2">Tres herramientas.<br>Un ecosistema coherente.</h2>
-    <p class="section-sub">Diseñadas para trabajar juntas: la IA genera, la SPEC guía, el tablero gestiona.</p>
+    <div class="section-label reveal">Herramientas</div>
+    <h2 class="section-h2 reveal reveal-1">Tres herramientas.<br>Un ecosistema coherente.</h2>
+    <p class="section-sub reveal reveal-2">Diseñadas para trabajar juntas: la IA genera, la SPEC guía, el tablero gestiona.</p>
     <div class="tools-grid" id="toolsGrid"></div>
   </div>
 </section>
@@ -208,8 +208,8 @@ const tools = [
   },
 ];
 
-document.getElementById('toolsGrid').innerHTML = tools.map(tool => `
-  <div class="tool-card">
+document.getElementById('toolsGrid').innerHTML = tools.map((tool, i) => `
+  <div class="tool-card reveal reveal-${i + 1}">
     <div class="tool-icon">${tool.icon}</div>
     <h3>${tool.name}</h3>
     <p>${tool.desc}</p>
@@ -224,6 +224,17 @@ function toggleMenu() {
 document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
+
+/* Scroll reveal */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>

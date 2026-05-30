@@ -22,7 +22,7 @@
   /* ── SITE CONTENT INDEX ───────────────────────────────── */
   var PAGES = [
     /* SpecSolid */
-    { title: 'SpecSolid — Herramientas', url: 'https://www.specsolid.com/tools/', tags: ['tools','herramientas','alpaquitay','manancanchu','scrum','spec','devops','kanban'] },
+    { title: 'SpecSolid — Herramientas', url: 'https://www.specsolid.com/tools/', tags: ['tools','herramientas','alpaquitay','manan kanchu','scrum','spec','devops','kanban'] },
     { title: 'SpecSolid — Architecture', url: 'https://www.specsolid.com/architecture/', tags: ['architecture','arquitectura','patterns','solid','design'] },
     { title: 'SpecSolid — Philosophy', url: 'https://www.specsolid.com/philosophy/', tags: ['philosophy','filosofia','spec-driven','sdd','principios'] },
     { title: 'SpecSolid — Open Source', url: 'https://www.specsolid.com/opensource/', tags: ['open source','github','codigo abierto','contribuir'] },
@@ -53,8 +53,8 @@
     { title: 'SDD — Riesgos', url: 'https://ai.specsolid.com/riesgos/', tags: ['riesgos','risks','risk management','gestion'] },
     /* Alpaquitay AI */
     { title: 'Alpaquitay AI — VS Code Extension', url: 'https://alpaquitay-ai.specsolid.com/', tags: ['alpaquitay','vscode','extension','ai','coding assistant','llm','claude'] },
-    /* Manancanchu AI */
-    { title: 'Manancanchu AI — VS Code Extension', url: 'https://manan-kanchu-code-ai.specsolid.com/', tags: ['manancanchu','vscode','extension','ai','security','vulnerability','code detection','malware','ai detector'] },
+    /* Manan kanchu AI */
+    { title: 'Manan kanchu AI — VS Code Extension', url: 'https://manan-kanchu-code-ai.specsolid.com/', tags: ['manan kanchu','vscode','extension','ai','security','vulnerability','code detection','malware','ai detector'] },
   ];
 
   /* ── KNOWLEDGE BASE (Interview + Search topics) ───────── */

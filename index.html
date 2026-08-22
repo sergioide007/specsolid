@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpecSolid — Spec-Driven Engineering for Senior Developers</title>
+<meta name="description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="SpecSolid">
+<meta name="keywords" content="Spec-Driven Development, SDD, Alpaquitay AI, Manan kanchu AI, VS Code extension, software architecture, senior developer, DevOps, Kubernetes, Terraform, Scrum Board, AI engineering, software specification, vulnerability scanner, AI code detection">
+<meta name="theme-color" content="#050a14">
+<meta name="geo.region" content="PE">
+<meta name="geo.placename" content="Pucallpa, Peru">
+<!-- Canonical -->
+<link rel="canonical" href="https://www.specsolid.com/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpecSolid">
+<meta property="og:title" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<meta property="og:description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<meta property="og:url" content="https://www.specsolid.com/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<meta name="twitter:description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
+<meta name="twitter:image:alt" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shared/specsolid-search.css">
+<!-- JSON-LD: Organization + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.specsolid.com/#organization",
+      "name": "SpecSolid",
+      "url": "https://www.specsolid.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.specsolid.com/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Laboratorio de ingeniería especializado en Spec-Driven Development, Alpaquitay AI, Manan kanchu AI y arquitectura de software senior.",
+      "sameAs": [
+        "https://github.com/sergioide007"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sergioide007@gmail.com",
+        "contactType": "technical support"
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Pucallpa, Perú"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.specsolid.com/#website",
+      "url": "https://www.specsolid.com/",
+      "name": "SpecSolid",
+      "description": "Spec-Driven Engineering for Senior Developers",
+      "publisher": {
+        "@id": "https://www.specsolid.com/#organization"
+      },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.specsolid.com/#webpage",
+      "url": "https://www.specsolid.com/",
+      "name": "SpecSolid — Spec-Driven Engineering for Senior Developers",
+      "description": "Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Scrum Board SDD y framework teórico para arquitectos senior.",
+      "isPartOf": { "@id": "https://www.specsolid.com/#website" },
+      "about": { "@id": "https://www.specsolid.com/#organization" },
+      "inLanguage": "es"
+    }
+  ]
+}
+</script>
+<!-- LinkedIn / Facebook article metadata -->
+<meta property="article:author" content="https://github.com/sergioide007">
+<meta property="article:published_time" content="2026-05-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-05-25T00:00:00+00:00">
+<!-- fb:app_id: create free app at developers.facebook.com -> My Apps -> Create App -> get numeric ID -->
+<!-- <meta property="fb:app_id" content="YOUR_NUMERIC_APP_ID"> -->
+</head>
+<body>
+
+<style>
+.nav-link-book{
+  position:relative;font-weight:700;
+  background:linear-gradient(135deg,#f5d485 0%,#d4a94a 45%,#f5d485 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.nav-link-book::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,169,74,.6),transparent);
+  opacity:.6;
+}
+.mobile-link.nav-link-book{
+  background:linear-gradient(135deg,#f5d485 0%,#d4a94a 45%,#f5d485 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;
+}
+</style>
+
+<header>
+  <div class="nav-inner">
+    <a href="./" class="brand">SPEC<span>SOLID</span></a>
+    <nav class="nav-links">
+      <a href="tools/" class="nav-link">Tools</a>
+      <a href="architecture/" class="nav-link">Architecture</a>
+      <a href="philosophy/" class="nav-link">Philosophy</a>
+      <a href="support/" class="nav-link">Support</a>
+      <a href="opensource/" class="nav-link">Open Source</a>
+      <a href="https://devops.specsolid.com/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
+      <a href="https://codigosintetico.specsolid.com/" class="nav-link nav-link-book">Código Sintético ↗</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
+      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
+    <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético ↗</a>
+    <a href="tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
+    <a href="architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
+    <a href="philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
+    <a href="support/" class="mobile-link" onclick="toggleMenu()">Support</a>
+    <a href="opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
+    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Help</a>
+    <a href="https://github.com/sergioide007" target="_blank" class="mobile-link">GitHub →</a>
+  </div>
+</header>
+
+<!-- ── ROULETTE HERO ── -->
+<div class="roulette-wrapper hero">
+  <span class="roulette-label reveal">We Build</span>
+  <div class="roulette-viewport reveal reveal-1">
+    <div class="roulette-word" id="rouletteWord">Alpaquitay AI</div>
+  </div>
+  <div class="roulette-divider reveal reveal-2"></div>
+</div>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">Alpaquitay AI</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Manan kanchu AI</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Spec-Driven Dev</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Scrum Board SDD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">XAI Research</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">VS Code Extension</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Distributed Systems</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SpecSolid Lab</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI Engineering</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" style="color:#00e5a0">DevOps Curriculum</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Kubernetes</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Terraform</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ISO 27001</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Alpaquitay AI</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Manan kanchu AI</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Spec-Driven Dev</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Scrum Board SDD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">XAI Research</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">VS Code Extension</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Distributed Systems</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item" style="color:#00e5a0">12 Sections · 41+ Guides</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SpecSolid Lab</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI Engineering</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- ── HERO DETAIL ── -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow reveal">SDD · AI Engineering · Senior Architecture</div>
+      <h1 class="reveal reveal-1">Build software<br>that <em>stays alive</em><br>under AI pressure</h1>
+      <p class="hero-sub reveal reveal-2">
+        SpecSolid es un laboratorio de ingeniería especializado en
+        <strong style="color:#fff">Spec-Driven Development</strong> —
+        la metodología que convierte la IA en un multiplicador predecible,
+        no en una apuesta.
+      </p>
+      <div class="hero-ctas reveal reveal-3">
+        <a href="tools/" class="btn btn-p">Explorar herramientas →</a>
+        <a href="https://ai.specsolid.com/" class="btn btn-o">Ver teoría SDD</a>
+      </div>
+    </div>
+    <div class="hero-stats reveal reveal-2" id="heroStats"></div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Stack</span>
+    <div class="trust-items" id="trustItems"></div>
+  </div>
+</div>
+
+<!-- ── DEVOPS FEATURE ── -->
+<style>
+.devops-feature{padding:80px 24px;background:linear-gradient(180deg,var(--s1) 0%,rgba(0,229,160,.03) 50%,var(--s1) 100%);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.df-inner{max-width:1100px;margin:0 auto}
+.df-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#00e5a0;margin-bottom:16px;opacity:.85}
+.df-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.df-title{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;color:#e6edf3;line-height:1.1;margin-bottom:20px}
+.df-title em{font-style:normal;color:#00e5a0}
+.df-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:24px;max-width:480px}
+.df-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.df-pill{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid rgba(0,229,160,.2);border-radius:20px;color:rgba(0,229,160,.7);background:rgba(0,229,160,.04)}
+.df-terminal{background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,229,160,.06)}
+.df-term-bar{height:36px;background:#161b22;display:flex;align-items:center;padding:0 14px;gap:7px;border-bottom:1px solid rgba(255,255,255,.06)}
+.df-term-dot{width:11px;height:11px;border-radius:50%}
+.df-term-dot.r{background:#ff5f57}.df-term-dot.y{background:#febc2e}.df-term-dot.g{background:#28c840}
+.df-term-body{padding:20px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:2;color:rgba(255,255,255,.75)}
+.df-term-body .prompt{color:#00e5a0}
+.df-term-body .dim{color:rgba(255,255,255,.35);padding-left:0}
+.df-term-body .ok{color:#00e5a0;font-weight:600}
+.df-term-body .sec{color:#8be9fd}
+.df-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+.df-stat-num{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#00e5a0}
+.df-stat-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+@media(max-width:800px){.df-grid{grid-template-columns:1fr;gap:40px}.df-title{font-size:30px}}
+</style>
+<section class="devops-feature">
+  <div class="df-inner">
+    <div class="df-eyebrow reveal">New · Open Curriculum · 2026</div>
+    <div class="df-grid">
+      <div>
+        <h2 class="df-title reveal reveal-1">DevOps<br><em>from Zero to Senior</em></h2>
+        <p class="df-desc reveal reveal-2">12 sections. 41+ guides. Every command tested. From Linux fundamentals to ISO 27001 compliance — written in A1/A2 English with senior technical depth.</p>
+        <div class="df-pills reveal reveal-3">
+          <span class="df-pill">Linux</span>
+          <span class="df-pill">Kubernetes</span>
+          <span class="df-pill">Terraform</span>
+          <span class="df-pill">CI/CD</span>
+          <span class="df-pill">Prometheus</span>
+          <span class="df-pill">ISO 27001</span>
+          <span class="df-pill">BIAN</span>
+          <span class="df-pill">PCI-DSS</span>
+          <span class="df-pill">TOGAF</span>
+          <span class="df-pill">GDPR</span>
+        </div>
+        <a href="https://devops.specsolid.com/" class="btn btn-p" style="font-size:14px;padding:10px 24px">Explore DevOps Curriculum →</a>
+        <div class="df-stats">
+          <div><div class="df-stat-num">12</div><div class="df-stat-lbl">Sections</div></div>
+          <div><div class="df-stat-num">41+</div><div class="df-stat-lbl">Guides</div></div>
+          <div><div class="df-stat-num">7</div><div class="df-stat-lbl">ISO/Compliance Frameworks</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="df-terminal">
+          <div class="df-term-bar">
+            <div class="df-term-dot r"></div>
+            <div class="df-term-dot y"></div>
+            <div class="df-term-dot g"></div>
+          </div>
+          <div class="df-term-body">
+            <div><span class="prompt">$</span> kubectl get nodes</div>
+            <div class="dim">NAME         STATUS   ROLES    AGE</div>
+            <div class="dim">master-01    Ready    control  47d</div>
+            <div class="dim">worker-01    Ready    &lt;none&gt;   47d</div>
+            <div class="dim">worker-02    Ready    &lt;none&gt;   47d</div>
+            <div><span class="prompt">$</span> terraform apply -auto-approve</div>
+            <div class="dim">Plan: 14 to add, 0 to change...</div>
+            <div class="ok">✓ Apply complete! 14 added.</div>
+            <div><span class="prompt">$</span> <span class="sec"># 12 sections · zero to senior</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CÓDIGO SINTÉTICO (BOOK) FEATURE ── -->
+<style>
+.csf-feature{padding:80px 24px;background:linear-gradient(180deg,var(--s1) 0%,rgba(212,169,74,.04) 50%,var(--s1) 100%);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.csf-inner{max-width:1100px;margin:0 auto}
+.csf-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#d4a94a;margin-bottom:16px;opacity:.9}
+.csf-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.csf-title{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;color:#e6edf3;line-height:1.1;margin-bottom:20px}
+.csf-title em{font-style:normal;background:linear-gradient(135deg,#f5d485,#d4a94a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.csf-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:24px;max-width:480px}
+.csf-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.csf-pill{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid rgba(212,169,74,.25);border-radius:20px;color:rgba(212,169,74,.85);background:rgba(212,169,74,.05)}
+.csf-btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;padding:10px 24px;border-radius:8px;font-weight:700;
+  background:linear-gradient(135deg,#f5d485,#d4a94a);color:#1a1206;box-shadow:0 4px 20px rgba(212,169,74,.25);transition:box-shadow .25s ease,transform .25s ease}
+.csf-btn:hover{box-shadow:0 8px 32px rgba(212,169,74,.4);transform:translateY(-1px);text-decoration:none}
+.csf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
+.csf-stat-num{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#d4a94a}
+.csf-stat-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+.csf-book{position:relative;display:flex;justify-content:center;perspective:1400px}
+.csf-cover{
+  width:260px;aspect-ratio:2/3;border-radius:3px 8px 8px 3px;position:relative;
+  background:linear-gradient(150deg,#1c140a 0%,#0d0a05 60%,#050403 100%);
+  border:1px solid rgba(212,169,74,.35);
+  box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4),-6px 0 18px rgba(0,0,0,.5) inset;
+  transform:rotateY(-18deg) rotateX(2deg);transition:transform .5s var(--ease-out, ease)
+}
+.csf-book:hover .csf-cover{transform:rotateY(-8deg) rotateX(1deg)}
+.csf-cover::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
+  background:linear-gradient(90deg,rgba(0,0,0,.6),transparent);border-radius:3px 0 0 3px;
+}
+.csf-cover-inner{position:absolute;inset:22px 20px;border:1px solid rgba(212,169,74,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
+.csf-cover-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,169,74,.65);margin-bottom:18px}
+.csf-cover-title{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;font-size:26px;line-height:1.15;font-weight:700;background:linear-gradient(135deg,#f5d485,#d4a94a);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+.csf-cover-rule{width:34px;height:1px;background:rgba(212,169,74,.5);margin-bottom:14px}
+.csf-cover-sub{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.4);letter-spacing:.05em}
+@media(max-width:800px){.csf-grid{grid-template-columns:1fr;gap:40px}.csf-title{font-size:30px}.csf-book{order:-1}}
+</style>
+<section class="csf-feature">
+  <div class="csf-inner">
+    <div class="csf-eyebrow reveal">Nuevo · Libro · 2026</div>
+    <div class="csf-grid">
+      <div>
+        <h2 class="csf-title reveal reveal-1">Código Sintético<br><em>el libro</em></h2>
+        <p class="csf-desc reveal reveal-2">Un ensayo técnico sobre la era del código generado por IA: por qué el software sin especificación se degrada, cómo leer la intención detrás de cada línea sintética, y el framework SDD que separa a quienes dirigen la IA de quienes la siguen.</p>
+        <div class="csf-pills reveal reveal-3">
+          <span class="csf-pill">Spec-Driven Development</span>
+          <span class="csf-pill">Ingeniería de IA</span>
+          <span class="csf-pill">Arquitectura de software</span>
+          <span class="csf-pill">Ensayo técnico</span>
+        </div>
+        <a href="https://codigosintetico.specsolid.com/" class="csf-btn">Leer Código Sintético →</a>
+        <div class="csf-stats">
+          <div><div class="csf-stat-num">SDD</div><div class="csf-stat-lbl">Framework central</div></div>
+          <div><div class="csf-stat-num">2026</div><div class="csf-stat-lbl">Edición</div></div>
+          <div><div class="csf-stat-num">ES</div><div class="csf-stat-lbl">Idioma original</div></div>
+        </div>
+      </div>
+      <div class="csf-book">
+        <div class="csf-cover">
+          <div class="csf-cover-inner">
+            <div class="csf-cover-eyebrow">SpecSolid Press</div>
+            <div class="csf-cover-title">Código<br>Sintético</div>
+            <div class="csf-cover-rule"></div>
+            <div class="csf-cover-sub">Sergio Ide · Ed. 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="./" class="brand" style="margin-bottom:12px;font-size:13px;display:block">SPEC<span>SOLID</span></a>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
+          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
+        </p>
+      </div>
+      <div>
+        <h4>Herramientas</h4>
+        <a href="https://devops.specsolid.com/" class="footer-link" style="color:#00e5a0">DevOps Curriculum →</a>
+        <a href="https://codigosintetico.specsolid.com/" class="footer-link nav-link-book">Código Sintético (libro) →</a>
+        <a href="https://scrum.specsolid.com/" class="footer-link">Scrum Board SDD</a>
+        <a href="https://ai.specsolid.com/" class="footer-link">SDD Teoría</a>
+        <a href="https://alpaquitay-ai.specsolid.com/" class="footer-link">Alpaquitay AI</a>
+        <a href="https://manan-kanchu-code-ai.specsolid.com/" class="footer-link">Manan kanchu AI</a>
+        <a href="support/" class="footer-link">Soporte extensión →</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
+        <a href="https://github.com/sergioide007" target="_blank" class="footer-link">github.com/sergioide007</a>
+        <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" class="footer-link">Reportar bug →</a>
+        <a href="https://github.com/sponsors/sergioide007" target="_blank" class="footer-link">Patrocinar →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
+      <p class="footer-legal">
+        SpecSolid, Alpaquitay AI y Manan kanchu AI son iniciativas de investigación técnica autónomas.
+        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.SpecSearch = {
+  site: 'specsolid',
+  lang: 'es',
+  topics: ['Spec-Driven Development','Alpaquitay AI','Manan kanchu AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture'],
+};
+</script>
+<script src="shared/specsolid-search.js" defer></script>
+<script>
+const heroStats = [
+  { num:'45%',    lbl:'del código IA sin SPEC contiene vulnerabilidades', src:'Rick-Brick, 2026' },
+  { num:'×100',   lbl:'multiplicador de costo por iteración sin especificación', src:'estimación tokens' },
+  { num:'1 pass', lbl:'SPEC precisa → código limpio en una sola pasada', src:'L. Campbell, DEV 2026' },
+];
+const trust = ['Claude SDK', 'TypeScript', 'VS Code API', 'Chart.js', 'HTML5 Drag & Drop', 'LocalStorage', 'WebView Bridge', 'ADR'];
+
+document.getElementById('heroStats').innerHTML = heroStats.map(s => `
+  <div class="hstat">
+    <div class="num">${s.num}</div>
+    <div class="lbl">${s.lbl}</div>
+    <div class="src">${s.src}</div>
+  </div>`).join('');
+
+document.getElementById('trustItems').innerHTML = trust.map(t =>
+  `<span class="trust-item">${t}</span>`).join('');
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+
+/* Roulette with spring animation classes */
+const WORDS = ['Alpaquitay AI', 'Scrum Board', 'SDD Framework', 'DevOps Curriculum', 'SpecSolid'];
+let idx = 0;
+const el = document.getElementById('rouletteWord');
+let rouletteTimer;
+function cycleRoulette() {
+  el.classList.add('r-exit');
+  setTimeout(() => {
+    idx = (idx + 1) % WORDS.length;
+    el.textContent = WORDS[idx];
+    el.classList.remove('r-exit');
+    el.classList.add('r-enter');
+    el.addEventListener('animationend', () => el.classList.remove('r-enter'), { once: true });
+  }, 300);
+}
+rouletteTimer = setInterval(cycleRoulette, 2800);
+
+/* Scroll reveal with IntersectionObserver */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>

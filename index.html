@@ -306,53 +306,47 @@
 .csf-stat-num{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#d4a94a}
 .csf-stat-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
 .csf-book{position:relative;display:flex;justify-content:center;perspective:1400px}
-.csf-cover{
-  width:260px;aspect-ratio:2/3;border-radius:3px 8px 8px 3px;position:relative;
-  background:linear-gradient(150deg,#1c140a 0%,#0d0a05 60%,#050403 100%);
-  border:1px solid rgba(212,169,74,.35);
-  box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4),-6px 0 18px rgba(0,0,0,.5) inset;
-  transform:rotateY(-18deg) rotateX(2deg);transition:transform .5s var(--ease-out, ease)
+.csf-cover-img{
+  width:260px;border-radius:3px 8px 8px 3px;position:relative;overflow:hidden;
+  box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(212,169,74,.15);
+  transform:rotateY(-18deg) rotateX(2deg);transition:transform .5s var(--ease-out, ease);
 }
-.csf-book:hover .csf-cover{transform:rotateY(-8deg) rotateX(1deg)}
-.csf-cover::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
-  background:linear-gradient(90deg,rgba(0,0,0,.6),transparent);border-radius:3px 0 0 3px;
+.csf-cover-img img{display:block;width:100%;height:auto}
+.csf-book:hover .csf-cover-img{transform:rotateY(-8deg) rotateX(1deg)}
+.csf-badge{
+  display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#7fd8a8;
+  border:1px solid rgba(100,200,150,.3);border-radius:20px;padding:5px 12px;margin-bottom:18px;
 }
-.csf-cover-inner{position:absolute;inset:22px 20px;border:1px solid rgba(212,169,74,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
-.csf-cover-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,169,74,.65);margin-bottom:18px}
-.csf-cover-title{font-family:'Space Grotesk','IBM Plex Sans',sans-serif;font-size:26px;line-height:1.15;font-weight:700;background:linear-gradient(135deg,#f5d485,#d4a94a);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
-.csf-cover-rule{width:34px;height:1px;background:rgba(212,169,74,.5);margin-bottom:14px}
-.csf-cover-sub{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.4);letter-spacing:.05em}
+.csf-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#7fd8a8;flex-shrink:0}
+.csf-price{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:#d4a94a;margin-left:6px}
 @media(max-width:800px){.csf-grid{grid-template-columns:1fr;gap:40px}.csf-title{font-size:30px}.csf-book{order:-1}}
 </style>
 <section class="csf-feature">
   <div class="csf-inner">
-    <div class="csf-eyebrow reveal">Nuevo · Libro · 2026</div>
+    <div class="csf-eyebrow reveal">Libro · SpecSolid Press · 2026</div>
     <div class="csf-grid">
       <div>
+        <span class="csf-badge reveal reveal-1">Disponible en Kindle</span>
         <h2 class="csf-title reveal reveal-1">Código Sintético<br><em>el libro</em></h2>
-        <p class="csf-desc reveal reveal-2">Un ensayo técnico sobre la era del código generado por IA: por qué el software sin especificación se degrada, cómo leer la intención detrás de cada línea sintética, y el framework SDD que separa a quienes dirigen la IA de quienes la siguen.</p>
+        <p class="csf-desc reveal reveal-2">21 capítulos sobre arquitectura, economía y criterio de ingeniería para diseñar, gobernar y escalar sistemas multiagente en producción. No es solo teoría: cada patrón central tiene una implementación de referencia ejecutable, verificada capítulo por capítulo.</p>
         <div class="csf-pills reveal reveal-3">
           <span class="csf-pill">Spec-Driven Development</span>
-          <span class="csf-pill">Ingeniería de IA</span>
-          <span class="csf-pill">Arquitectura de software</span>
-          <span class="csf-pill">Ensayo técnico</span>
+          <span class="csf-pill">Sistemas multiagente</span>
+          <span class="csf-pill">Platform Engineering</span>
+          <span class="csf-pill">Gobernanza de IA</span>
         </div>
-        <a href="https://codigosintetico.specsolid.com/" class="csf-btn">Leer Código Sintético →</a>
+        <a href="https://www.amazon.com/dp/B0HG96Y1LN" target="_blank" rel="noopener" class="csf-btn">Comprar en Kindle — $9.99 →</a>
+        <a href="https://codigosintetico.specsolid.com/#suscripcion" style="margin-left:14px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none">o lee 3 capítulos gratis primero →</a>
         <div class="csf-stats">
-          <div><div class="csf-stat-num">SDD</div><div class="csf-stat-lbl">Framework central</div></div>
-          <div><div class="csf-stat-num">2026</div><div class="csf-stat-lbl">Edición</div></div>
-          <div><div class="csf-stat-num">ES</div><div class="csf-stat-lbl">Idioma original</div></div>
+          <div><div class="csf-stat-num">21</div><div class="csf-stat-lbl">Capítulos</div></div>
+          <div><div class="csf-stat-num">$9.99</div><div class="csf-stat-lbl">eBook Kindle</div></div>
+          <div><div class="csf-stat-num">2</div><div class="csf-stat-lbl">Repos de código</div></div>
         </div>
       </div>
       <div class="csf-book">
-        <div class="csf-cover">
-          <div class="csf-cover-inner">
-            <div class="csf-cover-eyebrow">SpecSolid Press</div>
-            <div class="csf-cover-title">Código<br>Sintético</div>
-            <div class="csf-cover-rule"></div>
-            <div class="csf-cover-sub">Sergio Ide · Ed. 2026</div>
-          </div>
+        <div class="csf-cover-img">
+          <img src="book-cover.jpg" alt="Portada de Código Sintético: El arte de orquestar agentes de IA, por Sergio Perez Ruiz" width="900" height="1350" loading="lazy">
         </div>
       </div>
     </div>

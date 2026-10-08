@@ -1,0 +1,208 @@
+/* ==========================================================================
+   SpecSolid — tema claro (v2, hecho sobre tu style.css real)
+   Archivo ADITIVO: se carga DESPUÉS de style.css. No toca el tema oscuro.
+   Solo actúa con <html data-theme="light"> (lo fija theme-light.js).
+
+   Estrategia: tu CSS ya usa variables (--ink, --text, --s1…), así que aquí
+   se redefinen y casi todo el sitio se adapta solo. Luego se corrigen los
+   valores que están escritos fijos (rgba(255,255,255,.x), #fff, gradientes).
+   ========================================================================== */
+
+/* ---------- 1. Pulido (ambos temas) ---------- */
+h1, h2, h3, .df-title, .csf-title, .section-h2 { text-wrap: balance; }
+p, .hero-sub, .section-sub, .df-desc, .csf-desc { text-wrap: pretty; }
+.num, .df-stat-num, .csf-stat-num, .csf-price, .hstat .num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 6px; }
+
+/* En pantallas táctiles no hay hover: evita que el elevado quede "pegado" tras tocar */
+@media (hover: none) {
+  .btn:hover, .tool-card:hover, .phil-item:hover, .support-card:hover,
+  .os-card:hover, .cg-item:hover, .trust-item:hover, .csf-btn:hover { transform: none; }
+}
+
+/* Cambio de tema sin transiciones a medias */
+.theme-switching *, .theme-switching *::before, .theme-switching *::after { transition: none !important; }
+
+/* Botón de tema (lo inserta theme-light.js) */
+.ss-theme-btn {
+  position: relative; width: 34px; height: 34px; flex: none; padding: 0; cursor: pointer;
+  display: inline-grid; place-items: center;
+  background: transparent; color: var(--text);
+  border: 1.5px solid var(--border); border-radius: var(--radius);
+  transition: transform .22s var(--ease-spring), border-color .15s, background .15s;
+}
+.ss-theme-btn::after { content: ""; position: absolute; inset: -5px; }       /* zona táctil ≥ 44px */
+.ss-theme-btn:active { transform: scale(.92); transition-duration: .08s; }
+.ss-theme-btn svg {
+  grid-area: 1 / 1; width: 17px; height: 17px;
+  transition: opacity .2s var(--ease-out), transform .3s var(--ease-out), filter .2s var(--ease-out);
+}
+/* Sol y luna se cruzan con un leve desenfoque */
+.ss-theme-btn .i-moon { opacity: 0; transform: rotate(-45deg) scale(.5); filter: blur(3px); }
+html[data-theme="light"] .ss-theme-btn .i-sun  { opacity: 0; transform: rotate(45deg) scale(.5); filter: blur(3px); }
+html[data-theme="light"] .ss-theme-btn .i-moon { opacity: 1; transform: none; filter: none; }
+@media (hover: hover) and (pointer: fine) {
+  .ss-theme-btn:hover { border-color: var(--signal); color: var(--signal); }
+}
+.mobile-menu .ss-theme-btn { margin-top: 8px; }
+
+/* ---------- 2. Tema claro: variables ---------- */
+html[data-theme="light"] {
+  color-scheme: light;
+  --ink:    #f5f6f8;                 /* fondo de página */
+  --text:   #0e1726;                 /* texto: el azul noche de tu marca */
+  --s1:     #ffffff;                 /* bandas y tarjetas */
+  --s2:     #f0f2f6;
+  --s3:     #e3e7ee;
+  --s4:     #c3cad6;
+  --border: rgba(14, 23, 38, .10);
+  --border-signal: rgba(0, 122, 85, .28);
+  --muted:    #5f6b7e;
+  --muted-lt: #3d4859;
+  --signal:     #007a55;             /* verde de marca con contraste AA para texto */
+  --signal-dim: #3d9e7d;
+  --shadow:    0 2px 16px rgba(14, 23, 38, .08);
+  --shadow-lg: 0 8px 48px rgba(14, 23, 38, .12);
+}
+
+/* Bloques que se quedan OSCUROS a propósito: código, diagramas, modal y terminal.
+   Se les devuelve su paleta original y todo su contenido sigue funcionando sin cambios. */
+html[data-theme="light"] :is(.arch-code, .mermaid-wrap, .modal-overlay, .df-terminal) {
+  --ink: #050a14; --text: #e6edf3;
+  --s1: #0d1117; --s2: #161b22; --s3: #21262d; --s4: #30363d;
+  --border: rgba(255, 255, 255, .07); --border-signal: rgba(0, 229, 160, .25);
+  --muted: #6b7280; --muted-lt: #9ca3af;
+  --signal: #00e5a0; --signal-dim: #00a872;
+  color-scheme: dark;
+}
+html[data-theme="light"] .modal-overlay { color: #e6edf3; }
+html[data-theme="light"] :is(.arch-code, .mermaid-wrap) { background: #0d1117; border-color: rgba(14, 23, 38, .5); }
+html[data-theme="light"] .arch-code, html[data-theme="light"] .mermaid-wrap { box-shadow: 0 2px 4px rgba(14, 23, 38, .12), 0 20px 40px -16px rgba(14, 23, 38, .4); }
+
+/* ---------- 3. Tema claro: lo que estaba escrito fijo ---------- */
+
+/* Navegación */
+html[data-theme="light"] header { background: rgba(245, 246, 248, .88); }
+html[data-theme="light"] .nav-link:hover { color: var(--text); }
+html[data-theme="light"] .nav-link.active { color: var(--signal); }
+html[data-theme="light"] .nav-link[style*="#00e5a0"],
+html[data-theme="light"] .mobile-link[style*="#00e5a0"] { color: var(--signal) !important; }
+
+/* Enlaces dorados (Código Sintético): el degradado claro no se lee sobre fondo claro */
+html[data-theme="light"] :is(.nav-link-book, .mobile-link.nav-link-book, .footer-link.nav-link-book) {
+  background: linear-gradient(135deg, #8a5f00 0%, #b07d10 50%, #8a5f00 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+html[data-theme="light"] .nav-link-book::after { background: linear-gradient(90deg, transparent, rgba(138, 95, 0, .6), transparent); }
+
+/* Botones */
+html[data-theme="light"] .btn-p { background: #00e5a0; color: #04140e; }
+html[data-theme="light"] .btn-p:hover { box-shadow: 0 8px 24px rgba(0, 150, 105, .3), 0 2px 6px rgba(14, 23, 38, .12); }
+html[data-theme="light"] .btn-o { border-color: rgba(14, 23, 38, .22); }
+html[data-theme="light"] .btn-o:hover { border-color: var(--signal); color: var(--signal); box-shadow: 0 4px 16px rgba(14, 23, 38, .08); }
+
+/* Hero: aquí van los conceptos principales */
+html[data-theme="light"] .roulette-word {
+  background: linear-gradient(130deg, #007a55 0%, #1a5fe4 60%, #6d3fd1 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-theme="light"] .hero::before { opacity: .8; }
+html[data-theme="light"] .hero-sub { color: var(--muted-lt); }
+html[data-theme="light"] .hero-sub strong { color: var(--text) !important; }   /* pisa style="color:#fff" */
+html[data-theme="light"] .hero-stats {
+  background: #fff; border-color: transparent; backdrop-filter: none;
+  box-shadow: 0 0 0 1px rgba(14, 23, 38, .08), 0 1px 2px rgba(14, 23, 38, .05), 0 20px 40px -20px rgba(14, 23, 38, .2);
+}
+html[data-theme="light"] .hero-stats:hover { border-color: transparent; box-shadow: 0 0 0 1px rgba(0, 122, 85, .25), 0 1px 2px rgba(14, 23, 38, .05), 0 24px 48px -20px rgba(14, 23, 38, .26); }
+html[data-theme="light"] .hstat .lbl { color: var(--text); opacity: .75; }
+html[data-theme="light"] .hstat .src { color: var(--muted); }
+
+/* Marquee y barra de stack */
+html[data-theme="light"] .marquee-strip { background: transparent; }
+html[data-theme="light"] .marquee-dot { color: rgba(0, 122, 85, .35); }
+html[data-theme="light"] .marquee-item[style*="#00e5a0"] { color: var(--signal) !important; }
+html[data-theme="light"] .trust { background: var(--s1); }
+html[data-theme="light"] .trust-item:hover { border-color: var(--border-signal); background: rgba(0, 122, 85, .05); }
+
+/* Secciones y tarjetas */
+html[data-theme="light"] .section-sub { color: var(--muted-lt); }
+html[data-theme="light"] .tool-card, html[data-theme="light"] .phil-item, html[data-theme="light"] .support-card {
+  box-shadow: 0 1px 2px rgba(14, 23, 38, .04);
+}
+html[data-theme="light"] .tool-card p, html[data-theme="light"] .tool-feat,
+html[data-theme="light"] .step-body p, html[data-theme="light"] .phil-item p,
+html[data-theme="light"] .support-card p, html[data-theme="light"] .support-note p,
+html[data-theme="light"] .cg-item p { color: var(--muted-lt); }
+html[data-theme="light"] .tool-card:hover { border-color: var(--border-signal); box-shadow: 0 24px 48px -20px rgba(14, 23, 38, .22), 0 0 0 1px rgba(0, 122, 85, .08); }
+html[data-theme="light"] .phil-item:hover { border-color: var(--border-signal); box-shadow: 0 16px 36px -16px rgba(14, 23, 38, .2); }
+html[data-theme="light"] .support-card:hover { border-color: var(--border-signal); box-shadow: 0 20px 44px -20px rgba(14, 23, 38, .22); }
+html[data-theme="light"] .os-card { background: #fff; }
+html[data-theme="light"] .os-card:hover { background: #fff; border-color: var(--border-signal); box-shadow: 0 14px 30px -14px rgba(14, 23, 38, .22); }
+html[data-theme="light"] .support-note { background: rgba(0, 122, 85, .06); border-color: var(--border-signal); }
+html[data-theme="light"] .step-num { background: #fff; }
+html[data-theme="light"] .arch-step:hover .step-num { background: rgba(0, 122, 85, .08); box-shadow: 0 0 0 4px rgba(0, 122, 85, .1); }
+
+/* Etiquetas de color: las claras de modo oscuro no se leen sobre blanco */
+html[data-theme="light"] .tag-g { background: rgba(0, 122, 85, .1);   color: #006b49; }
+html[data-theme="light"] .tag-b { background: rgba(26, 95, 228, .1);  color: #1a4fc4; }
+html[data-theme="light"] .tag-w { background: rgba(245, 158, 11, .15); color: #8a5300; }
+html[data-theme="light"] .tag-r { background: rgba(255, 75, 110, .1);  color: #c01f45; }
+html[data-theme="light"] .tag-v { background: rgba(109, 63, 209, .1);  color: #5b32b3; }
+
+/* Cita destacada */
+html[data-theme="light"] .callout { background: #fff; border-color: var(--border); }
+html[data-theme="light"] .callout:hover { border-color: var(--border-signal); box-shadow: 0 0 48px rgba(0, 122, 85, .06); }
+html[data-theme="light"] .callout blockquote { color: var(--text); }
+html[data-theme="light"] .cg-item { background: var(--s2); border-color: var(--border); }
+html[data-theme="light"] .cg-item:hover { border-color: var(--border-signal); }
+
+/* Tooltip */
+html[data-theme="light"] [data-tip]::after { background: #fff; box-shadow: 0 6px 20px -6px rgba(14, 23, 38, .25); }
+
+/* Botón "Escribir con IA" */
+html[data-theme="light"] .ai-write-btn { background: rgba(0, 122, 85, .07); border-color: var(--border-signal); }
+html[data-theme="light"] .ai-write-btn:hover { background: rgba(0, 122, 85, .13); box-shadow: 0 8px 20px rgba(0, 122, 85, .14); }
+
+/* DevOps (bloque con <style> en index.html) */
+html[data-theme="light"] .devops-feature { background: var(--s1); border-color: var(--border); }
+html[data-theme="light"] .df-eyebrow { color: var(--signal); opacity: 1; }
+html[data-theme="light"] .df-title { color: var(--text); }
+html[data-theme="light"] .df-title em { color: var(--signal); }
+html[data-theme="light"] .df-desc { color: var(--muted-lt); }
+html[data-theme="light"] .df-pill { color: #006b49; border-color: rgba(0, 122, 85, .28); background: rgba(0, 229, 160, .1); }
+html[data-theme="light"] .df-stats { border-top-color: var(--border); }
+html[data-theme="light"] .df-stat-num { color: var(--signal); }
+html[data-theme="light"] .df-stat-lbl { color: var(--muted); }
+/* La terminal queda oscura: es el ancla visual de la página en modo claro */
+html[data-theme="light"] .df-terminal { border: 0; box-shadow: 0 0 0 1px rgba(14, 23, 38, .5), 0 2px 4px rgba(14, 23, 38, .12), 0 24px 48px -16px rgba(14, 23, 38, .45); }
+
+/* Libro (bloque con <style> en index.html) */
+html[data-theme="light"] .csf-feature { background: var(--ink); border-color: var(--border); }
+html[data-theme="light"] .csf-eyebrow { color: #8a5f00; opacity: 1; }
+html[data-theme="light"] .csf-title { color: var(--text); }
+html[data-theme="light"] .csf-title em { background: none; -webkit-text-fill-color: currentColor; color: #8a5f00; }
+html[data-theme="light"] .csf-desc { color: var(--muted-lt); }
+html[data-theme="light"] .csf-pill { color: #8a5f00; border-color: rgba(138, 95, 0, .3); background: rgba(212, 169, 74, .12); }
+html[data-theme="light"] .csf-btn { background: #f2c14e; color: #1a1206; box-shadow: 0 0 0 1px rgba(138, 95, 0, .4), 0 1px 2px rgba(14, 23, 38, .12); }
+html[data-theme="light"] .csf-btn:hover { box-shadow: 0 0 0 1px rgba(138, 95, 0, .55), 0 8px 20px -6px rgba(180, 130, 20, .5); }
+html[data-theme="light"] .csf-badge { color: #1e7a4e; border-color: rgba(30, 122, 78, .35); }
+html[data-theme="light"] .csf-badge::before { background: #1e7a4e; }
+html[data-theme="light"] :is(.csf-price, .csf-stat-num) { color: #8a5f00; }
+html[data-theme="light"] .csf-stats { border-top-color: var(--border); }
+html[data-theme="light"] .csf-stat-lbl { color: var(--muted); }
+html[data-theme="light"] .csf-cover-img { box-shadow: 0 0 0 1px rgba(14, 23, 38, .12), 0 30px 60px -20px rgba(14, 23, 38, .4); }
+html[data-theme="light"] .csf-feature a[style*="rgba(255,255,255"] { color: var(--muted-lt) !important; }
+
+/* Pie */
+html[data-theme="light"] footer { background: var(--s1); }
+html[data-theme="light"] .footer-link { color: var(--muted-lt); }
+html[data-theme="light"] .footer-link:hover { color: var(--signal); }
+html[data-theme="light"] .footer-link[style*="#00e5a0"] { color: var(--signal) !important; }
+html[data-theme="light"] footer [style*="rgba(255,255,255"] { color: var(--muted) !important; }
+html[data-theme="light"] .footer-legal { color: var(--muted); }
+
+/* ---------- 4. Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .roulette-word, .hero::before { animation: none !important; }
+  .ss-theme-btn svg, .ss-theme-btn { transition-duration: .01ms !important; }
+}

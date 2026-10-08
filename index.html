@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpecSolid — Spec-Driven Engineering for Senior Developers</title>
-<meta name="description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<title>SpecSolid | Spec-Driven Development y DevOps de cero a senior</title>
+<meta name="description" content="Aprende Spec-Driven Development (SDD) con IA: currículo abierto de DevOps de cero a senior, herramientas como Alpaquitay AI y el libro Código Sintético.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="SpecSolid">
 <meta name="keywords" content="Spec-Driven Development, SDD, Alpaquitay AI, Manan kanchu AI, VS Code extension, software architecture, senior developer, DevOps, Kubernetes, Terraform, Scrum Board, AI engineering, software specification, vulnerability scanner, AI code detection">
@@ -13,24 +13,26 @@
 <meta name="geo.placename" content="Pucallpa, Peru">
 <!-- Canonical -->
 <link rel="canonical" href="https://www.specsolid.com/">
+<link rel="alternate" hreflang="es" href="https://www.specsolid.com/">
+<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpecSolid">
-<meta property="og:title" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
-<meta property="og:description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<meta property="og:title" content="SpecSolid | Spec-Driven Development y DevOps de cero a senior">
+<meta property="og:description" content="Aprende Spec-Driven Development (SDD) con IA: currículo abierto de DevOps de cero a senior, herramientas como Alpaquitay AI y el libro Código Sintético.">
 <meta property="og:url" content="https://www.specsolid.com/">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<meta property="og:image:alt" content="SpecSolid | Spec-Driven Development y DevOps de cero a senior">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
-<meta name="twitter:description" content="Laboratorio de ingeniería especializado en Spec-Driven Development: Alpaquitay AI, Manan kanchu AI, Scrum Board SDD y framework teórico para arquitectos senior.">
+<meta name="twitter:title" content="SpecSolid | Spec-Driven Development y DevOps de cero a senior">
+<meta name="twitter:description" content="Aprende Spec-Driven Development (SDD) con IA: currículo abierto de DevOps de cero a senior, herramientas como Alpaquitay AI y el libro Código Sintético.">
 <meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
-<meta name="twitter:image:alt" content="SpecSolid — Spec-Driven Engineering for Senior Developers">
+<meta name="twitter:image:alt" content="SpecSolid | Spec-Driven Development y DevOps de cero a senior">
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -205,8 +207,8 @@
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow reveal">SDD · AI Engineering · Senior Architecture</div>
-      <h1 class="reveal reveal-1">Build software<br>that <em>stays alive</em><br>under AI pressure</h1>
+      <div class="eyebrow reveal">Spec-Driven Development · Ingeniería con IA · Arquitectura senior</div>
+      <h1 class="reveal reveal-1">Software que<br><em>sigue en pie</em><br>cuando la IA escribe el código</h1>
       <p class="hero-sub reveal reveal-2">
         SpecSolid es un laboratorio de ingeniería especializado en
         <strong style="color:#fff">Spec-Driven Development</strong> —
@@ -218,7 +220,11 @@
         <a href="https://ai.specsolid.com/" class="btn btn-o">Ver teoría SDD</a>
       </div>
     </div>
-    <div class="hero-stats reveal reveal-2" id="heroStats"></div>
+    <div class="hero-stats reveal reveal-2" id="heroStats">
+  <div class="hstat"><div class="num">45%</div><div class="lbl">del código IA sin SPEC contiene vulnerabilidades</div><div class="src">Rick-Brick, 2026</div></div>
+  <div class="hstat"><div class="num">×100</div><div class="lbl">multiplicador de costo por iteración sin especificación</div><div class="src">estimación tokens</div></div>
+  <div class="hstat"><div class="num">1 pass</div><div class="lbl">SPEC precisa → código limpio en una sola pasada</div><div class="src">L. Campbell, DEV 2026</div></div>
+</div>
   </div>
 </section>
 
@@ -427,22 +433,7 @@ window.SpecSearch = {
 </script>
 <script src="shared/specsolid-search.js" defer></script>
 <script>
-const heroStats = [
-  { num:'45%',    lbl:'del código IA sin SPEC contiene vulnerabilidades', src:'Rick-Brick, 2026' },
-  { num:'×100',   lbl:'multiplicador de costo por iteración sin especificación', src:'estimación tokens' },
-  { num:'1 pass', lbl:'SPEC precisa → código limpio en una sola pasada', src:'L. Campbell, DEV 2026' },
-];
-const trust = ['Claude SDK', 'TypeScript', 'VS Code API', 'Chart.js', 'HTML5 Drag & Drop', 'LocalStorage', 'WebView Bridge', 'ADR'];
 
-document.getElementById('heroStats').innerHTML = heroStats.map(s => `
-  <div class="hstat">
-    <div class="num">${s.num}</div>
-    <div class="lbl">${s.lbl}</div>
-    <div class="src">${s.src}</div>
-  </div>`).join('');
-
-document.getElementById('trustItems').innerHTML = trust.map(t =>
-  `<span class="trust-item">${t}</span>`).join('');
 
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');

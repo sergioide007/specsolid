@@ -169,7 +169,7 @@
 <div class="roulette-wrapper hero">
   <span class="roulette-label reveal">We Build</span>
   <div class="roulette-viewport reveal reveal-1">
-    <div class="roulette-word" id="rouletteWord">Alpaquitay AI</div>
+    <div class="roulette-word" id="rouletteWord">Spec-Driven Development</div>
   </div>
   <div class="roulette-divider reveal reveal-2"></div>
 </div>
@@ -226,15 +226,39 @@
   <div class="hstat"><div class="num">1 pass</div><div class="lbl">SPEC precisa → código limpio en una sola pasada</div><div class="src">L. Campbell, DEV 2026</div></div>
 </div>
   </div>
-</section>
+<!-- ── HERO CONTEXT ── -->
+<div class="hero-context">
+  <div class="hero-context-inner">
+    <p class="lede">
+      <strong>Spec-Driven Development</strong> es la metodología que convierte la IA en un
+      multiplicador predecible. Especifica primero el problema, genera el código con IA,
+      y verifica cada entrega. Aquí tienes el currículo y las herramientas para hacerlo
+      <a href="https://devops.specsolid.com/">DevOps de cero a senior</a>, gestionar un
+      <a href="https://scrum.specsolid.com/">Scrum Board SDD</a>, aplicar <a href="https://ai.specsolid.com/">SDD Teoría</a>,
+      o explorar <a href="https://alpaquitay-ai.specsolid.com/">Alpaquitay AI</a> y
+      <a href="https://manan-kanchu-code-ai.specsolid.com/">Manan kanchu AI</a>.
+    </p>
+  </div>
+</div>
 
 <!-- ── TRUST BAR ── -->
 <div class="trust">
   <div class="trust-inner">
     <span class="trust-label">Stack</span>
-    <div class="trust-items" id="trustItems"></div>
+    <div class="trust-items" id="trustItems">
+      <span class="trust-item">Spec-Driven Development</span>
+      <span class="trust-item">DevOps</span>
+      <span class="trust-item">Kubernetes</span>
+      <span class="trust-item">Terraform</span>
+      <span class="trust-item">AI Engineering</span>
+      <span class="trust-item">CI/CD</span>
+    </div>
   </div>
 </div>
+
+</section>
+
+<!-- ── DEVOPS FEATURE ──
 
 <!-- ── DEVOPS FEATURE ── -->
 <style>
@@ -443,7 +467,17 @@ document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
 });
 
 /* Roulette with spring animation classes */
-const WORDS = ['Alpaquitay AI', 'Scrum Board', 'SDD Framework', 'DevOps Curriculum', 'SpecSolid'];
+// Palabras clave relevantes para SEO y propósito del laboratorio.
+// El HTML ya incluye "Spec-Driven Development" como fallback visible sin JS.
+const WORDS = [
+  'Spec-Driven Development',
+  'DevOps Curriculum',
+  'Kubernetes',
+  'Terraform',
+  'AI Engineering',
+  'CI/CD',
+  'Scrum Board SDD',
+];
 let idx = 0;
 const el = document.getElementById('rouletteWord');
 let rouletteTimer;

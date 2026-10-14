@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 — Página no encontrada · SpecSolid</title>
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050a14">
+
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -15,14 +17,22 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+<script src="/theme-light.js"></script>
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/shared/specsolid-search.css">
+<link rel="stylesheet" href="/theme-light.css">
+
 <style>
-.not-found{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;gap:20px}
+.not-found{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;gap:20px}
 .not-found .code{font-family:'IBM Plex Mono',monospace;font-size:clamp(60px,15vw,120px);font-weight:700;line-height:1;background:linear-gradient(130deg,#00e5a0 0%,#60a5fa 55%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.not-found h1{font-size:clamp(20px,3vw,32px);font-weight:700;letter-spacing:-.02em}
-.not-found p{font-size:15px;color:rgba(255,255,255,.5);max-width:420px;line-height:1.7}
+.not-found h1{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-.02em}
+.not-found p{font-size:15px;color:rgba(255,255,255,.6);max-width:460px;line-height:1.75}
 </style>
 </head>
 <body>
@@ -35,19 +45,27 @@
       <a href="/philosophy/" class="nav-link">Philosophy</a>
       <a href="/support/" class="nav-link">Support</a>
       <a href="/opensource/" class="nav-link">Open Source</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="https://devops.specsolid.com/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
+      <a href="https://codigosintetico.specsolid.com/" class="nav-link nav-link-book">Código Sintético ↗</a>
     </nav>
     <div class="nav-cta">
       <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
-      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+      <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">GitHub →</a>
     </div>
   </div>
 </header>
-<div class="not-found">
-  <div class="code">404</div>
+
+<main class="not-found">
+  <div class="code" aria-hidden="true">404</div>
   <h1>Página no encontrada</h1>
-  <p>La URL que buscas no existe o fue movida. Puede que el SPEC de esta ruta nunca fue definido.</p>
-  <a href="/" class="btn btn-p">Volver al inicio →</a>
-</div>
+  <p>La URL que buscas no existe o fue movida. Parece que el SPEC de esta ruta nunca fue definido.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="/" class="btn btn-p">Volver al inicio →</a>
+    <a href="/tools/" class="btn btn-o">Explorar herramientas</a>
+  </div>
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-bottom" style="border-top:none;padding-top:0">
@@ -55,5 +73,14 @@
     </div>
   </div>
 </footer>
+
+<script>
+window.SpecSearch = {
+  site: 'specsolid',
+  lang: 'es',
+  topics: ['Spec-Driven Development','Alpaquitay AI','Manan kanchu AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture','Código Sintético'],
+};
+</script>
+<script src="/shared/specsolid-search.js" defer></script>
 </body>
 </html>

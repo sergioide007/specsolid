@@ -507,6 +507,69 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:48px 24p
 .footer-copy{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .footer-legal{font-size:11px;color:rgba(255,255,255,.25);max-width:500px;line-height:1.6}
 
+/* ── METHODOLOGY & EXPLAINER SECTION ── */
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+.method-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease-spring)}
+.method-card:hover{border-color:rgba(0,229,160,.3);transform:translateY(-4px)}
+.method-num{font-family:var(--mono);font-size:12px;color:var(--signal);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.method-num::after{content:'';flex:1;height:1px;background:var(--border)}
+.method-card h3{font-size:16px;font-weight:700;margin-bottom:8px;color:#fff}
+.method-card p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.65}
+
+/* ── COMPARISON MATRIX ── */
+.compare-section{background:linear-gradient(180deg,var(--s1) 0%,rgba(0,229,160,.02) 50%,var(--s1) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 24px}
+.compare-wrap{overflow-x:auto;margin-top:40px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--s1);box-shadow:0 16px 60px rgba(0,0,0,.4)}
+.compare-table{width:100%;border-collapse:collapse;text-align:left;font-size:13.5px;min-width:680px}
+.compare-table th,.compare-table td{padding:16px 20px;border-bottom:1px solid var(--border)}
+.compare-table th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-lt);background:var(--s2)}
+.compare-table th.col-sdd,.compare-table td.col-sdd{background:rgba(0,229,160,.04);color:#fff;border-left:1px solid rgba(0,229,160,.2);border-right:1px solid rgba(0,229,160,.2)}
+.compare-table th.col-sdd{color:var(--signal);font-weight:700;background:rgba(0,229,160,.08)}
+.badge-col{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
+.badge-vibe{background:rgba(255,75,110,.12);color:#ff7070;border:1px solid rgba(255,75,110,.25)}
+.badge-agile{background:rgba(245,158,11,.12);color:#fcd34d;border:1px solid rgba(245,158,11,.25)}
+.badge-sdd{background:rgba(0,229,160,.12);color:var(--signal);border:1px solid rgba(0,229,160,.3)}
+.ico-chk{color:var(--signal);font-weight:700;margin-right:6px}
+.ico-cross{color:#ff7070;font-weight:700;margin-right:6px}
+.ico-warn{color:#fcd34d;font-weight:700;margin-right:6px}
+
+/* ── FAQ ACCORDION ── */
+.faq-section{padding:80px 24px}
+.faq-grid{display:flex;flex-direction:column;gap:14px;margin-top:36px;max-width:880px}
+.faq-item{background:var(--s1);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.faq-item:hover{border-color:rgba(0,229,160,.25)}
+.faq-item[open]{border-color:rgba(0,229,160,.4);box-shadow:0 8px 30px rgba(0,229,160,.06)}
+.faq-item summary{padding:18px 22px;cursor:pointer;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;-webkit-user-select:none;user-select:none;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-chevron{font-family:var(--mono);font-size:14px;color:var(--signal);transition:transform .25s var(--ease-spring)}
+.faq-item[open] .faq-chevron{transform:rotate(90deg)}
+.faq-body{padding:0 22px 20px;font-size:14px;color:rgba(255,255,255,.65);line-height:1.75;border-top:1px solid rgba(255,255,255,.04);margin-top:4px;padding-top:14px}
+.faq-body p{margin-bottom:12px}
+.faq-body p:last-child{margin-bottom:0}
+.faq-body a{color:var(--signal);text-decoration:underline}
+
+/* ── INTERACTIVE WORKFLOW PREVIEW ── */
+.flow-showcase{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;background:var(--s1);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.flow-pane{display:flex;flex-direction:column;min-width:0}
+.flow-pane-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:11px;color:var(--muted-lt)}
+.flow-pane-code{padding:20px;font-family:var(--mono);font-size:12px;line-height:1.8;color:rgba(255,255,255,.75);overflow-x:auto;background:var(--ink);flex:1}
+
+/* ── AUTHOR / E-E-A-T SECTION ── */
+.author-card{margin-top:60px;background:linear-gradient(135deg,rgba(0,229,160,.03) 0%,rgba(212,169,74,.03) 100%),var(--s1);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.author-avatar{width:90px;height:90px;border-radius:50%;border:2px solid var(--signal);display:flex;align-items:center;justify-content:center;background:var(--s2);font-family:var(--mono);font-size:28px;font-weight:700;color:var(--signal);box-shadow:0 0 24px rgba(0,229,160,.2)}
+.author-info h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:4px}
+.author-role{font-family:var(--mono);font-size:11.5px;color:var(--signal);margin-bottom:12px}
+.author-bio{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:16px;max-width:720px}
+.author-links{display:flex;flex-wrap:wrap;gap:12px}
+.author-link-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);color:var(--text);background:var(--s2);transition:border-color .2s,color .2s,background .2s}
+.author-link-btn:hover{border-color:var(--signal);color:var(--signal);text-decoration:none;background:rgba(0,229,160,.06)}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:20px;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted-lt);text-decoration:none}
+.breadcrumb a:hover{color:var(--signal);text-decoration:underline}
+.breadcrumb-sep{color:rgba(255,255,255,.2)}
+.breadcrumb-current{color:var(--signal)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .nav-link{padding:0 10px;font-size:12.5px}

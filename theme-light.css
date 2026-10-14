@@ -201,6 +201,26 @@ html[data-theme="light"] .footer-link[style*="#00e5a0"] { color: var(--signal) !
 html[data-theme="light"] footer [style*="rgba(255,255,255"] { color: var(--muted) !important; }
 html[data-theme="light"] .footer-legal { color: var(--muted); }
 
+/* Nuevas secciones: Matriz comparativa, FAQ, Metodología y Autor */
+html[data-theme="light"] .compare-section { background: var(--s2); }
+html[data-theme="light"] .compare-wrap { background: #fff; box-shadow: 0 4px 20px rgba(14,23,38,.06); }
+html[data-theme="light"] .compare-table th { background: var(--s3); color: var(--text); }
+html[data-theme="light"] .compare-table th.col-sdd,
+html[data-theme="light"] .compare-table td.col-sdd { background: rgba(0, 122, 85, .05); border-color: rgba(0, 122, 85, .25); color: var(--text); }
+html[data-theme="light"] .compare-table th.col-sdd { color: var(--signal); }
+html[data-theme="light"] .faq-item { background: #fff; }
+html[data-theme="light"] .faq-item summary { color: var(--text); }
+html[data-theme="light"] .faq-body { color: var(--muted-lt); }
+html[data-theme="light"] .method-card { background: #fff; box-shadow: 0 2px 10px rgba(14,23,38,.04); }
+html[data-theme="light"] .method-card h3 { color: var(--text); }
+html[data-theme="light"] .method-card p { color: var(--muted-lt); }
+html[data-theme="light"] .flow-showcase { background: #fff; }
+html[data-theme="light"] .flow-pane-hdr { background: var(--s2); color: var(--text); }
+html[data-theme="light"] .author-card { background: #fff; box-shadow: 0 4px 24px rgba(14,23,38,.08); }
+html[data-theme="light"] .author-info h3 { color: var(--text); }
+html[data-theme="light"] .author-bio { color: var(--muted-lt); }
+html[data-theme="light"] .author-link-btn { background: var(--s2); color: var(--text); }
+
 /* ---------- 4. Movimiento reducido ---------- */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track, .roulette-word, .hero::before { animation: none !important; }

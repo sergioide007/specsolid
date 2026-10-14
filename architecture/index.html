@@ -3,19 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Architecture — Flujo Spec-Driven del problema al código · SpecSolid</title>
-<meta name="description" content="Flujo de trabajo Spec-Driven en 5 pasos: del problema al código sin improvisación. ADRs, validación multi-agente y observabilidad completa.">
+<title>Arquitectura SDD | Flujo Spec-Driven del Problema al Código · SpecSolid</title>
+<meta name="description" content="Flujo de arquitectura Spec-Driven en 5 pasos: del problema de negocio al código verificable sin improvisación. ADRs versionados, validación multi-agente y observabilidad.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="SpecSolid">
+<meta name="author" content="Sergio Perez Ruiz - SpecSolid">
+<meta name="keywords" content="Arquitectura de software con IA, Spec-Driven Development, flujo SDD, ADRs en Git, contratos de API, validación multi-agente, Alpaquitay AI, ingeniería de software">
 <meta name="theme-color" content="#050a14">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<!-- Canonical -->
+
+<!-- Canonical & Hreflang -->
 <link rel="canonical" href="https://www.specsolid.com/architecture/">
+<link rel="alternate" hreflang="es" href="https://www.specsolid.com/architecture/">
+<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/architecture/">
+
 <!-- Open Graph -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="SpecSolid">
-<meta property="og:title" content="Architecture — Flujo Spec-Driven del problema al código · SpecSolid">
-<meta property="og:description" content="Flujo de trabajo Spec-Driven en 5 pasos: del problema al código sin improvisación. ADRs, validación multi-agente y observabilidad completa.">
+<meta property="og:title" content="Arquitectura SDD | Flujo Spec-Driven del Problema al Código · SpecSolid">
+<meta property="og:description" content="Flujo de arquitectura Spec-Driven en 5 pasos: del problema de negocio al código verificable sin improvisación. ADRs versionados, validación multi-agente y observabilidad.">
 <meta property="og:url" content="https://www.specsolid.com/architecture/">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
@@ -23,12 +28,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="SpecSolid Architecture — Flujo Spec-Driven del problema al código">
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Architecture — Flujo Spec-Driven del problema al código · SpecSolid">
+<meta name="twitter:title" content="Arquitectura SDD | Flujo Spec-Driven del Problema al Código · SpecSolid">
 <meta name="twitter:description" content="Flujo de trabajo Spec-Driven en 5 pasos: del problema al código sin improvisación. ADRs, validación multi-agente y observabilidad completa.">
 <meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
 <meta name="twitter:image:alt" content="SpecSolid Architecture — Flujo Spec-Driven del problema al código">
+
 <!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="shortcut icon" href="/favicon.ico">
@@ -39,44 +46,90 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+<script src="/theme-light.js"></script>
 <link rel="stylesheet" href="../style.css">
-<!-- JSON-LD -->
+<link rel="stylesheet" href="../shared/specsolid-search.css">
+<link rel="stylesheet" href="/theme-light.css">
+
+<!-- JSON-LD: HowTo + TechArticle + BreadcrumbList -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "@id": "https://www.specsolid.com/architecture/#webpage",
-  "url": "https://www.specsolid.com/architecture/",
-  "name": "Architecture — Flujo Spec-Driven del problema al código · SpecSolid",
-  "description": "Flujo de trabajo Spec-Driven en 5 pasos: del problema al código sin improvisación.",
-  "isPartOf": { "@id": "https://www.specsolid.com/#website" },
-  "inLanguage": "es",
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "SpecSolid", "item": "https://www.specsolid.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Architecture", "item": "https://www.specsolid.com/architecture/" }
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.specsolid.com/architecture/#webpage",
+      "url": "https://www.specsolid.com/architecture/",
+      "name": "Arquitectura SDD | Flujo Spec-Driven del Problema al Código · SpecSolid",
+      "description": "Flujo de trabajo de arquitectura Spec-Driven en 5 pasos: definición formal de SPEC, validación multi-agente, generación en una pasada, ADRs y observabilidad de telemetría.",
+      "isPartOf": { "@id": "https://www.specsolid.com/#website" },
+      "inLanguage": "es",
+      "author": {
+        "@type": "Person",
+        "name": "Sergio Perez Ruiz",
+        "url": "https://www.specsolid.com/#sergio-perez-ruiz"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "SpecSolid", "item": "https://www.specsolid.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Architecture", "item": "https://www.specsolid.com/architecture/" }
+        ]
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Flujo de Trabajo Spec-Driven Development (SDD) en 5 Pasos",
+      "description": "Metodología sistemática para construir software con agentes de inteligencia artificial garantizando contratos de API, cero arquitectura invisible y trazabilidad total.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "01. SPEC antes de código",
+          "text": "Define el problema, flujos, contratos de API y criterios de aceptación. La IA recibe contexto completo en un documento formal SPEC.md."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "02. Validación multi-agente",
+          "text": "Agentes especializados analizan la SPEC: seguridad informática, dominio, UX y compliance, eliminando bloqueantes antes de generar."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "03. Generación limpia",
+          "text": "Una sola pasada (1 pass). Código testeable, documentado y perfectamente alineado con la arquitectura definida."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "04. ADR + Review senior",
+          "text": "El arquitecto valida el output, registra decisiones en Architecture Decision Records (ADRs) y aprueba. La SPEC viaja con el PR."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "05. Deploy + observabilidad",
+          "text": "Feature flags, métricas de tokens, logs de decisiones IA trazables en la plataforma de observabilidad en producción."
+        }
+      ]
+    }
+  ]
 }
 </script>
-<!-- LinkedIn / Facebook article metadata -->
-<meta property="article:author" content="https://github.com/sergioide007">
-<meta property="article:published_time" content="2026-05-01T00:00:00+00:00">
-<meta property="article:modified_time" content="2026-05-25T00:00:00+00:00">
-<!-- fb:app_id: create free app at developers.facebook.com -> My Apps -> Create App -> get numeric ID -->
-<!-- <meta property="fb:app_id" content="YOUR_NUMERIC_APP_ID"> -->
 </head>
 <body>
 
 <header>
   <div class="nav-inner">
-    <a href="../" class="brand">SPEC<span>SOLID</span></a>
-    <nav class="nav-links">
+    <a href="../" class="brand" aria-label="SpecSolid - Inicio">SPEC<span>SOLID</span></a>
+    <nav class="nav-links" aria-label="Navegación principal">
       <a href="../tools/" class="nav-link">Tools</a>
       <a href="../architecture/" class="nav-link active">Architecture</a>
       <a href="../philosophy/" class="nav-link">Philosophy</a>
@@ -89,79 +142,192 @@
     </nav>
     <div class="nav-cta">
       <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
-      <a href="https://github.com/sergioide007" target="_blank" class="btn btn-p btn-sm">GitHub →</a>
+      <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">GitHub →</a>
     </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">☰</button>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
     <div class="mobile-label">Sitio</div>
-    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools</a>
-    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture</a>
-    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy</a>
-    <div class="mobile-label">Comunidad</div>
+    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools (Herramientas)</a>
+    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture (Arquitectura)</a>
+    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy (Filosofía)</a>
+    <div class="mobile-label">Ecosistema & Aprendizaje</div>
+    <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps Curriculum (0 a Senior) ↗</a>
+    <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — el libro ↗</a>
+    <a href="https://scrum.specsolid.com/" class="mobile-link" onclick="toggleMenu()">Scrum Board SDD ↗</a>
+    <a href="https://ai.specsolid.com/" class="mobile-link" onclick="toggleMenu()">SDD Teoría & Modelos ↗</a>
+    <div class="mobile-label">Comunidad & Contacto</div>
     <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support</a>
     <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
-    <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
-    <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — el libro ↗</a>
-    <div class="mobile-label">Contacto</div>
     <a href="mailto:sergioide007@gmail.com" class="mobile-link">Help</a>
-    <a href="https://github.com/sergioide007" target="_blank" class="mobile-link">GitHub →</a>
+    <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="mobile-link">GitHub Profile →</a>
   </div>
 </header>
 
-<section id="architecture" class="arch-section">
-  <div class="section-inner">
-    <div class="section-label reveal">Flujo de trabajo</div>
-    <h2 class="section-h2 reveal reveal-1">Del problema al código.<br>Sin improvisación.</h2>
-    <p class="section-sub reveal reveal-2">Cada decisión arquitectónica queda registrada. Cada generación de IA tiene contexto completo.</p>
-    <button class="ai-write-btn reveal reveal-3" onclick="openSpecModal()">
-      <span class="blink-c">▊</span>&nbsp;Ver Alpaquitay AI generando este SPEC →
-    </button>
-    <div class="arch-grid">
-      <div class="arch-steps" id="archSteps"></div>
-      <div>
-        <div class="arch-tabs">
-          <button class="arch-tab active" onclick="switchArchTab('flow',this)">◆ Flow</button>
-          <button class="arch-tab" onclick="switchArchTab('spec',this)">📄 SPEC arquitectónica</button>
-          <button class="arch-tab" onclick="switchArchTab('sprint',this)">✅ SPEC de sprint</button>
+<main>
+  <section id="architecture" class="arch-section">
+    <div class="section-inner">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <a href="../">Inicio</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Arquitectura SDD</span>
+      </nav>
+
+      <div class="section-label reveal">Flujo de Trabajo de Ingeniería</div>
+      <h1 class="section-h2 reveal reveal-1">Del problema al código. Sin improvisación.</h1>
+      <p class="section-sub reveal reveal-2">
+        Cada decisión arquitectónica queda registrada. Cada generación de IA tiene contexto cerrado y contratos estrictos.
+      </p>
+
+      <button class="ai-write-btn reveal reveal-3" onclick="openSpecModal()" aria-label="Simular generación de SPEC con Alpaquitay AI">
+        <span class="blink-c">▊</span>&nbsp;Ver Alpaquitay AI generando este SPEC →
+      </button>
+
+      <div class="arch-grid">
+        <!-- Pre-rendered Semantic Steps -->
+        <div class="arch-steps" id="archSteps">
+          <div class="arch-step">
+            <div class="step-col">
+              <div class="step-num" data-tip="Contexto completo = una sola pasada de generación">01</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>SPEC antes de código</h3>
+              <p>Define el problema de negocio, flujos de usuario, contratos de API estrictos y criterios de aceptación verificables. La IA recibe contexto completo sin suposiciones.</p>
+            </div>
+          </div>
+
+          <div class="arch-step">
+            <div class="step-col">
+              <div class="step-num" data-tip="4 agentes en paralelo: seguridad, dominio, UX, compliance">02</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>Validación multi-agente</h3>
+              <p>Agentes especializados analizan la SPEC en paralelo: seguridad perimetral, lógica de dominio, UX y compliance. Cero bloqueantes antes de escribir código.</p>
+            </div>
+          </div>
+
+          <div class="arch-step">
+            <div class="step-col">
+              <div class="step-num" data-tip="1 pass = código testeable y documentado">03</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>Generación limpia (1-Pass)</h3>
+              <p>Una sola pasada de generación de código. Salida testeable, estructurada, documentada y estrictamente alineada con la arquitectura definida.</p>
+            </div>
+          </div>
+
+          <div class="arch-step">
+            <div class="step-col">
+              <div class="step-num" data-tip="Architecture Decision Records versionados con el PR">04</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>ADR + Review senior</h3>
+              <p>El arquitecto de software valida el output, registra las decisiones técnicas en un ADR (Architecture Decision Record) y aprueba. La SPEC viaja con el Pull Request.</p>
+            </div>
+          </div>
+
+          <div class="arch-step">
+            <div class="step-col">
+              <div class="step-num" data-tip="Trazabilidad IA end-to-end: tokens, latencia, decisiones">05</div>
+            </div>
+            <div class="step-body">
+              <h3>Deploy + observabilidad</h3>
+              <p>Despliegue automatizado con feature flags, métricas de latencia p99, telemetría de tokens y logs de decisiones de IA trazables en producción.</p>
+            </div>
+          </div>
         </div>
-        <div class="arch-panel active" id="archFlow">
-          <div class="mermaid-wrap"><div class="mermaid" id="mermaidDiagram"></div></div>
-        </div>
-        <div class="arch-panel" id="archSpec">
-          <div class="arch-code" id="archCode"></div>
-        </div>
-        <div class="arch-panel" id="archSprint">
-          <div class="arch-code" id="archSprintCode"></div>
+
+        <div>
+          <div class="arch-tabs">
+            <button class="arch-tab active" onclick="switchArchTab('flow',this)">◆ Diagrama de Flujo</button>
+            <button class="arch-tab" onclick="switchArchTab('spec',this)">📄 SPEC Arquitectónica</button>
+            <button class="arch-tab" onclick="switchArchTab('sprint',this)">✅ SPEC de Sprint</button>
+          </div>
+          <div class="arch-panel active" id="archFlow">
+            <div class="mermaid-wrap">
+              <div class="mermaid" id="mermaidDiagram"></div>
+            </div>
+          </div>
+          <div class="arch-panel" id="archSpec">
+            <pre class="arch-code" id="archCode"><code><span class="c-muted">// SPEC.md — versionado en Git con el PR</span>
+
+<span class="c-green">## Contexto</span>
+Implementar MFA TOTP para 50k usuarios concurrentes.
+Sprint 14 · Plazo: 2026-05-12 · Arquitecto: Sergio Perez Ruiz.
+
+<span class="c-green">## Contratos API</span>
+<span class="c-blue">POST</span> /auth/mfa/init
+  <span class="c-yellow">body</span>: { userId: string }
+  <span class="c-yellow">resp</span>: { challengeId: UUID, expiresAt: ISO8601 }
+
+<span class="c-blue">POST</span> /auth/mfa/verify
+  <span class="c-yellow">body</span>: { challengeId: UUID, code: string }
+  <span class="c-yellow">resp</span>: { accessToken: JWT } | <span class="c-red">401 Unauthorized</span>
+
+<span class="c-green">## Criterios de Aceptación (Verificables)</span>
+<span class="c-green">✅</span> <span data-tip="Red team verified — zero bypass vectors found">Pentesting sin bypass MFA</span>
+<span class="c-green">✅</span> <span data-tip="SonarQube gate: ≥90% branch coverage requerido">Cobertura de tests &ge; 90%</span>
+<span class="c-green">✅</span> <span data-tip="Medido en CDN edge, no en app server">Latencia p99 &lt; 300ms</span>
+<span class="c-green">✅</span> <span data-tip="SOC 2 Type II: todos los eventos MFA persistidos">Audit log inmutable obligatorio</span></code></pre>
+          </div>
+          <div class="arch-panel" id="archSprint">
+            <pre class="arch-code" id="archSprintCode"><code><span class="c-muted">// SPEC-Sprint-2.md — exportado desde Scrum Board SDD</span>
+<span class="c-muted">// Alpaquitay AI lo lee como contexto del sprint activo</span>
+
+<span class="c-green"># SPEC: Sprint 2 — Auth &amp; Dashboard</span>
+
+<span class="c-yellow">**Período:**</span> 2026-04-28 → 2026-05-11
+<span class="c-yellow">**Capacidad:**</span> 42 pts
+
+---
+
+<span class="c-green">## Epic: Auth &amp; Security</span>
+- [x] Login con email y password
+- [ ] Implementar MFA con TOTP (RFC 6238)
+- [ ] Notificación login nuevo dispositivo
+- [x] Fix: sesión expirada sin feedback
+
+<span class="c-green">## Epic: Dashboard UX</span>
+- [ ] Widget de métricas del sprint
+- [ ] Dark mode persistente
+
+<span class="c-green">## Infraestructura &amp; DevOps</span>
+- [x] Configurar pipeline CI/CD en GitHub Actions
+- [x] Reglas de seguridad Manan kanchu AI en pre-commit</code></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── SPEC MODAL ── -->
-<div class="modal-overlay" id="specModal" onclick="if(event.target===this)closeSpecModal()">
-  <div class="modal-box">
-    <div class="modal-hdr">
-      <div class="modal-brand"><div class="modal-dot"></div>Alpaquitay AI</div>
-      <span class="modal-status" id="modalStatus">generando SPEC.md…</span>
-      <button class="modal-close-btn" onclick="closeSpecModal()" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="modal-phases-bar" id="modalPhasesBar"></div>
-    <div class="modal-body" id="modalBody"><span class="modal-cursor"></span></div>
-    <div class="modal-ftr">
-      <div class="modal-pbar"><div class="modal-pfill" id="modalPfill"></div></div>
-      <span class="modal-pct" id="modalPct">0%</span>
-      <span class="modal-credit">✦ Alpaquitay AI</span>
+  <!-- ── SPEC GENERATION MODAL ── -->
+  <div class="modal-overlay" id="specModal" onclick="if(event.target===this)closeSpecModal()">
+    <div class="modal-box">
+      <div class="modal-hdr">
+        <div class="modal-brand"><div class="modal-dot"></div>Alpaquitay AI</div>
+        <span class="modal-status" id="modalStatus">generando SPEC.md…</span>
+        <button class="modal-close-btn" onclick="closeSpecModal()" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div class="modal-phases-bar" id="modalPhasesBar"></div>
+      <div class="modal-body" id="modalBody"><span class="modal-cursor"></span></div>
+      <div class="modal-ftr">
+        <div class="modal-pbar"><div class="modal-pfill" id="modalPfill"></div></div>
+        <span class="modal-pct" id="modalPct">0%</span>
+        <span class="modal-credit">✦ Alpaquitay AI Assistant</span>
+      </div>
     </div>
   </div>
-</div>
+</main>
 
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="../" class="brand" style="margin-bottom:12px;font-size:13px;display:block">SPEC<span>SOLID</span></a>
+        <a href="../" class="brand" style="margin-bottom:12px;font-size:14px;display:block">SPEC<span>SOLID</span></a>
         <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
           Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
         </p>
@@ -186,9 +352,9 @@
         <h4>Libro &amp; Contacto</h4>
         <a href="https://codigosintetico.specsolid.com/" class="footer-link nav-link-book">Código Sintético (libro) →</a>
         <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
-        <a href="https://github.com/sergioide007" target="_blank" class="footer-link">github.com/sergioide007</a>
-        <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" class="footer-link">Reportar bug →</a>
-        <a href="https://github.com/sponsors/sergioide007" target="_blank" class="footer-link">Patrocinar →</a>
+        <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/sergioide007</a>
+        <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" rel="noopener noreferrer" class="footer-link">Reportar bug →</a>
+        <a href="https://github.com/sponsors/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">Patrocinar →</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -203,72 +369,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-const archSteps = [
-  { num:'01', title:'SPEC antes de código',    tip:'Contexto completo = una sola pasada de generación', body:'Define el problema, flujos, contratos de API y criterios de aceptación. La IA recibe contexto completo.' },
-  { num:'02', title:'Validación multi-agente', tip:'4 agentes en paralelo: seguridad, dominio, UX, compliance', body:'Agentes especializados analizan la SPEC: seguridad, dominio, UX, compliance. Cero bloqueantes antes de generar.' },
-  { num:'03', title:'Generación limpia',        tip:'1 pass = código testeable y documentado', body:'Una sola pasada. Código testeable, documentado y alineado con la arquitectura definida.' },
-  { num:'04', title:'ADR + Review senior',      tip:'Architecture Decision Records versionados con el PR', body:'El arquitecto valida el output, registra decisiones en ADR y aprueba. La SPEC viaja con el PR.' },
-  { num:'05', title:'Deploy + observabilidad',  tip:'Trazabilidad IA end-to-end: tokens, latencia, decisiones', body:'Feature flags, métricas de tokens, logs de decisiones IA trazables en la plataforma de observabilidad.' },
-];
-
-const archCode = `<span class="c-muted">// SPEC.md — versionado en Git con el PR</span>
-
-<span class="c-green">## Contexto</span>
-Implementar MFA TOTP para 50k usuarios.
-Sprint 14 · Plazo: 2026-05-12.
-
-<span class="c-green">## Contratos API</span>
-<span class="c-blue">POST</span> /auth/mfa/init
-  <span class="c-yellow">body</span>: { userId: string }
-  <span class="c-yellow">resp</span>: { challengeId, expiresAt }
-
-<span class="c-blue">POST</span> /auth/mfa/verify
-  <span class="c-yellow">body</span>: { challengeId, code }
-  <span class="c-yellow">resp</span>: { accessToken } | <span class="c-red">401</span>
-
-<span class="c-green">## Criterios de aceptación</span>
-<span class="c-green">✅</span> <span data-tip="Red team verified — zero bypass vectors found">Pentesting sin bypass MFA</span>
-<span class="c-green">✅</span> <span data-tip="SonarQube gate: ≥90% branch coverage requerido">Cobertura tests &gt;90%</span>
-<span class="c-green">✅</span> <span data-tip="Medido en CDN edge, no en app server">Latencia p99 &lt; 300ms</span>
-<span class="c-green">✅</span> <span data-tip="SOC 2 Type II: todos los eventos MFA persistidos">Audit log obligatorio</span>`;
-
-document.getElementById('archSteps').innerHTML = archSteps.map((s, i) => `
-  <div class="arch-step">
-    <div class="step-col">
-      <div class="step-num"${s.tip ? ` data-tip="${s.tip}"` : ''}>${s.num}</div>
-      ${i < archSteps.length - 1 ? '<div class="step-line"></div>' : ''}
-    </div>
-    <div class="step-body">
-      <h4>${s.title}</h4>
-      <p>${s.body}</p>
-    </div>
-  </div>`).join('');
-document.getElementById('archCode').innerHTML = archCode;
-
-const sprintCode = `<span class="c-muted">// SPEC-Sprint-2.md — exportado desde Scrum Board</span>
-<span class="c-muted">// Alpaquitay AI lo lee como contexto del sprint activo</span>
-
-<span class="c-green"># SPEC: Sprint 2 — Auth & Dashboard</span>
-
-<span class="c-yellow">**Período:**</span> 2026-04-28 → 2026-05-11
-<span class="c-yellow">**Capacidad:**</span> 42 pts
-
----
-
-<span class="c-green">## Epic: Auth & Security</span>
-- [x] Login con email y password
-- [ ] Implementar MFA con TOTP
-- [ ] Notificación login nuevo dispositivo
-- [x] Fix: sesión expirada sin feedback
-
-<span class="c-green">## Epic: Dashboard UX</span>
-- [ ] Widget de métricas del sprint
-- [ ] Dark mode persistente
-
-<span class="c-green">## Sin épica</span>
-- [x] Configurar pipeline CI/CD`;
-document.getElementById('archSprintCode').innerHTML = sprintCode;
-
 function switchArchTab(tab, btn) {
   document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.arch-panel').forEach(p => p.classList.remove('active'));
@@ -284,17 +384,17 @@ document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
 
-/* Mermaid */
+/* Mermaid Diagram */
 const MERMAID_DEF = `flowchart TD
-  A(["👤 Client"]):::node --> B["POST /auth/mfa/init"]:::endpoint
-  B --> C{{"🔐 TOTP Challenge\\ncreated"}}:::challenge
+  A(["👤 Cliente"]):::node --> B["POST /auth/mfa/init"]:::endpoint
+  B --> C{{"🔐 TOTP Challenge\\ncreado"}}:::challenge
   C --> D["challengeId · expiresAt"]:::resp
   D --> E(["📱 Authenticator App"]):::node
   E --> F["POST /auth/mfa/verify"]:::endpoint
-  F --> G{"Valid TOTP?"}:::decision
-  G -->|"✅ success"| H(["accessToken"]):::success
-  G -->|"❌ 401"| I(["Unauthorized"]):::error
-  H --> J["📋 Audit Log"]:::audit
+  F --> G{"TOTP Válido?"}:::decision
+  G -->|"✅ Éxito"| H(["accessToken JWT"]):::success
+  G -->|"❌ 401"| I(["No Autorizado"]):::error
+  H --> J["📋 Registro de Auditoría Inmutable"]:::audit
   I --> J
   classDef node fill:#0d1117,stroke:#00e5a0,color:#e6edf3,rx:8
   classDef endpoint fill:#161b22,stroke:#60a5fa,color:#60a5fa
@@ -305,26 +405,27 @@ const MERMAID_DEF = `flowchart TD
   classDef error fill:#2a0d11,stroke:#ff4b6e,color:#ff7070
   classDef audit fill:#161b22,stroke:#30363d,color:#9ca3af`;
 
-mermaid.initialize({
-  startOnLoad: false,
-  theme: 'base',
-  themeVariables: {
-    primaryColor:'#161b22', primaryTextColor:'#e6edf3',
-    primaryBorderColor:'#30363d', lineColor:'#6b7280',
-    secondaryColor:'#0d1117', background:'#0d1117',
-    mainBkg:'#161b22', nodeBorder:'#30363d',
-    clusterBkg:'#0d1117', edgeLabelBackground:'#0d1117',
-    fontFamily:'IBM Plex Mono, monospace', fontSize:'11px',
+if (window.mermaid) {
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      primaryColor:'#161b22', primaryTextColor:'#e6edf3',
+      primaryBorderColor:'#30363d', lineColor:'#6b7280',
+      secondaryColor:'#0d1117', background:'#0d1117',
+      mainBkg:'#161b22', nodeBorder:'#30363d',
+      clusterBkg:'#0d1117', edgeLabelBackground:'#0d1117',
+      fontFamily:'IBM Plex Mono, monospace', fontSize:'11px',
+    }
+  });
+  const mEl = document.getElementById('mermaidDiagram');
+  if (mEl) {
+    mEl.textContent = MERMAID_DEF;
+    mermaid.run({ nodes: [mEl] });
   }
-});
-(function() {
-  const el = document.getElementById('mermaidDiagram');
-  if (!el) return;
-  el.textContent = MERMAID_DEF;
-  mermaid.run({ nodes: [el] });
-})();
+}
 
-/* Modal */
+/* Modal Generation Demo */
 const SPEC_PHASES = [
   {
     label:'Contexto',
@@ -332,7 +433,7 @@ const SPEC_PHASES = [
       { t:'// SPEC.md — versionado en Git con el PR', c:'cc-muted' },
       { t:'\n\n' },
       { t:'## Contexto', c:'cc-green' },
-      { t:'\nImplementar MFA TOTP para 50k usuarios.\nSprint 14 · Plazo: 2026-05-12.' },
+      { t:'\nImplementar MFA TOTP para 50k usuarios concurrentes.\nSprint 14 · Plazo: 2026-05-12.' },
     ]
   },
   {
@@ -359,7 +460,7 @@ const SPEC_PHASES = [
       { t:'✅', c:'cc-green' },{ t:' Pentesting sin bypass MFA\n' },
       { t:'✅', c:'cc-green' },{ t:' Cobertura tests >90%\n' },
       { t:'✅', c:'cc-green' },{ t:' Latencia p99 < 300ms\n' },
-      { t:'✅', c:'cc-green' },{ t:' Audit log obligatorio' },
+      { t:'✅', c:'cc-green' },{ t:' Audit log inmutable obligatorio' },
     ]
   },
 ];
@@ -367,7 +468,9 @@ const SPEC_PHASES = [
 let _animActive = false, _animTimer = null;
 
 function renderModalPhases(activeIdx) {
-  document.getElementById('modalPhasesBar').innerHTML = SPEC_PHASES.map((p, i) => {
+  const bar = document.getElementById('modalPhasesBar');
+  if (!bar) return;
+  bar.innerHTML = SPEC_PHASES.map((p, i) => {
     const cls = i < activeIdx ? 'mphase done' : (i === activeIdx ? 'mphase act' : 'mphase');
     return `<div class="${cls}">${i < activeIdx ? '✓ ' : ''}${p.label}</div>`;
   }).join('');
@@ -397,6 +500,7 @@ function _startAnim() {
   const pfill  = document.getElementById('modalPfill');
   const pct    = document.getElementById('modalPct');
   const status = document.getElementById('modalStatus');
+  if (!bodyEl) return;
   bodyEl.innerHTML = '<span class="modal-cursor"></span>';
   pfill.style.width = '0%';
   pct.textContent = '0%';
@@ -440,10 +544,10 @@ function _startAnim() {
     pct.textContent = p + '%';
     const preview = html + (curCls ? `<span class="${curCls}">${curBuf}</span>` : curBuf);
     bodyEl.innerHTML = preview + '<span class="modal-cursor"></span>';
-    _animTimer = setTimeout(tick, (ch === '\n' || ch === ' ') ? 12 : 20);
+    _animTimer = setTimeout(tick, (ch === '\n' || ch === ' ') ? 10 : 18);
   }
 
-  _animTimer = setTimeout(tick, 180);
+  _animTimer = setTimeout(tick, 150);
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSpecModal(); });
@@ -458,5 +562,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
+<script>
+window.SpecSearch = {
+  site: 'specsolid',
+  lang: 'es',
+  topics: ['Spec-Driven Development','Alpaquitay AI','Manan kanchu AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture'],
+};
+</script>
+<script src="../shared/specsolid-search.js" defer></script>
 </body>
 </html>

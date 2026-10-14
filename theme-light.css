@@ -67,7 +67,7 @@ html[data-theme="light"] {
 
 /* Bloques que se quedan OSCUROS a propósito: código, diagramas, modal y terminal.
    Se les devuelve su paleta original y todo su contenido sigue funcionando sin cambios. */
-html[data-theme="light"] :is(.arch-code, .mermaid-wrap, .modal-overlay, .df-terminal) {
+html[data-theme="light"] :is(.arch-code, .mermaid-wrap, .modal-overlay, .df-terminal, .flow-pane-code) {
   --ink: #050a14; --text: #e6edf3;
   --s1: #0d1117; --s2: #161b22; --s3: #21262d; --s4: #30363d;
   --border: rgba(255, 255, 255, .07); --border-signal: rgba(0, 229, 160, .25);
@@ -76,7 +76,8 @@ html[data-theme="light"] :is(.arch-code, .mermaid-wrap, .modal-overlay, .df-term
   color-scheme: dark;
 }
 html[data-theme="light"] .modal-overlay { color: #e6edf3; }
-html[data-theme="light"] :is(.arch-code, .mermaid-wrap) { background: #0d1117; border-color: rgba(14, 23, 38, .5); }
+html[data-theme="light"] :is(.arch-code, .mermaid-wrap, .flow-pane-code) { background: #0d1117 !important; border-color: rgba(14, 23, 38, .5); color: #e6edf3 !important; }
+html[data-theme="light"] .flow-pane-hdr { background: #161b22 !important; color: #9ca3af !important; border-bottom: 1px solid rgba(255, 255, 255, .08) !important; }
 html[data-theme="light"] .arch-code, html[data-theme="light"] .mermaid-wrap { box-shadow: 0 2px 4px rgba(14, 23, 38, .12), 0 20px 40px -16px rgba(14, 23, 38, .4); }
 
 /* ---------- 3. Tema claro: lo que estaba escrito fijo ---------- */
@@ -109,6 +110,12 @@ html[data-theme="light"] .roulette-word {
 html[data-theme="light"] .hero::before { opacity: .8; }
 html[data-theme="light"] .hero-sub { color: var(--muted-lt); }
 html[data-theme="light"] .hero-sub strong { color: var(--text) !important; }   /* pisa style="color:#fff" */
+/* Contexto del Hero (párrafo explicativo lede): texto legible con alto contraste */
+html[data-theme="light"] .hero-context p,
+html[data-theme="light"] .hero-context .lede { color: var(--muted-lt) !important; }
+html[data-theme="light"] .hero-context .lede strong { color: var(--text) !important; font-weight: 700; }
+html[data-theme="light"] .hero-context a { color: var(--signal) !important; text-decoration: underline; font-weight: 600; }
+html[data-theme="light"] .hero-context a:hover { color: var(--signal-dim) !important; }
 html[data-theme="light"] .hero-stats {
   background: #fff; border-color: transparent; backdrop-filter: none;
   box-shadow: 0 0 0 1px rgba(14, 23, 38, .08), 0 1px 2px rgba(14, 23, 38, .05), 0 20px 40px -20px rgba(14, 23, 38, .2);

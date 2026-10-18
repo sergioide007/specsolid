@@ -102,6 +102,7 @@
         "https://www.amazon.com/author/sergioperezruiz",
         "https://github.com/sergioide007",
         "https://codigosintetico.specsolid.com/",
+        "https://books.specsolid.com/",
         "https://books2read.com/u/b5dRJp"
       ]
     },
@@ -255,6 +256,7 @@
       <span class="nav-divider" aria-hidden="true"></span>
       <a href="https://devops.specsolid.com/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
       <a href="https://codigosintetico.specsolid.com/" class="nav-link nav-link-book">Código Sintético ↗</a>
+      <a href="https://books.specsolid.com/es/" class="nav-link nav-link-book">Serie abierta ↗</a>
     </nav>
     <div class="nav-cta">
       <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
@@ -270,6 +272,7 @@
     <div class="mobile-label">Ecosistema & Aprendizaje</div>
     <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps Curriculum (0 a Senior) ↗</a>
     <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — El Libro ↗</a>
+    <a href="https://books.specsolid.com/es/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — Serie abierta (ES/EN) ↗</a>
     <a href="https://scrum.specsolid.com/" class="mobile-link" onclick="toggleMenu()">Scrum Board SDD ↗</a>
     <a href="https://ai.specsolid.com/" class="mobile-link" onclick="toggleMenu()">SDD Teoría & Modelos ↗</a>
     <div class="mobile-label">Comunidad & Soporte</div>
@@ -620,8 +623,11 @@
             <div class="tool-feat">Modelos económicos de consumo de tokens y optimización</div>
             <div class="tool-feat">Implementaciones de referencia verificadas capítulo a capítulo</div>
             <div class="tool-feat">Disponible en Kindle, tapa blanda, tapa dura y ePub</div>
+            <div class="tool-feat">Serie ampliada de 4 volúmenes, gratis en línea en español e inglés</div>
           </div>
           <a href="https://codigosintetico.specsolid.com/" class="btn btn-o btn-sm" style="border-color:rgba(212,169,74,.5);color:#f5d485">Ver Libro →</a>
+          <a href="https://books.specsolid.com/es/" class="btn btn-o btn-sm" style="border-color:rgba(212,169,74,.5);color:#f5d485" hreflang="es">Leer la serie (ES) →</a>
+          <a href="https://books.specsolid.com/en/" class="btn btn-o btn-sm" style="border-color:rgba(212,169,74,.5);color:#f5d485" hreflang="en" lang="en">Read the series (EN) →</a>
         </article>
       </div>
     </div>
@@ -844,6 +850,11 @@ export class MFAService {
               Leer 3 capítulos gratis primero →
             </a>
           </div>
+          <div style="margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.7)">
+            Serie completa en acceso abierto:
+            <a href="https://books.specsolid.com/es/" hreflang="es" style="color:#f5d485">Español</a> ·
+            <a href="https://books.specsolid.com/en/" hreflang="en" lang="en" style="color:#f5d485">English</a>
+          </div>
           <div style="margin-top:16px">
             <a href="https://www.amazon.com/author/sergioperezruiz" target="_blank" rel="noopener noreferrer" style="font-size:12.5px;color:rgba(255,255,255,.45);text-decoration:none">
               Perfil oficial de autor en Amazon Books →
@@ -1010,6 +1021,8 @@ export class MFAService {
       <div>
         <h4>Libro &amp; Autor</h4>
         <a href="https://codigosintetico.specsolid.com/" class="footer-link nav-link-book">Código Sintético (libro) →</a>
+        <a href="https://books.specsolid.com/es/" class="footer-link nav-link-book">Serie abierta — Español →</a>
+        <a href="https://books.specsolid.com/en/" class="footer-link nav-link-book">Open series — English →</a>
         <a href="https://www.amazon.com/author/sergioperezruiz" target="_blank" rel="noopener noreferrer" class="footer-link">Sergio Perez Ruiz en Amazon →</a>
         <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub @sergioide007</a>
         <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" rel="noopener noreferrer" class="footer-link">Reportar bug / Issue →</a>

@@ -203,7 +203,7 @@
           "name": "¿Por qué el código generado por IA sin especificación contiene vulnerabilidades?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Estudios de seguridad informática demuestran que hasta un 45% del código generado por IA sin contexto formal de especificación contiene vulnerabilidades críticas (como inyección SQL, secrets en duro, falta de validación de entrada o bypasses lógicos). SDD mitiga este riesgo al delimitar el contexto exacto mediante contratos rigurosos y validación multi-agente previa."
+            "text": "Según el informe GenAI Code Security de Veracode (primavera de 2026, más de 150 modelos), alrededor del 45% de las tareas de generación de código con IA introdujeron una falla de seguridad conocida cuando no se daba ninguna instrucción de seguridad explícita; el informe de agosto de 2026 reporta 44%. El estudio no compara código con y sin especificación formal: el beneficio de SDD frente a esto es una hipótesis de diseño (delimitar el contexto con contratos y validar con herramientas de seguridad antes de generar), no un resultado medido por Veracode."
           }
         },
         {
@@ -300,7 +300,7 @@
       <span class="marquee-item">Manan kanchu AI</span><span class="marquee-dot">◆</span>
       <span class="marquee-item">Spec-Driven Dev</span><span class="marquee-dot">◆</span>
       <span class="marquee-item">Scrum Board SDD</span><span class="marquee-dot">◆</span>
-      <span class="marquee-item">XAI Research</span><span class="marquee-dot">◆</span>
+      <span class="marquee-item">AI-Assisted Engineering Research</span><span class="marquee-dot">◆</span>
       <span class="marquee-item">VS Code Extension</span><span class="marquee-dot">◆</span>
       <span class="marquee-item">Distributed Systems</span><span class="marquee-dot">◆</span>
       <span class="marquee-item">SpecSolid Lab</span><span class="marquee-dot">◆</span>
@@ -338,13 +338,13 @@
       <div class="hero-stats reveal reveal-2" id="heroStats">
         <div class="hstat">
           <div class="num">45%</div>
-          <div class="lbl">del código IA sin SPEC contiene vulnerabilidades críticas</div>
-          <div class="src">Rick-Brick, 2026</div>
+          <div class="lbl">de las tareas de código con IA introdujeron una falla de seguridad conocida (sin instrucción de seguridad)</div>
+          <div class="src">Veracode, GenAI Code Security, 2026</div>
         </div>
         <div class="hstat">
           <div class="num">×100</div>
-          <div class="lbl">multiplicador de costo en tokens por iteración ciega</div>
-          <div class="src">estimación consumo LLM</div>
+          <div class="lbl">orden de magnitud ilustrativo del costo en tokens de iterar a ciegas</div>
+          <div class="src">estimación propia del autor, no medida</div>
         </div>
         <div class="hstat">
           <div class="num">1 pass</div>
@@ -463,9 +463,9 @@
             </tr>
             <tr>
               <td><strong>Tasa de vulnerabilidades</strong></td>
-              <td><span class="badge-col badge-vibe"><span class="ico-cross">✗</span> 45%+ sin validación</span></td>
+              <td><span class="badge-col badge-vibe"><span class="ico-cross">✗</span> ~45% de tareas con falla sin instrucción de seguridad (Veracode, 2026)</span></td>
               <td><span class="badge-col badge-agile"><span class="ico-warn">~</span> Dependiente del dev</span></td>
-              <td class="col-sdd"><span class="badge-col badge-sdd"><span class="ico-chk">✓</span> Mínima (Security lint pre-gen)</span></td>
+              <td class="col-sdd"><span class="badge-col badge-sdd"><span class="ico-chk">✓</span> Menor riesgo esperado (Security lint pre-gen; hipótesis de diseño, no medida)</span></td>
             </tr>
             <tr>
               <td><strong>Deuda técnica a 6 meses</strong></td>
@@ -781,6 +781,7 @@ export class MFAService {
               <div class="ok">✓ Apply complete! Resources: 14 added, 0 changed.</div>
               <div><span class="prompt">$</span> specsolid audit --compliance=iso27001</div>
               <div class="ok">✓ Audit passed: 100% controls verified (A.12.1.2, A.9.4.2)</div>
+              <div class="dim"># salida ilustrativa: el comando de ejemplo no es una herramienta publicada</div>
               <div><span class="prompt">$</span> <span class="sec"># 12 secciones completas de cero a senior</span></div>
             </div>
           </div>
@@ -907,7 +908,7 @@ export class MFAService {
           </summary>
           <div class="faq-body">
             <p>
-              Estudios de seguridad informática indican que hasta un <strong>45% del código generado por IA sin contexto formal</strong> contiene fallos de seguridad (inyecciones SQL, credenciales expuestas en duro, validación deficiente o desbordamiento de búfer).
+              Según el informe <a href="https://www.veracode.com/blog/spring-2026-genai-code-security/" rel="noopener">GenAI Code Security de Veracode (primavera de 2026, más de 150 modelos)</a>, alrededor del <strong>45% de las tareas de generación de código con IA</strong> introdujeron una falla de seguridad conocida cuando no se daba ninguna instrucción de seguridad explícita (el informe de agosto de 2026 reporta 44%). Ese estudio no compara código con y sin especificación formal; que SDD reduzca esa cifra es una hipótesis de diseño, no un resultado medido por Veracode.
             </p>
             <p>
               Esto ocurre porque los LLMs buscan la respuesta estadísticamente más probable, no la más segura para tu arquitectura específica. En SpecSolid, la metodología SDD exige contratos estrictos y validación de seguridad previa con herramientas como <a href="https://manan-kanchu-code-ai.specsolid.com/">Manan kanchu AI</a>.
@@ -966,7 +967,7 @@ export class MFAService {
         <div class="author-role">Fundador de SpecSolid · Ingeniero de Sistemas · Autor</div>
         <p class="author-bio">
           Ingeniero de sistemas con amplia trayectoria en arquitectura de software distribuido, sistemas multiagente y DevOps.
-          Investigador en metodologías de ingeniería asistidas por inteligencia artificial (XAI), creador de las extensiones
+          Investigador independiente en ingeniería de software asistida por inteligencia artificial y seguridad del código generado, creador de las extensiones
           Alpaquitay AI y Manan kanchu AI para Visual Studio Code, y autor del libro <em>Código Sintético: El arte de orquestar agentes de IA</em>.
         </p>
         <div class="author-links">

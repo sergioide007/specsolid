@@ -97,7 +97,7 @@ La idea central: cuando algo falla, se corrige la **especificación** y se vuelv
 ## Arquitectura y principios
 
 - **Arquitectura:** RAG desacoplado (Retrieval Augmented Generation), arquitectura hexagonal y microservicios.
-- **IA explicable (XAI):** SHAP y LIME; orquestación multiagente con n8n y LangChain.
+- **Líneas de trabajo:** orquestación multiagente (n8n, LangChain) y enfoque de IA explicable (SHAP, LIME). Este repositorio contiene solo el sitio web; la implementación vive en los proyectos enlazados.
 - **Valores:** "Principios sobre tendencias". Seguimos el Manifiesto Ágil y el marco RUN LIDER.
 
 ## Estructura del repositorio

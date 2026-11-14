@@ -2,257 +2,250 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soporte &amp; Ayuda | Alpaquitay AI &amp; Ecosistema SpecSolid</title>
-<meta name="description" content="Centro de soporte oficial para Alpaquitay AI, Manan kanchu AI y las herramientas de SpecSolid. Reporta bugs en GitHub, solicita features o contacta al equipo.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Sergio Perez Ruiz - SpecSolid">
-<meta name="theme-color" content="#050a14">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-<!-- Canonical & Hreflang -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte · SpecSolid</title>
+<meta name="description" content="Reporta errores, propone mejoras o escribe directamente sobre Alpaquitay AI, Manan kanchu AI y el resto de herramientas de SpecSolid.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sergio Perez Ruiz">
+<meta name="theme-color" content="#0b0e11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7f6" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="https://www.specsolid.com/support/">
 <link rel="alternate" hreflang="es" href="https://www.specsolid.com/support/">
-<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/support/">
-
-<!-- Open Graph -->
+<link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/support/">
+<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/support/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpecSolid">
-<meta property="og:title" content="Soporte &amp; Ayuda | Alpaquitay AI &amp; Ecosistema SpecSolid">
-<meta property="og:description" content="Centro de soporte oficial para Alpaquitay AI, Manan kanchu AI y las herramientas de SpecSolid. Reporta bugs en GitHub, solicita features o contacta al equipo.">
-<meta property="og:url" content="https://www.specsolid.com/support/">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Soporte · SpecSolid">
+<meta property="og:description" content="Reporta errores, propone mejoras o escribe directamente sobre Alpaquitay AI, Manan kanchu AI y el resto de herramientas de SpecSolid.">
+<meta property="og:url" content="https://www.specsolid.com/support/">
 <meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="SpecSolid Support — Alpaquitay AI VS Code Extension">
-
-<!-- Twitter Card -->
+<meta property="og:image:alt" content="SpecSolid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Soporte &amp; Ayuda | Alpaquitay AI &amp; Ecosistema SpecSolid">
-<meta name="twitter:description" content="Centro de soporte oficial para Alpaquitay AI, Manan kanchu AI y las herramientas de SpecSolid.">
+<meta name="twitter:title" content="Soporte · SpecSolid">
+<meta name="twitter:description" content="Reporta errores, propone mejoras o escribe directamente sobre Alpaquitay AI, Manan kanchu AI y el resto de herramientas de SpecSolid.">
 <meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
-<meta name="twitter:image:alt" content="SpecSolid Support — Alpaquitay AI VS Code Extension">
-
-<!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <script src="/theme-light.js"></script>
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../shared/specsolid-search.css">
-<link rel="stylesheet" href="/theme-light.css">
-
-<!-- JSON-LD: ContactPage + BreadcrumbList -->
+<link rel="stylesheet" href="/shared/specsolid-search.css">
+<link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.specsolid.com/#organization",
+   "name": "SpecSolid",
+   "url": "https://www.specsolid.com/",
+   "email": "sergio@specsolid.com",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.specsolid.com/android-chrome-512x512.png",
+    "width": 512,
+    "height": 512
+   },
+   "founder": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "foundingLocation": {
+    "@type": "Place",
+    "name": "Pucallpa, Perú"
+   },
+   "sameAs": [
+    "https://github.com/sergioide007",
+    "https://www.amazon.com/author/sergioperezruiz",
+    "https://medium.com/@sergioide007"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
     {
-      "@type": "ContactPage",
-      "@id": "https://www.specsolid.com/support/#webpage",
-      "url": "https://www.specsolid.com/support/",
-      "name": "Soporte & Ayuda | Alpaquitay AI & Ecosistema SpecSolid",
-      "description": "Canales de soporte comunitario y reporte de incidencias para Alpaquitay AI, Manan kanchu AI y la suite SpecSolid.",
-      "isPartOf": { "@id": "https://www.specsolid.com/#website" },
-      "inLanguage": "es",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "SpecSolid", "item": "https://www.specsolid.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://www.specsolid.com/support/" }
-        ]
-      }
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://www.specsolid.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Soporte",
+     "item": "https://www.specsolid.com/support/"
     }
-  ]
+   ]
+  }
+ ]
 }
 </script>
 </head>
 <body>
-
-<header>
-  <div class="nav-inner">
-    <a href="../" class="brand" aria-label="SpecSolid - Inicio">SPEC<span>SOLID</span></a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="../tools/" class="nav-link">Tools</a>
-      <a href="../architecture/" class="nav-link">Architecture</a>
-      <a href="../philosophy/" class="nav-link">Philosophy</a>
-      <span class="nav-divider" aria-hidden="true"></span>
-      <a href="../support/" class="nav-link active">Support</a>
-      <a href="../opensource/" class="nav-link">Open Source</a>
-      <span class="nav-divider" aria-hidden="true"></span>
-      <a href="https://devops.specsolid.com/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
-      <a href="https://codigosintetico.specsolid.com/" class="nav-link nav-link-book">Código Sintético ↗</a>
-      <a href="https://books.specsolid.com/es/" class="nav-link nav-link-book">Serie abierta ↗</a>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="lang-suggest" id="langSuggest" lang="en" hidden>
+  <span>This site is also available in English.</span> <a href="/en/support/" data-setlang="en">Read in English</a>
+  <button type="button" aria-label="Close">×</button>
+</div>
+<div class="notice" role="note"><b>Nuevo</b><em>Synthetic Code</em>, la edición en inglés de Código Sintético, ya está en Amazon. <a href="/#libros">Ver ediciones</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="SpecSolid, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/philosophy/">Filosofía</a>
+      <a href="/architecture/">Método</a>
+      <a href="/tools/">Herramientas</a>
+      <a href="/#libros">Libros</a>
+      <a href="/opensource/">Comunidad</a>
     </nav>
     <div class="nav-cta">
-      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
-      <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">GitHub →</a>
+      <a class="lang-switch" href="/en/support/" hreflang="en" lang="en" data-setlang="en" title="Read this page in English">English</a>
+      <a href="https://github.com/sergioide007" class="btn btn-ghost btn-sm" rel="noopener">GitHub</a>
     </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">☰</button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú" data-close="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
-  <div class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
-    <div class="mobile-label">Sitio</div>
-    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools (Herramientas)</a>
-    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture (Arquitectura)</a>
-    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy (Filosofía)</a>
-    <div class="mobile-label">Ecosistema & Aprendizaje</div>
-    <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps Curriculum (0 a Senior) ↗</a>
-    <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — el libro ↗</a>
-    <a href="https://books.specsolid.com/es/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — Serie abierta (ES/EN) ↗</a>
-    <a href="https://scrum.specsolid.com/" class="mobile-link" onclick="toggleMenu()">Scrum Board SDD ↗</a>
-    <a href="https://ai.specsolid.com/" class="mobile-link" onclick="toggleMenu()">SDD Teoría & Modelos ↗</a>
-    <div class="mobile-label">Comunidad & Contacto</div>
-    <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support (Soporte)</a>
-    <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
-    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Help</a>
-    <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="mobile-link">GitHub Profile →</a>
-  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="/philosophy/">Filosofía</a>
+    <a href="/architecture/">Método</a>
+    <a href="/tools/">Herramientas</a>
+    <a href="/#libros">Libros</a>
+    <a href="/opensource/">Comunidad</a>
+    <a href="/support/">Soporte</a>
+    <a href="https://github.com/sergioide007" rel="noopener">GitHub</a>
+    <a href="/en/support/" hreflang="en" lang="en" data-setlang="en">English</a>
+  </nav>
 </header>
 
-<main>
-  <section id="support" class="support-section">
-    <div class="section-inner">
-      <nav class="breadcrumb" aria-label="Migas de pan">
-        <a href="../">Inicio</a>
-        <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">Soporte</span>
-      </nav>
-
-      <div class="section-label reveal">Alpaquitay AI · VS Code Extensions · Ecosistema</div>
-      <h1 class="section-h2 reveal reveal-1">Soporte técnico y canales de ayuda</h1>
-      <p class="section-sub reveal reveal-2">
-        Reporta incidencias, sugiere nuevas funcionalidades o contáctanos directamente para consultas sobre arquitectura. Respondemos habitualmente en 24–48 h hábiles.
-      </p>
-
-      <div class="support-grid">
-        <article class="support-card reveal reveal-1">
-          <div class="s-icon">🐛</div>
-          <h2>Reportar un bug</h2>
-          <p>Abre un issue en GitHub con los pasos para reproducirlo, versión de VS Code, sistema operativo y logs de error adjuntos.</p>
-          <a href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=bug_report.md" target="_blank" rel="noopener noreferrer" class="btn btn-o btn-sm">Abrir issue en GitHub →</a>
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <ol class="crumbs"><li><a href="/">Inicio</a></li><li aria-current="page">Soporte</li></ol>
+      <h1>¿Cómo podemos ayudarte?</h1>
+      <p class="lead">El soporte lo brinda el mantenedor según su disponibilidad. Normalmente se responde en 24 a 48 horas hábiles.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:56px">
+    <div class="wrap">
+      <div class="two">
+        <article class="card tool">
+          <div class="tool-top"><h2>Reportar un error</h2><span class="kind">GitHub</span></div>
+          <p>Incluye los pasos para reproducirlo, la versión de VS Code, tu sistema operativo y los mensajes de error.</p>
+                    <div class="actions">
+            <a class="btn btn-primary btn-sm" href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=bug_report.md">Abrir un issue</a>
+          </div>
         </article>
-
-        <article class="support-card reveal reveal-2">
-          <div class="s-icon">💡</div>
-          <h2>Solicitar una feature</h2>
-          <p>¿Tienes una idea para potenciar el flujo Spec-Driven? Comparte el caso de uso y el impacto técnico que generaría.</p>
-          <a href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=feature_request.md" target="_blank" rel="noopener noreferrer" class="btn btn-o btn-sm">Proponer feature →</a>
+        <article class="card tool">
+          <div class="tool-top"><h2>Proponer una mejora</h2><span class="kind">GitHub</span></div>
+          <p>Cuenta el caso de uso y qué cambiaría en tu forma de trabajar.</p>
+                    <div class="actions">
+            <a class="btn btn-primary btn-sm" href="https://github.com/sergioide007/alpaquitay-ai/issues/new?template=feature_request.md">Proponer</a>
+          </div>
         </article>
-
-        <article class="support-card reveal reveal-3">
-          <div class="s-icon">📋</div>
-          <h2>Tracker de issues conocidos</h2>
-          <p>Revisa el listado de incidencias activas en GitHub antes de crear un nuevo ticket. Puede que tu consulta ya esté resuelta en un patch.</p>
-          <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" rel="noopener noreferrer" class="btn btn-o btn-sm">Ver issues abiertos →</a>
+        <article class="card tool">
+          <div class="tool-top"><h2>Problemas conocidos</h2><span class="kind">GitHub</span></div>
+          <p>Antes de abrir uno nuevo, revisa si ya está reportado o resuelto.</p>
+                    <div class="actions">
+            <a class="btn btn-primary btn-sm" href="https://github.com/sergioide007/alpaquitay-ai/issues">Ver issues abiertos</a>
+          </div>
         </article>
-
-        <article class="support-card reveal reveal-4">
-          <div class="s-icon">✉️</div>
-          <h2>Contacto comunitario</h2>
-          <p>Para consultas técnicas sobre la metodología SDD, soporte comunitario o inquietudes sobre el libro Código Sintético.</p>
-          <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Enviar email directo →</a>
+        <article class="card tool">
+          <div class="tool-top"><h2>Escribir directamente</h2><span class="kind">Correo</span></div>
+          <p>Para dudas sobre la metodología, el libro o colaboraciones: sergio@specsolid.com</p>
+                    <div class="actions">
+            <a class="btn btn-primary btn-sm" href="mailto:sergio@specsolid.com">Enviar un correo</a>
+          </div>
         </article>
       </div>
-
-      <aside class="support-note">
-        <div class="note-icon">ℹ️</div>
-        <p>
-          <strong>Política de soporte y seguridad:</strong> Alpaquitay AI y Manan kanchu AI son proyectos open source bajo licencia MIT.
-          El soporte se brinda según la disponibilidad del maintainer.
-          Para divulgación responsable de vulnerabilidades críticas de seguridad, por favor envía un correo directamente a
-          <a href="mailto:sergioide007@gmail.com">sergioide007@gmail.com</a>
-          en lugar de abrir un ticket público.
-        </p>
-      </aside>
+      <p class="callout"><strong>Vulnerabilidades de seguridad:</strong> no abras un issue público. Escribe a <a href="mailto:sergio@specsolid.com">sergio@specsolid.com</a> para coordinar una divulgación responsable.</p>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
       <div>
-        <a href="../" class="brand" style="margin-bottom:12px;font-size:14px;display:block">SPEC<span>SOLID</span></a>
-        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
-          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
-        </p>
+        <a href="/" class="brand" aria-label="SpecSolid"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+        <p>Una filosofía, un marco y una comunidad para construir software con IA. Todo es gratis. Todo es abierto.</p>
+        <p><a href="mailto:sergio@specsolid.com">sergio@specsolid.com</a></p>
       </div>
       <div>
-        <h4>Explorar</h4>
-        <a href="../tools/" class="footer-link">Tools</a>
-        <a href="../architecture/" class="footer-link">Architecture</a>
-        <a href="../philosophy/" class="footer-link">Philosophy</a>
-        <a href="../support/" class="footer-link">Support</a>
-        <a href="../opensource/" class="footer-link">Open Source</a>
+        <h2>SpecSolid</h2>
+        <ul>
+          <li><a href="/philosophy/">Filosofía</a></li>
+          <li><a href="/architecture/">Método SDD</a></li>
+          <li><a href="/tools/">Herramientas</a></li>
+          <li><a href="https://ai.specsolid.com/">Teoría SDD</a></li>
+          <li><a href="https://devops.specsolid.com/">DevOps de cero a senior</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Productos</h4>
-        <a href="https://devops.specsolid.com/" class="footer-link" style="color:#00e5a0">DevOps Curriculum →</a>
-        <a href="https://scrum.specsolid.com/" class="footer-link">Scrum Board SDD</a>
-        <a href="https://ai.specsolid.com/" class="footer-link">SDD Teoría</a>
-        <a href="https://alpaquitay-ai.specsolid.com/" class="footer-link">Alpaquitay AI</a>
-        <a href="https://manan-kanchu-code-ai.specsolid.com/" class="footer-link">Manan kanchu AI</a>
+        <h2>Libros</h2>
+        <ul>
+          <li><a href="https://codigosintetico.specsolid.com/">Código Sintético</a></li>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/en/">Synthetic Code (English)</a></li>
+          <li><a href="https://books.specsolid.com/es/">Serie abierta</a></li>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/">Ficha técnica del libro</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Libro &amp; Contacto</h4>
-        <a href="https://codigosintetico.specsolid.com/" class="footer-link nav-link-book">Código Sintético (libro) →</a>
-        <a href="https://books.specsolid.com/es/" class="footer-link nav-link-book">Serie abierta — Español →</a>
-        <a href="https://books.specsolid.com/en/" class="footer-link nav-link-book">Open series — English →</a>
-        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
-        <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/sergioide007</a>
-        <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" rel="noopener noreferrer" class="footer-link">Reportar bug →</a>
-        <a href="https://github.com/sponsors/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">Patrocinar →</a>
+        <h2>Comunidad</h2>
+        <ul>
+          <li><a href="/opensource/">Código abierto</a></li>
+          <li><a href="https://github.com/sponsors/sergioide007">Patrocinar</a></li>
+          <li><a href="/support/">Soporte</a></li>
+          <li><a href="https://medium.com/@sergioide007">Artículos en Medium</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
-      <p class="footer-legal">
-        SpecSolid, Alpaquitay AI y Manan kanchu AI son iniciativas de investigación técnica autónomas.
-        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
-      </p>
+    <div class="foot-bottom">
+      <span>© 2026 SpecSolid · Sergio Perez Ruiz · Pucallpa, Perú · Licencia MIT</span>
+      <span>Proyecto independiente, sin relación con ninguna afiliación profesional de sus autores.</span>
     </div>
   </div>
 </footer>
 
 <script>
-window.SpecSearch = {
-  site: 'specsolid',
-  lang: 'es',
-  topics: ['Spec-Driven Development','Alpaquitay AI','Manan kanchu AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture','Código Sintético'],
-};
+window.SpecSearch = { site: 'specsolid', lang: 'es', topics: ['Spec-Driven Development','SOLID','Alpaquitay AI','Manan kanchu AI','DevOps','Scrum Board SDD','Código Sintético','Synthetic Code'] };
+(function () {
+  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('mobileMenu');
+  var openLabel = btn.getAttribute('aria-label'), closeLabel = btn.getAttribute('data-close');
+  function set(open) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? closeLabel : openLabel);
+  }
+  btn.addEventListener('click', function () { set(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
 </script>
-<script src="../shared/specsolid-search.js" defer></script>
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
+(function () {
+  var KEY = 'specsolid-lang', page = document.documentElement.lang;
+  document.querySelectorAll('[data-setlang]').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem(KEY, a.getAttribute('data-setlang')); } catch (e) {} });
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+  var want = first.indexOf('es') === 0 ? 'es' : 'en';
+  var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+  if (want === page || !alt) return;
+  var bar = document.getElementById('langSuggest');
+  bar.hidden = false;
+  bar.querySelector('button').addEventListener('click', function () {
+    bar.hidden = true; try { localStorage.setItem(KEY, page); } catch (e) {}
+  });
+})();
 </script>
+<script src="/shared/specsolid-search.js" defer></script>
 </body>
 </html>

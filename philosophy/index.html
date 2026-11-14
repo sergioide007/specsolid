@@ -2,296 +2,336 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Filosofía SDD | Por qué SDD gana donde Vibe Coding pierde · SpecSolid</title>
-<meta name="description" content="Principios de Spec-Driven Development: SPEC primero, ADRs versionados, agentes coordinados y supervisión senior. Por qué SDD reduce el 80% de correcciones en software con IA.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Sergio Perez Ruiz - SpecSolid">
-<meta name="keywords" content="Filosofía SDD, Spec-Driven Development vs Vibe Coding, principios de ingeniería con IA, arquitectura de software senior, mitigación de deuda técnica en IA, ADRs versionados, Sergio Perez Ruiz">
-<meta name="theme-color" content="#050a14">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-<!-- Canonical & Hreflang -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filosofía de SpecSolid · Sobre hombros de gigantes</title>
+<meta name="description" content="De dónde viene SpecSolid: los principios SOLID de Robert C. Martin, Fowler, Kent Beck, el Manifiesto Ágil y los pioneros de la IA, y los cinco principios que sostienen el marco.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sergio Perez Ruiz">
+<meta name="theme-color" content="#0b0e11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7f6" media="(prefers-color-scheme: light)">
 <link rel="canonical" href="https://www.specsolid.com/philosophy/">
 <link rel="alternate" hreflang="es" href="https://www.specsolid.com/philosophy/">
-<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/philosophy/">
-
-<!-- Open Graph -->
+<link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/philosophy/">
+<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/philosophy/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SpecSolid">
-<meta property="og:title" content="Filosofía SDD | Por qué SDD gana donde Vibe Coding pierde · SpecSolid">
-<meta property="og:description" content="Principios de Spec-Driven Development: SPEC primero, ADRs versionados, agentes coordinados y supervisión senior. Por qué SDD reduce el 80% de correcciones en software con IA.">
-<meta property="og:url" content="https://www.specsolid.com/philosophy/">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Filosofía de SpecSolid · Sobre hombros de gigantes">
+<meta property="og:description" content="De dónde viene SpecSolid: los principios SOLID de Robert C. Martin, Fowler, Kent Beck, el Manifiesto Ágil y los pioneros de la IA, y los cinco principios que sostienen el marco.">
+<meta property="og:url" content="https://www.specsolid.com/philosophy/">
 <meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="SpecSolid Philosophy — Por qué SDD gana donde Vibe Coding pierde">
-
-<!-- Twitter Card -->
+<meta property="og:image:alt" content="SpecSolid">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Filosofía SDD | Por qué SDD gana donde Vibe Coding pierde · SpecSolid">
-<meta name="twitter:description" content="Principios de Spec-Driven Development: SPEC primero, ADRs versionados, agentes coordinados y supervisión senior.">
+<meta name="twitter:title" content="Filosofía de SpecSolid · Sobre hombros de gigantes">
+<meta name="twitter:description" content="De dónde viene SpecSolid: los principios SOLID de Robert C. Martin, Fowler, Kent Beck, el Manifiesto Ágil y los pioneros de la IA, y los cinco principios que sostienen el marco.">
 <meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
-<meta name="twitter:image:alt" content="SpecSolid Philosophy — Por qué SDD gana donde Vibe Coding pierde">
-
-<!-- Favicon -->
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <script src="/theme-light.js"></script>
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../shared/specsolid-search.css">
-<link rel="stylesheet" href="/theme-light.css">
-
-<!-- JSON-LD: Article + BreadcrumbList -->
+<link rel="stylesheet" href="/shared/specsolid-search.css">
+<link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.specsolid.com/#organization",
+   "name": "SpecSolid",
+   "url": "https://www.specsolid.com/",
+   "email": "sergio@specsolid.com",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.specsolid.com/android-chrome-512x512.png",
+    "width": 512,
+    "height": 512
+   },
+   "founder": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "foundingLocation": {
+    "@type": "Place",
+    "name": "Pucallpa, Perú"
+   },
+   "sameAs": [
+    "https://github.com/sergioide007",
+    "https://www.amazon.com/author/sergioperezruiz",
+    "https://medium.com/@sergioide007"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.specsolid.com/#sergio-perez-ruiz",
+   "name": "Sergio Perez Ruiz",
+   "jobTitle": "Senior Software Engineer",
+   "email": "sergio@specsolid.com",
+   "image": "https://www.specsolid.com/assets/img/author.png",
+   "worksFor": {
+    "@id": "https://www.specsolid.com/#organization"
+   },
+   "sameAs": [
+    "https://github.com/sergioide007",
+    "https://medium.com/@sergioide007",
+    "https://www.amazon.com/author/sergioperezruiz",
+    "https://codigosintetico.specsolid.com/",
+    "https://books.specsolid.com/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
     {
-      "@type": "Article",
-      "@id": "https://www.specsolid.com/philosophy/#webpage",
-      "url": "https://www.specsolid.com/philosophy/",
-      "name": "Filosofía SDD | Por qué SDD gana donde Vibe Coding pierde · SpecSolid",
-      "description": "Principios fundamentales de ingeniería en Spec-Driven Development: cómo construir software empresarial sostenible asistido por inteligencia artificial.",
-      "headline": "Por qué SDD gana donde Vibe Coding pierde: Criterio de ingeniería para sistemas con IA",
-      "isPartOf": { "@id": "https://www.specsolid.com/#website" },
-      "inLanguage": "es",
-      "author": {
-        "@type": "Person",
-        "name": "Sergio Perez Ruiz",
-        "url": "https://www.specsolid.com/#sergio-perez-ruiz"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SpecSolid",
-        "url": "https://www.specsolid.com/"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "SpecSolid", "item": "https://www.specsolid.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Philosophy", "item": "https://www.specsolid.com/philosophy/" }
-        ]
-      }
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://www.specsolid.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Filosofía",
+     "item": "https://www.specsolid.com/philosophy/"
     }
-  ]
+   ]
+  },
+  {
+   "@type": "Article",
+   "headline": "SpecSolid: una filosofía, un marco y una comunidad, sobre hombros de gigantes",
+   "description": "De dónde viene SpecSolid: los principios SOLID de Robert C. Martin, Fowler, Kent Beck, el Manifiesto Ágil y los pioneros de la IA, y los cinco principios que sostienen el marco.",
+   "author": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "publisher": {
+    "@id": "https://www.specsolid.com/#organization"
+   },
+   "datePublished": "2026-05-21",
+   "dateModified": "2026-11-14",
+   "inLanguage": "es",
+   "mainEntityOfPage": "https://www.specsolid.com/philosophy/",
+   "image": "https://www.specsolid.com/og-image.jpg",
+   "isBasedOn": "https://medium.com/@sergioide007/specsolid-a-philosophy-a-framework-and-a-community-built-on-the-shoulders-of-giants-471062066e10"
+  }
+ ]
 }
 </script>
 </head>
 <body>
-
-<header>
-  <div class="nav-inner">
-    <a href="../" class="brand" aria-label="SpecSolid - Inicio">SPEC<span>SOLID</span></a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="../tools/" class="nav-link">Tools</a>
-      <a href="../architecture/" class="nav-link">Architecture</a>
-      <a href="../philosophy/" class="nav-link active">Philosophy</a>
-      <span class="nav-divider" aria-hidden="true"></span>
-      <a href="../support/" class="nav-link">Support</a>
-      <a href="../opensource/" class="nav-link">Open Source</a>
-      <span class="nav-divider" aria-hidden="true"></span>
-      <a href="https://devops.specsolid.com/" class="nav-link" style="color:#00e5a0;font-weight:700">DevOps ↗</a>
-      <a href="https://codigosintetico.specsolid.com/" class="nav-link nav-link-book">Código Sintético ↗</a>
-      <a href="https://books.specsolid.com/es/" class="nav-link nav-link-book">Serie abierta ↗</a>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="lang-suggest" id="langSuggest" lang="en" hidden>
+  <span>This site is also available in English.</span> <a href="/en/philosophy/" data-setlang="en">Read in English</a>
+  <button type="button" aria-label="Close">×</button>
+</div>
+<div class="notice" role="note"><b>Nuevo</b><em>Synthetic Code</em>, la edición en inglés de Código Sintético, ya está en Amazon. <a href="/#libros">Ver ediciones</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="SpecSolid, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/philosophy/" aria-current="page">Filosofía</a>
+      <a href="/architecture/">Método</a>
+      <a href="/tools/">Herramientas</a>
+      <a href="/#libros">Libros</a>
+      <a href="/opensource/">Comunidad</a>
     </nav>
     <div class="nav-cta">
-      <a href="mailto:sergioide007@gmail.com" class="btn btn-o btn-sm">Help</a>
-      <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="btn btn-p btn-sm">GitHub →</a>
+      <a class="lang-switch" href="/en/philosophy/" hreflang="en" lang="en" data-setlang="en" title="Read this page in English">English</a>
+      <a href="https://github.com/sergioide007" class="btn btn-ghost btn-sm" rel="noopener">GitHub</a>
     </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">☰</button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú" data-close="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
-  <div class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
-    <div class="mobile-label">Sitio</div>
-    <a href="../tools/" class="mobile-link" onclick="toggleMenu()">Tools (Herramientas)</a>
-    <a href="../architecture/" class="mobile-link" onclick="toggleMenu()">Architecture (Arquitectura)</a>
-    <a href="../philosophy/" class="mobile-link" onclick="toggleMenu()">Philosophy (Filosofía)</a>
-    <div class="mobile-label">Ecosistema & Aprendizaje</div>
-    <a href="https://devops.specsolid.com/" class="mobile-link" onclick="toggleMenu()" style="color:#00e5a0;font-weight:700">DevOps Curriculum (0 a Senior) ↗</a>
-    <a href="https://codigosintetico.specsolid.com/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — el libro ↗</a>
-    <a href="https://books.specsolid.com/es/" class="mobile-link nav-link-book" onclick="toggleMenu()">Código Sintético — Serie abierta (ES/EN) ↗</a>
-    <a href="https://scrum.specsolid.com/" class="mobile-link" onclick="toggleMenu()">Scrum Board SDD ↗</a>
-    <a href="https://ai.specsolid.com/" class="mobile-link" onclick="toggleMenu()">SDD Teoría & Modelos ↗</a>
-    <div class="mobile-label">Comunidad & Contacto</div>
-    <a href="../support/" class="mobile-link" onclick="toggleMenu()">Support</a>
-    <a href="../opensource/" class="mobile-link" onclick="toggleMenu()">Open Source</a>
-    <a href="mailto:sergioide007@gmail.com" class="mobile-link">Help</a>
-    <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="mobile-link">GitHub Profile →</a>
-  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <a href="/philosophy/">Filosofía</a>
+    <a href="/architecture/">Método</a>
+    <a href="/tools/">Herramientas</a>
+    <a href="/#libros">Libros</a>
+    <a href="/opensource/">Comunidad</a>
+    <a href="/support/">Soporte</a>
+    <a href="https://github.com/sergioide007" rel="noopener">GitHub</a>
+    <a href="/en/philosophy/" hreflang="en" lang="en" data-setlang="en">English</a>
+  </nav>
 </header>
 
-<main>
-  <section id="philosophy">
-    <div class="section-inner">
-      <nav class="breadcrumb" aria-label="Migas de pan">
-        <a href="../">Inicio</a>
-        <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">Filosofía &amp; Principios</span>
-      </nav>
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <ol class="crumbs"><li><a href="/">Inicio</a></li><li aria-current="page">Filosofía</li></ol>
+      <h1>Una filosofía, un marco y una comunidad, sobre hombros de gigantes.</h1>
+      <p class="lead">Antes de explicar qué es SpecSolid, hay que hablar de quienes lo hicieron posible. Cualquier descripción honesta de un marco de software debe reconocer su herencia intelectual.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:64px">
+    <div class="wrap">
+      <article class="prose">
+        <h2>Los maestros que formaron el software moderno</h2>
 
-      <div class="section-label reveal">Principios Fundacionales</div>
-      <h1 class="section-h2 reveal reveal-1">Por qué SDD gana donde Vibe Coding pierde</h1>
-      <p class="section-sub reveal reveal-2">
-        El Vibe Coding produce prototipos llamativos en horas, pero deuda técnica inmanejable en semanas.
-        Spec-Driven Development produce sistemas escalables y auditables. La diferencia se mide en meses de vida útil y predictibilidad de costes.
-      </p>
+        <h3>Robert C. Martin: la batalla contra el mal código</h3>
+        <p><em>Clean Code</em> (Martin, 2008) enseñó a una generación que el código no es solo para las máquinas: es para las personas, que lo leen muchas más veces de las que lo escriben.</p>
+        <p>Sus principios <strong>SOLID</strong> (responsabilidad única, abierto/cerrado, sustitución de Liskov, segregación de interfaces e inversión de dependencias) son el ADN arquitectónico de SpecSolid. Cada decisión del marco se pregunta: ¿respeta SOLID? <strong>El nombre SpecSolid es un homenaje a ese trabajo.</strong></p>
 
-      <!-- Pre-rendered Semantic Principles Grid -->
-      <div class="phil-grid" id="philGrid">
-        <article class="phil-item reveal reveal-1">
-          <div class="icon">📐</div>
-          <h2>SPEC primero</h2>
-          <p>Un documento de especificación preciso define el problema de negocio, invariantes y contratos antes de que la IA genere una sola línea de código.</p>
-        </article>
+        <h3>Martin Fowler: los patrones de la arquitectura</h3>
+        <p>Con <em>Patterns of Enterprise Application Architecture</em> (Fowler, 2002) y <em>Refactoring</em> (Fowler, 2018) mostró que el buen software tiene patrones que se pueden aprender, enseñar y compartir. Su idea de <strong>arquitectura evolutiva</strong>, sistemas diseñados para cambiar y no para ser perfectos el primer día, es central en SpecSolid: no intentamos predecir el futuro; escribimos especificaciones que nos permiten adaptarnos a él.</p>
 
-        <article class="phil-item reveal reveal-2">
-          <div class="icon">🔗</div>
-          <h2>Decisiones versionadas (ADRs)</h2>
-          <p>Architecture Decision Records registran el por qué de cada decisión técnica. La IA tiene contexto histórico cerrado y no improvisa.</p>
-        </article>
+        <h3>Kent Beck: TDD y Extreme Programming</h3>
+        <p>El desarrollo guiado por pruebas (Beck, 2002) invierte un hábito: escribir la prueba antes que el código. Obliga a pensar cómo se ve el éxito antes de construir. Es, en esencia, una forma de especificación. En SpecSolid la especificación se escribe antes que el código: la misma filosofía, con mayor alcance.</p>
 
-        <article class="phil-item reveal reveal-3">
-          <div class="icon">🤖</div>
-          <h2>Agentes coordinados</h2>
-          <p>Modelos de lenguaje especializados por rol: arquitectura, seguridad, dominio, UX y compliance. El orquestador distribuye tareas y valida el resultado.</p>
-        </article>
+        <h3>Los 17 del Manifiesto Ágil</h3>
+        <p>En febrero de 2001, diecisiete personas reunidas en Snowbird, Utah, escribieron el <em>Manifiesto por el Desarrollo Ágil de Software</em> (Beck et al., 2001): cuatro valores y doce principios que alejaron a la industria de los procesos pesados hacia una entrega iterativa y centrada en las personas. Entre ellos, Ward Cunningham, inventor del wiki; Ron Jeffries, cocreador de Extreme Programming; Alistair Cockburn, creador de la familia Crystal; Andy Hunt y Dave Thomas, autores de <em>The Pragmatic Programmer</em>; y Ken Schwaber y Jeff Sutherland, cocreadores de Scrum.</p>
+        <p>"Software funcionando sobre documentación extensiva" no significa no documentar: significa documentación que sirva al trabajo. Eso es una buena especificación.</p>
 
-        <article class="phil-item reveal reveal-4">
-          <div class="icon">📊</div>
-          <h2>Métricas trazables</h2>
-          <p>Tokens consumidos, costo económico por cambio, latencia p99 y cobertura de pruebas automatizadas son medibles desde el primer sprint.</p>
-        </article>
+        <h2>Los arquitectos de la era de la IA</h2>
+        <p>Si la generación anterior nos dio principios para construir software, la actual nos está enseñando a construir inteligencia.</p>
+        <ul>
+          <li><strong>Geoffrey Hinton, Yoshua Bengio y Yann LeCun</strong>, los padres del aprendizaje profundo, sostuvieron durante décadas una línea de investigación que muchos descartaban. Hinton recibió en 2024 el Premio Nobel de Física, junto con John Hopfield.</li>
+          <li><strong>Ilya Sutskever</strong>, con Hinton y Krizhevsky, demostró con AlexNet (2012) que las redes profundas superaban a cualquier enfoque anterior en visión.</li>
+          <li><strong>Ashish Vaswani y sus coautores</strong> presentaron el Transformer (2017), la arquitectura detrás de los modelos de lenguaje actuales.</li>
+          <li><strong>Sam Altman y el equipo de OpenAI</strong> mostraron con GPT-4 (2023) que los modelos de lenguaje son motores de razonamiento de propósito general.</li>
+          <li><strong>Dario y Daniela Amodei y el equipo de Anthropic</strong> propusieron la IA constitucional (Bai et al., 2022): alinear modelos con valores humanos mediante principios explícitos. Claude es uno de los proveedores integrados en Alpaquitay AI.</li>
+          <li><strong>Andrej Karpathy</strong> ha enseñado a cientos de miles de ingenieros cómo funcionan las redes neuronales desde los primeros principios.</li>
+          <li><strong>Andrew Ng, Harrison Chase y Jerry Liu</strong> definieron la era agéntica: patrones de reflexión, uso de herramientas, planificación y colaboración entre agentes; LangChain; y LlamaIndex para conectar modelos con datos propios. El sistema de habilidades de Alpaquitay AI implementa estas ideas.</li>
+        </ul>
 
-        <article class="phil-item reveal reveal-5">
-          <div class="icon">🚫</div>
-          <h2>Sin Vibe Coding</h2>
-          <p>Rechazamos el código sin especificación. El Vibe Coding introduce architecture drift, vulnerabilidades invisibles y descontrol en la base de código.</p>
-        </article>
+        <h2>La filosofía SpecSolid</h2>
+        <p>SpecSolid es una filosofía y un marco para construir software que sea:</p>
+        <ul>
+          <li><strong>Especificación primero.</strong> Escribes qué quieres antes de escribir cómo. Un spec.md simple, con casillas verificables.</li>
+          <li><strong>Alineado con SOLID.</strong> Cada módulo respeta los principios del buen diseño. Con IA importan más, no menos.</li>
+          <li><strong>Impulsado por la comunidad.</strong> El conocimiento pertenece a todos. Todo es gratis y todo es abierto.</li>
+          <li><strong>Aumentado con IA.</strong> Las personas escriben las especificaciones; la IA ayuda a ejecutarlas.</li>
+          <li><strong>Privacidad por diseño.</strong> Desde la arquitectura, no como una casilla de cumplimiento.</li>
+        </ul>
 
-        <article class="phil-item reveal reveal-6">
-          <div class="icon">⚖️</div>
-          <h2>Supervisión senior</h2>
-          <p>La IA amplifica exponencialmente al arquitecto de software, no lo reemplaza. El senior valida SPEC, aprueba ADRs y toma decisiones críticas de negocio.</p>
-        </article>
-      </div>
+        <h3>Especificar antes de programar</h3>
+        <p>La idea central es simple: antes de escribir una línea de código, escribe una especificación. No un documento de cien páginas: un archivo <code>spec.md</code> con casillas.</p>
+<pre class="code"><code><span class="k"># Feature: autenticación de usuarios</span>
 
-      <!-- Pre-rendered Semantic Callout Quote and Stats -->
-      <div class="callout reveal">
-        <blockquote id="mainQuote">
-          &ldquo;Un agente de IA que recibe una especificación precisa genera código limpio y testeable en una sola pasada. Sin especificación, necesita diez pasadas para llegar al mismo resultado.&rdquo;
-        </blockquote>
-        <cite id="mainCite">— Lewis Campbell · DEV Community, 2026</cite>
+- [<span class="x">x</span>] Registro con correo y contraseña
+- [<span class="x">x</span>] Correo de confirmación al registrarse
+- [<span class="x">x</span>] Inicio de sesión con credenciales correctas
+- [ ] Contraseña incorrecta devuelve 401
+- [ ] Restablecer contraseña con enlace por correo</code></pre>
+        <p>Alpaquitay AI sigue esa especificación: la IA la lee, los commits se relacionan con cada casilla y el tablero muestra el avance. Es software funcionando que surge de una intención clara, justo hacia donde apuntaba el Manifiesto Ágil.</p>
 
-        <div class="callout-grid" id="calloutGrid">
-          <div class="cg-item">
-            <h3>~45% de tareas con falla</h3>
-            <p>De las tareas de generación de código con IA introdujeron una falla de seguridad conocida sin instrucción de seguridad (<a href="https://www.veracode.com/blog/spring-2026-genai-code-security/" rel="noopener">Veracode, 2026</a>). No compara con y sin SPEC.</p>
-          </div>
-          <div class="cg-item">
-            <h3>~×100 costo de tokens (ilustrativo)</h3>
-            <p>Escenario ilustrativo de iteraciones ciegas vs. una pasada con SPEC completa; estimación propia, no medida.</p>
-          </div>
-          <div class="cg-item">
-            <h3>80% menos correcciones</h3>
-            <p>Estimación propia (no medida) de reducción en ciclos de revisión con SDD.</p>
-          </div>
-          <div class="cg-item">
-            <h3>1-2 días de SPEC</h3>
-            <p>Tiempo de diseño recuperado íntegramente en la primera iteración ahorrada.</p>
-          </div>
-        </div>
-      </div>
+        <h3>Sin complejidad accidental</h3>
+        <p>Los sitios del ecosistema comparten un único módulo de búsqueda y asistencia escrito en JavaScript sin dependencias. Sin React, sin Vue, sin el peso de un framework. La web es la plataforma más democrática de la historia, y el JavaScript estándar funciona en todas partes, para todos. Es la distinción de Fred Brooks entre complejidad esencial y accidental (Brooks, 1986), aplicada en la práctica: eliminamos la accidental.</p>
 
+        <h2>Por qué importa</h2>
+        <p>La IA no reemplaza a los desarrolladores: los amplifica. Un desarrollador con buenos principios y buenas herramientas rinde mucho más que uno sin ellos, y esa brecha crece cada mes. SpecSolid existe para cerrarla, combinando la sabiduría de Martin, Fowler y Beck, el poder de los modelos de lenguaje, los patrones emergentes de la IA agéntica y un compromiso con la educación libre y abierta.</p>
+
+        <h2>Una invitación</h2>
+        <ul>
+          <li><strong>Si estás empezando:</strong> no llegas tarde. Lo que viene todavía no tiene expertos. Empieza ahora.</li>
+          <li><strong>Si enseñas:</strong> las herramientas pueden ampliar tus cursos. El asistente de entrevistas se puede integrar en tu plataforma y el buscador se puede adaptar. Todo es abierto.</li>
+          <li><strong>Si eres profesional:</strong> cuestiona tus supuestos. Los principios SOLID importan más, no menos, en la era de la IA.</li>
+          <li><strong>Si eres experto:</strong> comparte lo que sabes. Martin, Fowler, Beck y Cunningham no solo escribieron código: escribieron libros, dieron charlas y formaron comunidades.</li>
+        </ul>
+        <p>Publicado originalmente en inglés en <a href="https://medium.com/@sergioide007/specsolid-a-philosophy-a-framework-and-a-community-built-on-the-shoulders-of-giants-471062066e10" rel="noopener">Medium</a>, el 21 de mayo de 2026.</p>
+
+        <h2>Referencias</h2>
+        <ol class="refs">
+          <li>Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., et al. (2022). <em>Constitutional AI: Harmlessness from AI feedback</em>. arXiv. <a href="https://arxiv.org/abs/2212.08073" rel="noopener">arxiv.org/abs/2212.08073</a></li>
+          <li>Beck, K. (2002). <em>Test driven development: By example</em>. Addison-Wesley.</li>
+          <li>Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., Grenning, J., Highsmith, J., Hunt, A., Jeffries, R., Kern, J., Marick, B., Martin, R. C., Mellor, S., Schwaber, K., Sutherland, J., &amp; Thomas, D. (2001). <em>Manifesto for agile software development</em>. <a href="https://agilemanifesto.org/" rel="noopener">agilemanifesto.org</a></li>
+          <li>Brooks, F. P. (1986). No silver bullet: Essence and accidents of software engineering. <em>Proceedings of the IFIP Tenth World Computing Conference</em>.</li>
+          <li>Fowler, M. (2002). <em>Patterns of enterprise application architecture</em>. Addison-Wesley.</li>
+          <li>Fowler, M. (2018). <em>Refactoring: Improving the design of existing code</em> (2nd ed.). Addison-Wesley.</li>
+          <li>Hunt, A., &amp; Thomas, D. (1999). <em>The pragmatic programmer</em>. Addison-Wesley.</li>
+          <li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <em>Advances in Neural Information Processing Systems, 25</em>.</li>
+          <li>Martin, R. C. (2008). <em>Clean code: A handbook of agile software craftsmanship</em>. Prentice Hall.</li>
+          <li>Martin, R. C. (2017). <em>Clean architecture: A craftsman's guide to software structure and design</em>. Prentice Hall.</li>
+          <li>Ng, A. (2024). Agentic design patterns. <em>The Batch</em>, DeepLearning.AI.</li>
+          <li>OpenAI. (2023). <em>GPT-4 technical report</em>. arXiv. <a href="https://arxiv.org/abs/2303.08774" rel="noopener">arxiv.org/abs/2303.08774</a></li>
+          <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you need. <em>Advances in Neural Information Processing Systems, 30</em>. <a href="https://arxiv.org/abs/1706.03762" rel="noopener">arxiv.org/abs/1706.03762</a></li>
+        </ol>
+      </article>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
       <div>
-        <a href="../" class="brand" style="margin-bottom:12px;font-size:14px;display:block">SPEC<span>SOLID</span></a>
-        <p style="font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px">
-          Arquitectura de software de alto rendimiento y soluciones de IA con propósito corporativo.
-        </p>
+        <a href="/" class="brand" aria-label="SpecSolid"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+        <p>Una filosofía, un marco y una comunidad para construir software con IA. Todo es gratis. Todo es abierto.</p>
+        <p><a href="mailto:sergio@specsolid.com">sergio@specsolid.com</a></p>
       </div>
       <div>
-        <h4>Explorar</h4>
-        <a href="../tools/" class="footer-link">Tools</a>
-        <a href="../architecture/" class="footer-link">Architecture</a>
-        <a href="../philosophy/" class="footer-link">Philosophy</a>
-        <a href="../support/" class="footer-link">Support</a>
-        <a href="../opensource/" class="footer-link">Open Source</a>
+        <h2>SpecSolid</h2>
+        <ul>
+          <li><a href="/philosophy/">Filosofía</a></li>
+          <li><a href="/architecture/">Método SDD</a></li>
+          <li><a href="/tools/">Herramientas</a></li>
+          <li><a href="https://ai.specsolid.com/">Teoría SDD</a></li>
+          <li><a href="https://devops.specsolid.com/">DevOps de cero a senior</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Productos</h4>
-        <a href="https://devops.specsolid.com/" class="footer-link" style="color:#00e5a0">DevOps Curriculum →</a>
-        <a href="https://scrum.specsolid.com/" class="footer-link">Scrum Board SDD</a>
-        <a href="https://ai.specsolid.com/" class="footer-link">SDD Teoría</a>
-        <a href="https://alpaquitay-ai.specsolid.com/" class="footer-link">Alpaquitay AI</a>
-        <a href="https://manan-kanchu-code-ai.specsolid.com/" class="footer-link">Manan kanchu AI</a>
+        <h2>Libros</h2>
+        <ul>
+          <li><a href="https://codigosintetico.specsolid.com/">Código Sintético</a></li>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/en/">Synthetic Code (English)</a></li>
+          <li><a href="https://books.specsolid.com/es/">Serie abierta</a></li>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/">Ficha técnica del libro</a></li>
+        </ul>
       </div>
       <div>
-        <h4>Libro &amp; Contacto</h4>
-        <a href="https://codigosintetico.specsolid.com/" class="footer-link nav-link-book">Código Sintético (libro) →</a>
-        <a href="https://books.specsolid.com/es/" class="footer-link nav-link-book">Serie abierta — Español →</a>
-        <a href="https://books.specsolid.com/en/" class="footer-link nav-link-book">Open series — English →</a>
-        <a href="mailto:sergioide007@gmail.com" class="footer-link">sergioide007@gmail.com</a>
-        <a href="https://github.com/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/sergioide007</a>
-        <a href="https://github.com/sergioide007/alpaquitay-ai/issues" target="_blank" rel="noopener noreferrer" class="footer-link">Reportar bug →</a>
-        <a href="https://github.com/sponsors/sergioide007" target="_blank" rel="noopener noreferrer" class="footer-link">Patrocinar →</a>
+        <h2>Comunidad</h2>
+        <ul>
+          <li><a href="/opensource/">Código abierto</a></li>
+          <li><a href="https://github.com/sponsors/sergioide007">Patrocinar</a></li>
+          <li><a href="/support/">Soporte</a></li>
+          <li><a href="https://medium.com/@sergioide007">Artículos en Medium</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 SpecSolid · Pucallpa, Perú</div>
-      <p class="footer-legal">
-        SpecSolid, Alpaquitay AI y Manan kanchu AI son iniciativas de investigación técnica autónomas.
-        Los desarrollos y opiniones expresados son independientes de cualquier afiliación profesional o contractual vigente.
-      </p>
+    <div class="foot-bottom">
+      <span>© 2026 SpecSolid · Sergio Perez Ruiz · Pucallpa, Perú · Licencia MIT</span>
+      <span>Proyecto independiente, sin relación con ninguna afiliación profesional de sus autores.</span>
     </div>
   </div>
 </footer>
 
 <script>
-window.SpecSearch = {
-  site: 'specsolid',
-  lang: 'es',
-  topics: ['Spec-Driven Development','Alpaquitay AI','Manan kanchu AI','DevOps Curriculum','Kubernetes','Terraform','CI/CD','Scrum Board','SDD Framework','Architecture','Código Sintético'],
-};
+window.SpecSearch = { site: 'specsolid', lang: 'es', topics: ['Spec-Driven Development','SOLID','Alpaquitay AI','Manan kanchu AI','DevOps','Scrum Board SDD','Código Sintético','Synthetic Code'] };
+(function () {
+  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('mobileMenu');
+  var openLabel = btn.getAttribute('aria-label'), closeLabel = btn.getAttribute('data-close');
+  function set(open) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? closeLabel : openLabel);
+  }
+  btn.addEventListener('click', function () { set(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
 </script>
-<script src="../shared/specsolid-search.js" defer></script>
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-document.getElementById('mobileMenu').querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
+(function () {
+  var KEY = 'specsolid-lang', page = document.documentElement.lang;
+  document.querySelectorAll('[data-setlang]').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem(KEY, a.getAttribute('data-setlang')); } catch (e) {} });
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+  var want = first.indexOf('es') === 0 ? 'es' : 'en';
+  var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+  if (want === page || !alt) return;
+  var bar = document.getElementById('langSuggest');
+  bar.hidden = false;
+  bar.querySelector('button').addEventListener('click', function () {
+    bar.hidden = true; try { localStorage.setItem(KEY, page); } catch (e) {}
+  });
+})();
 </script>
+<script src="/shared/specsolid-search.js" defer></script>
 </body>
 </html>

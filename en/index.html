@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpecSolid · Spec-first, SOLID principles for building software with AI</title>
+<meta name="description" content="SpecSolid is a philosophy, a framework and an open community for building software with AI: spec-first, SOLID-aligned, free open-source tools and the book Synthetic Code.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sergio Perez Ruiz">
+<meta name="theme-color" content="#0b0e11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f7f6" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://www.specsolid.com/en/">
+<link rel="alternate" hreflang="es" href="https://www.specsolid.com/">
+<link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpecSolid">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:title" content="SpecSolid · Spec-first, SOLID principles for building software with AI">
+<meta property="og:description" content="SpecSolid is a philosophy, a framework and an open community for building software with AI: spec-first, SOLID-aligned, free open-source tools and the book Synthetic Code.">
+<meta property="og:url" content="https://www.specsolid.com/en/">
+<meta property="og:image" content="https://www.specsolid.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SpecSolid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SpecSolid · Spec-first, SOLID principles for building software with AI">
+<meta name="twitter:description" content="SpecSolid is a philosophy, a framework and an open community for building software with AI: spec-first, SOLID-aligned, free open-source tools and the book Synthetic Code.">
+<meta name="twitter:image" content="https://www.specsolid.com/og-image.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script src="/theme-light.js"></script>
+<link rel="stylesheet" href="/shared/specsolid-search.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.specsolid.com/#organization",
+   "name": "SpecSolid",
+   "url": "https://www.specsolid.com/",
+   "email": "sergio@specsolid.com",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.specsolid.com/android-chrome-512x512.png",
+    "width": 512,
+    "height": 512
+   },
+   "founder": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "foundingLocation": {
+    "@type": "Place",
+    "name": "Pucallpa, Perú"
+   },
+   "sameAs": [
+    "https://github.com/sergioide007",
+    "https://www.amazon.com/author/sergioperezruiz",
+    "https://medium.com/@sergioide007"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.specsolid.com/#sergio-perez-ruiz",
+   "name": "Sergio Perez Ruiz",
+   "jobTitle": "Senior Software Engineer",
+   "email": "sergio@specsolid.com",
+   "image": "https://www.specsolid.com/assets/img/author.png",
+   "worksFor": {
+    "@id": "https://www.specsolid.com/#organization"
+   },
+   "sameAs": [
+    "https://github.com/sergioide007",
+    "https://medium.com/@sergioide007",
+    "https://www.amazon.com/author/sergioperezruiz",
+    "https://codigosintetico.specsolid.com/",
+    "https://books.specsolid.com/"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.specsolid.com/#website",
+   "url": "https://www.specsolid.com/",
+   "name": "SpecSolid",
+   "inLanguage": [
+    "es",
+    "en"
+   ],
+   "publisher": {
+    "@id": "https://www.specsolid.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "url": "https://www.specsolid.com/en/",
+   "name": "SpecSolid · Spec-first, SOLID principles for building software with AI",
+   "isPartOf": {
+    "@id": "https://www.specsolid.com/#website"
+   },
+   "inLanguage": "en",
+   "dateModified": "2026-11-14"
+  },
+  {
+   "@type": "Book",
+   "@id": "https://www.specsolid.com/#codigo-sintetico",
+   "name": "Código Sintético: El arte de orquestar agentes de IA",
+   "author": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "inLanguage": "es",
+   "url": "https://codigosintetico.specsolid.com/",
+   "image": "https://www.specsolid.com/assets/img/codigo-sintetico-es.jpg",
+   "publisher": {
+    "@type": "Organization",
+    "name": "SpecSolid Press"
+   },
+   "workExample": [
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/EBook",
+     "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HG96Y1LN"
+     }
+    },
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/Paperback",
+     "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HGFD1Y6G"
+     }
+    },
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/Hardcover",
+     "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HGGH9P77"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "Book",
+   "@id": "https://www.specsolid.com/#synthetic-code",
+   "name": "Synthetic Code: The Art of Orchestrating AI Agents",
+   "author": {
+    "@id": "https://www.specsolid.com/#sergio-perez-ruiz"
+   },
+   "inLanguage": "en",
+   "url": "https://info-codigo-sintetico.specsolid.com/en/",
+   "image": "https://www.specsolid.com/assets/img/synthetic-code-en.jpg",
+   "translationOfWork": {
+    "@id": "https://www.specsolid.com/#codigo-sintetico"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "SpecSolid Press"
+   },
+   "workExample": [
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/EBook",
+     "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HRMZ15PV"
+     }
+    },
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/Paperback",
+     "isbn": "9798142416797",
+     "offers": {
+      "@type": "Offer",
+      "price": "24.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HRNT2QLQ"
+     }
+    },
+    {
+     "@type": "Book",
+     "bookFormat": "https://schema.org/Hardcover",
+     "isbn": "9798142423542",
+     "offers": {
+      "@type": "Offer",
+      "price": "34.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.amazon.com/dp/B0HRP4TT9D"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is SpecSolid?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A philosophy, a framework and a community for building software with AI. It starts from a simple idea: before you write code, you write a specification, and every module respects the SOLID principles. The name is a tribute to Robert C. Martin's SOLID principles."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is Spec-Driven Development (SDD)?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is SpecSolid's core practice: write a short, verifiable specification first (a spec.md file with checkboxes) and use it to guide people, the AI and the tests. When something fails, you fix the spec and regenerate, instead of patching the code by hand."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is AI replacing developers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It amplifies them. A developer with good principles and good tools gets far more done than one without them, but model-generated code still needs people who design, review and maintain it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Where can I get Synthetic Code?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On Amazon in Kindle, paperback and hardcover editions. You can read a free sample at info-codigo-sintetico.specsolid.com/en/. The original Spanish edition, Código Sintético, is also on Lulu, Apple Books, Kobo and Gumroad."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does it cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing. The tools, the DevOps curriculum, the theory framework and the extended book series are free and open source. Only the published book is sold."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="lang-suggest" id="langSuggest" lang="es" hidden>
+  <span>Este sitio también está en español.</span> <a href="/" data-setlang="es">Ver en español</a>
+  <button type="button" aria-label="Cerrar">×</button>
+</div>
+<div class="notice" role="note"><b>New</b><em>Synthetic Code</em>, the English edition of Código Sintético, is out on Amazon. <a href="https://www.amazon.com/dp/B0HRMZ15PV" rel="noopener">Get the book</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/en/" class="brand" aria-label="SpecSolid, home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/en/philosophy/">Philosophy</a>
+      <a href="/en/architecture/">Method</a>
+      <a href="/en/tools/">Tools</a>
+      <a href="/en/#books">Books</a>
+      <a href="/en/opensource/">Community</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="lang-switch" href="/" hreflang="es" lang="es" data-setlang="es" title="Leer esta página en español">Español</a>
+      <a href="https://github.com/sergioide007" class="btn btn-ghost btn-sm" rel="noopener">GitHub</a>
+    </div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" data-close="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
+    <a href="/en/philosophy/">Philosophy</a>
+    <a href="/en/architecture/">Method</a>
+    <a href="/en/tools/">Tools</a>
+    <a href="/en/#books">Books</a>
+    <a href="/en/opensource/">Community</a>
+    <a href="/en/support/">Support</a>
+    <a href="https://github.com/sergioide007" rel="noopener">GitHub</a>
+    <a href="/" hreflang="es" lang="es" data-setlang="es">Español</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">A philosophy, a framework and a community</p>
+        <h1>Solid software, <span>specified before it is written.</span></h1>
+        <p class="hero-sub">SpecSolid brings together the wisdom of the people who founded modern software engineering and the power of AI: you write what you want before you write how, and every module respects the SOLID principles.</p>
+        <div class="hero-ctas">
+          <a href="/en/philosophy/" class="btn btn-primary">Read the philosophy</a>
+          <a href="/en/architecture/" class="btn btn-ghost">How it works</a>
+        </div>
+      </div>
+      <figure class="card file" style="margin:0">
+        <div class="file-bar"><b>spec.md</b><span>3 of 5 done</span></div>
+<pre class="code"><code><span class="k"># Feature: User Authentication</span>
+
+- [<span class="x">x</span>] User can register with email and password
+- [<span class="x">x</span>] User receives a confirmation email
+- [<span class="x">x</span>] User can log in with correct credentials
+- [ ] Login fails with incorrect password (401)
+- [ ] User can reset password via email link</code></pre>
+        <figcaption class="file-foot">The AI reads it, commits map to each checkbox and the board shows the progress.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Principles</p><h2 class="h2">Five ideas hold everything else up.</h2></div>
+      <ol class="principles" style="list-style:none">
+        <li class="principle"><span class="principle-n">01</span><h3>Spec-first</h3><p>You write what you want before you write how. A simple spec.md with checkboxes you can verify.</p></li>
+        <li class="principle"><span class="principle-n">02</span><h3>SOLID-aligned</h3><p>Every module respects the principles of good design. With AI they matter more, not less.</p></li>
+        <li class="principle"><span class="principle-n">03</span><h3>Community-driven</h3><p>Knowledge belongs to everyone. Everything is free and everything is open.</p></li>
+        <li class="principle"><span class="principle-n">04</span><h3>AI-augmented</h3><p>Humans write the specs; AI helps execute them.</p></li>
+        <li class="principle"><span class="principle-n">05</span><h3>Privacy-respecting</h3><p>By design, not as a compliance checkbox.</p></li>
+      </ol>
+      <a class="more" href="/en/philosophy/">Read the full philosophy →</a>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Standing on the shoulders of giants</p><h2 class="h2">None of this starts with us.</h2><p class="lead">Software engineering is not a young field. SpecSolid takes its name from Robert C. Martin's SOLID principles and builds on decades of work by those who came before.</p></div>
+      <div class="solid" aria-label="SOLID">
+        <div><b>S</b><span>Single responsibility</span></div>
+        <div><b>O</b><span>Open for extension, closed for modification</span></div>
+        <div><b>L</b><span>Liskov substitution</span></div>
+        <div><b>I</b><span>Interface segregation</span></div>
+        <div><b>D</b><span>Dependency inversion</span></div>
+      </div>
+      <div class="giants" style="margin-top:64px">
+        <div>
+          <h3>The masters of software</h3>
+          <div class="giant"><strong>Robert C. Martin</strong><time>2008</time><span>Clean Code and the SOLID principles</span></div>
+          <div class="giant"><strong>Martin Fowler</strong><time>2002</time><span>Patterns, refactoring and evolutionary architecture</span></div>
+          <div class="giant"><strong>Kent Beck</strong><time>2002</time><span>Test-driven development and Extreme Programming</span></div>
+          <div class="giant"><strong>The 17 Agile Manifesto authors</strong><time>2001</time><span>Cunningham, Jeffries, Cockburn, Hunt, Thomas, Schwaber, Sutherland and others</span></div>
+        </div>
+        <div>
+          <h3>The architects of the AI era</h3>
+          <div class="giant"><strong>Hinton, Bengio and LeCun</strong><time>2012</time><span>Deep learning, the foundation of today's AI</span></div>
+          <div class="giant"><strong>Vaswani et al.</strong><time>2017</time><span>The Transformer: <em>Attention is all you need</em></span></div>
+          <div class="giant"><strong>OpenAI and Anthropic</strong><time>2022–23</time><span>General-purpose language models and Constitutional AI</span></div>
+          <div class="giant"><strong>Ng, Chase and Liu</strong><time>2022–24</time><span>Agentic patterns, LangChain and LlamaIndex</span></div>
+        </div>
+      </div>
+      <blockquote class="quote">
+        “The SOLID principles matter more, not less, in the age of AI.”
+        <cite>From <a href="https://medium.com/@sergioide007/specsolid-a-philosophy-a-framework-and-a-community-built-on-the-shoulders-of-giants-471062066e10" rel="noopener">SpecSolid: A Philosophy, a Framework, and a Community</a></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The framework in practice</p><h2 class="h2">Open tools and courses.</h2><p class="lead">Built with plain JavaScript, no frameworks: fast, accessible and easy to adapt. They work on their own and connect through spec.md.</p></div>
+      <div class="rows">
+        <article class="row"><span class="row-kind">Plan</span><div><h3>Scrum Board SDD</h3><p>A sprint board that exports the active sprint as spec.md.</p></div><a class="go" href="https://scrum.specsolid.com/">Open →</a></article>
+        <article class="row"><span class="row-kind">Build · VS Code</span><div><h3>Alpaquitay AI</h3><p>An assistant that uses the active spec and your Git history as context, with Claude, OpenAI or local models.</p></div><a class="go" href="https://alpaquitay-ai.specsolid.com/">View →</a></article>
+        <article class="row"><span class="row-kind">Verify · VS Code</span><div><h3>Manan kanchu AI</h3><p>Checks code before you commit: vulnerabilities, malicious code and AI-generated code.</p></div><a class="go" href="https://manan-kanchu-code-ai.specsolid.com/">View →</a></article>
+        <article class="row"><span class="row-kind">Ground</span><div><h3>SDD Theory</h3><p>The framework for AI-era architecture: anatomy of a spec, risks, costs and decision records (ADRs).</p></div><a class="go" href="https://ai.specsolid.com/">View →</a></article>
+        <article class="row"><span class="row-kind">Learn</span><div><h3>DevOps from zero to senior</h3><p>12 sections and 41+ guides: Linux, Kubernetes, Terraform, CI/CD, observability and ISO 27001.</p></div><a class="go" href="https://devops.specsolid.com/">Start →</a></article>
+      </div>
+      <a class="more" href="/en/tools/">All tools in detail →</a>
+    </div>
+  </section>
+
+  <section class="section alt" id="books">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Books</p><h2 class="h2">Synthetic Code</h2><p class="lead">How to design, govern and scale multi-agent systems in production, with open reference implementations for every core pattern.</p></div>
+      <div class="books">
+        <article class="card book">
+          <img src="/assets/img/synthetic-code-en.jpg" width="148" height="222" alt="Synthetic Code book cover" loading="lazy" decoding="async">
+          <div>
+            <span class="book-lang">English</span><span class="tag">New</span>
+            <h3>Synthetic Code</h3>
+            <p class="book-sub">The Art of Orchestrating AI Agents</p>
+            <ul class="facts"><li><strong>270</strong> pages</li><li>Updated for the November 2026 models</li><li>from <strong>$9.99</strong></li></ul>
+            <div class="actions">
+              <a class="btn btn-gold btn-sm" href="https://www.amazon.com/dp/B0HRMZ15PV" rel="noopener">Buy on Amazon</a>
+              <a class="btn btn-ghost btn-sm" href="https://info-codigo-sintetico.specsolid.com/en/#read">Read a free sample</a>
+            </div>
+          </div>
+        </article>
+        <article class="card book" lang="es">
+          <img src="/assets/img/codigo-sintetico-es.jpg" width="148" height="222" alt="Código Sintético cover" loading="lazy" decoding="async">
+          <div>
+            <span class="book-lang">Español</span>
+            <h3>Código Sintético</h3>
+            <p class="book-sub">El arte de orquestar agentes de IA</p>
+            <ul class="facts"><li><strong>21</strong> capítulos</li><li>Kindle, tapa blanda y tapa dura</li><li>desde <strong>$9.99</strong></li></ul>
+            <div class="actions">
+              <a class="btn btn-gold btn-sm" href="https://codigosintetico.specsolid.com/#comprar">Dónde comprarlo</a>
+              <a class="btn btn-ghost btn-sm" href="https://codigosintetico.specsolid.com/#suscripcion">3 capítulos gratis</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="links-2">
+        <a class="card" href="https://books.specsolid.com/en/"><strong>Open series in 4 volumes →</strong><span>The extended edition, free online, in English and Spanish.</span></a>
+        <a class="card" href="https://github.com/sergioide007/synthetic-code" rel="noopener"><strong>Reference code (MIT) →</strong><span>The book's patterns, runnable and tested.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">An invitation</p><h2 class="h2">Any developer, anywhere in the world, can reach their potential.</h2></div>
+      <div class="invite">
+        <div><h3>If you are just starting</h3><p>You are not too late. What is coming has no established experts yet. Start now.</p></div>
+        <div><h3>If you teach</h3><p>These tools can augment your courses. The search and the assistant can be forked and customized. Everything is open.</p></div>
+        <div><h3>If you are a professional</h3><p>Challenge your assumptions. Model-generated code still needs to be designed, reviewed and maintained.</p></div>
+        <div><h3>If you are an expert</h3><p>Share what you know. The greats did not just write code: they wrote books and built communities.</p></div>
+      </div>
+      <div class="author" id="author">
+        <img src="/assets/img/author.png" width="180" height="180" alt="Sergio Perez Ruiz" loading="lazy" decoding="async">
+        <div>
+          <h3>Sergio Perez Ruiz</h3>
+          <p class="author-role">Creator of SpecSolid · Senior Software Engineer · Pucallpa, Peru</p>
+          <p>Senior Software Engineer with experience in distributed systems, multi-agent systems and DevOps. He built Alpaquitay AI and Manan kanchu AI and wrote <em>Synthetic Code</em>, a guide to designing controllable AI systems in production.</p>
+          <div class="actions">
+            <a class="btn btn-primary btn-sm" href="mailto:sergio@specsolid.com">Email me</a>
+            <a class="btn btn-ghost btn-sm" href="https://medium.com/@sergioide007" rel="noopener">Medium</a>
+            <a class="btn btn-ghost btn-sm" href="https://github.com/sergioide007" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost btn-sm" href="https://www.amazon.com/author/sergioperezruiz" rel="noopener">Amazon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">FAQ</p><h2 class="h2">The essentials, briefly.</h2></div>
+      <div class="faq">
+        <details><summary>What is SpecSolid?</summary><div class="ans"><p>A philosophy, a framework and a community for building software with AI. It starts from a simple idea: before you write code, you write a specification, and every module respects the SOLID principles. The name is a tribute to Robert C. Martin's SOLID principles.</p></div></details>
+        <details><summary>What is Spec-Driven Development (SDD)?</summary><div class="ans"><p>It is SpecSolid's core practice: write a short, verifiable specification first (a spec.md file with checkboxes) and use it to guide people, the AI and the tests. When something fails, you fix the spec and regenerate, instead of patching the code by hand.</p></div></details>
+        <details><summary>Is AI replacing developers?</summary><div class="ans"><p>No. It amplifies them. A developer with good principles and good tools gets far more done than one without them, but model-generated code still needs people who design, review and maintain it.</p></div></details>
+        <details><summary>Where can I get Synthetic Code?</summary><div class="ans"><p>On Amazon in Kindle, paperback and hardcover editions. You can read a free sample at info-codigo-sintetico.specsolid.com/en/. The original Spanish edition, Código Sintético, is also on Lulu, Apple Books, Kobo and Gumroad.</p></div></details>
+        <details><summary>How much does it cost?</summary><div class="ans"><p>Nothing. The tools, the DevOps curriculum, the theory framework and the extended book series are free and open source. Only the published book is sold.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="/en/" class="brand" aria-label="SpecSolid"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 2.5v6M27.7 9.25l-5.2 3M27.7 22.75l-5.2-3M16 29.5v-6M4.3 22.75l5.2-3M4.3 9.25l5.2 3" stroke="currentColor" stroke-width="1" opacity=".4"/><path d="M20.3 12.3c-.7-1.3-2.3-2.1-4.1-2.1-2.4 0-4.1 1.3-4.1 3.1 0 3.9 8.4 2.2 8.4 6.1 0 1.9-1.8 3.2-4.3 3.2-1.9 0-3.5-.8-4.3-2.2" fill="none" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/></svg>SpecSolid</a>
+        <p>A philosophy, a framework and a community for building software with AI. Everything is free. Everything is open.</p>
+        <p><a href="mailto:sergio@specsolid.com">sergio@specsolid.com</a></p>
+      </div>
+      <div>
+        <h2>SpecSolid</h2>
+        <ul>
+          <li><a href="/en/philosophy/">Philosophy</a></li>
+          <li><a href="/en/architecture/">SDD method</a></li>
+          <li><a href="/en/tools/">Tools</a></li>
+          <li><a href="https://ai.specsolid.com/">SDD Theory</a></li>
+          <li><a href="https://devops.specsolid.com/">DevOps from zero to senior</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Books</h2>
+        <ul>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/en/">Synthetic Code</a></li>
+          <li><a href="https://codigosintetico.specsolid.com/">Código Sintético (Spanish)</a></li>
+          <li><a href="https://books.specsolid.com/en/">Open series</a></li>
+          <li><a href="https://info-codigo-sintetico.specsolid.com/">Book fact sheet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Community</h2>
+        <ul>
+          <li><a href="/en/opensource/">Open source</a></li>
+          <li><a href="https://github.com/sponsors/sergioide007">Sponsor</a></li>
+          <li><a href="/en/support/">Support</a></li>
+          <li><a href="https://medium.com/@sergioide007">Articles on Medium</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SpecSolid · Sergio Perez Ruiz · Pucallpa, Peru · MIT License</span>
+      <span>An independent project, unrelated to any professional affiliation of its authors.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.SpecSearch = { site: 'specsolid', lang: 'en', topics: ['Spec-Driven Development','SOLID','Alpaquitay AI','Manan kanchu AI','DevOps','Scrum Board SDD','Código Sintético','Synthetic Code'] };
+(function () {
+  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('mobileMenu');
+  var openLabel = btn.getAttribute('aria-label'), closeLabel = btn.getAttribute('data-close');
+  function set(open) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? closeLabel : openLabel);
+  }
+  btn.addEventListener('click', function () { set(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
+</script>
+<script>
+(function () {
+  var KEY = 'specsolid-lang', page = document.documentElement.lang;
+  document.querySelectorAll('[data-setlang]').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem(KEY, a.getAttribute('data-setlang')); } catch (e) {} });
+  });
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+  var want = first.indexOf('es') === 0 ? 'es' : 'en';
+  var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+  if (want === page || !alt) return;
+  var bar = document.getElementById('langSuggest');
+  bar.hidden = false;
+  bar.querySelector('button').addEventListener('click', function () {
+    bar.hidden = true; try { localStorage.setItem(KEY, page); } catch (e) {}
+  });
+})();
+</script>
+<script src="/shared/specsolid-search.js" defer></script>
+</body>
+</html>

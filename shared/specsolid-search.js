@@ -634,7 +634,7 @@
       + '<span id="ss-voice-text">Escuchando...</span>'
       + '</div>'
       /* Results */
-      + '<div id="ss-results" class="ss-results" role="listbox">'
+      + '<div id="ss-results" class="ss-results" role="region" aria-label="Resultados de búsqueda" aria-live="polite">'
       + '<div class="ss-results-empty">'
       + '<div class="ss-hint-row"><kbd>↑↓</kbd> navegar&nbsp; <kbd>Enter</kbd> abrir&nbsp; <kbd>Esc</kbd> cerrar&nbsp; <kbd>Ctrl+K</kbd> abrir</div>'
       + '<div class="ss-hint-topics">' + topicChips + '</div>'

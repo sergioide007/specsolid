@@ -118,4 +118,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/support/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/support/"/>
   </url>
+  <url>
+    <loc>https://www.specsolid.com/tools/scrum-board-sdd/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.specsolid.com/tools/scrum-board-sdd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/tools/scrum-board-sdd/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/tools/scrum-board-sdd/"/>
+  </url>
+  <url>
+    <loc>https://www.specsolid.com/en/tools/scrum-board-sdd/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.specsolid.com/tools/scrum-board-sdd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.specsolid.com/en/tools/scrum-board-sdd/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.specsolid.com/en/tools/scrum-board-sdd/"/>
+  </url>
 </urlset>
